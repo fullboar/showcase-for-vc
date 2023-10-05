@@ -1,0 +1,42 @@
+name: Test & Build
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - 'yarn.lock'
+  #     - 'client/config/**'
+  #     - 'server/src/**'
+  #     - 'server/config/**'
+# defaults:
+#   run:
+#     working-directory: ./web
+# env:
+#   REGISTRY: ghcr.io
+#   nodeVersion: 16.15
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    # permissions:
+    #   packages: read
+    #   contents: read
+    steps:
+      - uses: actions/checkout@v3
+
+      # - name: Setup node v${{ env.nodeVersion }}
+      #   uses: ./.github/actions/setup-node
+      #   with:
+      #     node-version: ${{ env.nodeVersion }}
+      #     registry-token: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Install dependencies
+      #   shell: bash
+      #   run: |
+      #     yarn install --frozen-lockfile
+            
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   env:
+      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
