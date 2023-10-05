@@ -6,9 +6,10 @@ on:
       - main
     paths:
       - 'yarn.lock'
-      - 'client/config/**'
-      - 'server/src/**'
-      - 'server/config/**'
+      - 'web/src/**'
+      - 'web/config/**'
+      - 'api/src/**'
+      - 'api/config/**'
 env:
   REGISTRY: ghcr.io
   nodeVersion: 16.15
