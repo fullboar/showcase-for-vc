@@ -5,7 +5,7 @@ import { json, static as stx } from 'express'
 import { createExpressServer, useContainer } from 'routing-controllers'
 import { Container } from 'typedi'
 
-import { tractionApiKeyUpdaterInit, tractionRequest, tractionGarbageCollection } from './utils/tractionHelper'
+import { tractionApiKeyUpdaterInit, tractionRequest, tractionGarbageCollection } from './utils/traction'
 
 process.on('unhandledRejection', (error) => {
   if (error instanceof Error) {
@@ -68,7 +68,7 @@ const run = async () => {
     return response
   })
 
-  app.listen(5000)
+  app.listen(3100)
 }
 
 run()

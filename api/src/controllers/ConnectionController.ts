@@ -1,7 +1,7 @@
 import { Body, Delete, Get, InternalServerError, JsonController, NotFoundError, Param, Post } from 'routing-controllers'
 import { Inject, Service } from 'typedi'
 
-import { tractionRequest } from '../utils/tractionHelper'
+import { tractionRequest } from '../utils/traction'
 
 @JsonController('/connections')
 @Service()

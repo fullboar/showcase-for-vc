@@ -2,7 +2,7 @@ import { Body, Delete, Get, InternalServerError, JsonController, NotFoundError, 
 import { Inject, Service } from 'typedi'
 
 import { Credential } from '../content/types'
-import { tractionRequest } from '../utils/tractionHelper'
+import { tractionRequest } from '../utils/traction'
 @JsonController('/credentials')
 @Service()
 export class CredentialController {

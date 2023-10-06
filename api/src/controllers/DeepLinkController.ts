@@ -1,7 +1,7 @@
 import { Body, JsonController, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { tractionRequest } from '../utils/tractionHelper'
+import { tractionRequest } from '../utils/traction'
 
 
 @JsonController('/deeplink')
