@@ -1,0 +1,16 @@
+name: Testing RC
+on:
+  workflow_dispatch:
+jobs:
+  rocketchat:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Send notification for iOS failure
+      uses: ./.github/actions/send-rocketchat-notification
+      with:
+        job_title: "BC Wallet iOS Build - Run number ${{ github.run_number }}"
+        job_status: ${{ job.status }}
+        webhook_url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
+        webhook_token: ${{ secrets.ROCKETCHAT_TOKEN }}
