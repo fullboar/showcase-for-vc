@@ -9,8 +9,8 @@
     "type": "git"
   },
   "workspaces": [
-    "client",
-    "server"
+    "web",
+    "api"
   ],
   "scripts": {
     "check-types": "tsc --noEmit",
