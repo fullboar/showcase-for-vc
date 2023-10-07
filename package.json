@@ -13,18 +13,9 @@
     "api"
   ],
   "scripts": {
-    "check-types": "tsc --noEmit",
-    "prettier": "prettier '**/*.+(js|json|ts|md|yml|yaml)'",
-    "lint": "eslint --ignore-path .gitignore .",
-    "format": "yarn prettier --write",
     "prepare": "husky install",
-    "client:start": "yarn workspace client start",
-    "client:build": "yarn workspace client build",
-    "server:dev": "yarn workspace server dev",
-    "server:build": "yarn workspace server build",
-    "dev": "concurrently -n 'client,server ' -c 'green.bold,red.bold' 'yarn client:start' 'yarn server:dev'",
     "test": "yarn run cypress open",
-    "build": "yarn workspace client build && yarn workspace server build",
+    "build": "yarn workspace run build",
     "cy:open": "cypress open",
     "cy:run": "cypress run"
   },

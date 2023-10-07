@@ -8,7 +8,10 @@
     "start": "node src/index.ts",
     "dev": "tsnd -r dotenv/config --respawn src/index.ts dotenv_config_path=.env",
     "build": "rm -rf build && tsc && cp -r src/public build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "test:format": "prettier '**/*.+(js|json|ts|md|yml|yaml)'",
+    "test:typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
