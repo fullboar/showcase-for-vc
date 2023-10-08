@@ -4,6 +4,7 @@
   "private": true,
   "license": "Apache-2.0",
   "description": "Verifiable Credential Demo",
+  "packageManager": "yarn@3.6.4",
   "repository": {
     "url": "https://github.com/fullboar/showcase-for-vc",
     "type": "git"
