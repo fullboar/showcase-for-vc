@@ -1,5 +1,5 @@
-import { Body, Get,  JsonController, Param, Post } from 'routing-controllers'
-import {  Service } from 'typedi'
+import { Body, Get, JsonController, Param, Post } from 'routing-controllers'
+import { Service } from 'typedi'
 
 import { tractionRequest } from '../utils/traction'
 

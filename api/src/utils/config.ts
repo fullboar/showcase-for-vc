@@ -1,14 +1,14 @@
-import dotenv from 'dotenv';
-import nconf from 'nconf';
+import dotenv from 'dotenv'
+import nconf from 'nconf'
 // import path from 'path';
 // import { fileURLToPath } from 'url';
 
 // const dirName = path.dirname(fileURLToPath(import.meta.url));
 // const configFileName = 'config.json';
-const env = process.env.NODE_ENV ?? 'development';
+const env = process.env.NODE_ENV ?? 'development'
 
 if (env === 'development') {
-  dotenv.config();
+  dotenv.config()
 }
 
 /**
@@ -27,20 +27,18 @@ nconf.overrides({
     walletId: process.env.WALLET_ID,
     walletSecret: process.env.WALLET_SECRET,
     tractionBaseUrl: process.env.TRACTION_BASE_URL,
-    tractionDid: process.env.TRACTION_DID
+    tractionDid: process.env.TRACTION_DID,
   },
-});
+})
 
 // load other properties from file.
-nconf
-  .argv()
-  .env()
-  // .file({ file: path.join(dirName, '../', configFileName) });
+nconf.argv().env()
+// .file({ file: path.join(dirName, '../', configFileName) });
 
 // if nothing else is set, use defaults. This will be set if
 // they do not exist in overrides or the config file.
 nconf.defaults({
   appUrl: process.env.APP_URL ?? 'http://localhost:3100',
-});
+})
 
-export default nconf;
+export default nconf

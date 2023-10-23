@@ -3,6 +3,7 @@ import type { Express } from 'express'
 
 import { json, static as stx } from 'express'
 import { createExpressServer } from 'routing-controllers'
+
 import config from './utils/config'
 import { tractionApiKeyUpdaterInit, tractionRequest, tractionGarbageCollection } from './utils/traction'
 
@@ -69,7 +70,7 @@ const run = async () => {
 
   app.listen(config.get('port'), config.get('host'), () => {
     console.log(`Server running on: ${config.get('host')}:${config.get('port')}`)
-  });
+  })
 }
 
 run()

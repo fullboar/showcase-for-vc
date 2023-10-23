@@ -1,6 +1,8 @@
 import type { AxiosRequestConfig } from 'axios'
+
 import axios from 'axios'
 import moment from 'moment'
+
 import config from './config'
 
 export let agentKey = ''
@@ -24,17 +26,15 @@ export const tractionApiKeyUpdaterInit = async () => {
   // Retrieve the Traction API key using the wallet ID and wallet secret
   const response = await axios.post(url, { wallet_key: walletSecret })
   const apiKey = response?.data?.token
-  
+
   // Set the retrieved API key to the agentKey variable
   if (apiKey) {
     agentKey = apiKey
   }
-  
+
   // Refresh agent key every hour
   setInterval(async () => {
-    agentKey =
-      (await axios.post(url, { wallet_key: walletSecret })).data
-        ?.token ?? agentKey
+    agentKey = (await axios.post(url, { wallet_key: walletSecret })).data?.token ?? agentKey
   }, 3600000)
 }
 
@@ -42,7 +42,12 @@ export const tractionApiKeyUpdaterInit = async () => {
  * Sends a Traction API request with the specified method, URL, data, and configuration.
  * This function adds the Traction API key to the request headers.
  */
-export const sendTractionRequest = async (method: string, path: string, data?: any, config?: AxiosRequestConfig<any>) => {
+export const sendTractionRequest = async (
+  method: string,
+  path: string,
+  data?: any,
+  config?: AxiosRequestConfig<any>
+) => {
   const headers = { ...config?.headers, Authorization: `Bearer ${agentKey}` }
   const timeout = config?.timeout ?? 80000
   const url = new URL(path, tractionBaseUrl).toString()
@@ -54,7 +59,7 @@ export const sendTractionRequest = async (method: string, path: string, data?: a
     headers,
     timeout,
   })
-  
+
   return response
 }
 
@@ -74,15 +79,15 @@ export const tractionRequest = {
 export const cleanupConnections = async () => {
   const maxAgeHours = 12
   const excludedAliases = ['endorser', 'bcovrin-test-endorser']
-  
+
   const connectionsResponse = await tractionRequest.get('/connections')
   const connections = connectionsResponse.data.results
-  
+
   const now = moment()
-  
+
   for (const conn of connections) {
     const ageHours = now.diff(moment(conn.created_at), 'hours')
-    
+
     if (ageHours >= maxAgeHours && !excludedAliases.includes(conn.alias)) {
       await tractionRequest.delete(`/connections/${conn.connection_id}`)
     }
@@ -90,18 +95,18 @@ export const cleanupConnections = async () => {
 }
 
 /**
- * Deletes records that are older than the specified maximum age, 
+ * Deletes records that are older than the specified maximum age,
  * using the specified endpoint path and ID field name.
  */
 const deleteOldRecords = async (endpointPath: string, idFieldName: string, maxAgeHours: number) => {
   const response = await tractionRequest.get(endpointPath)
   const records = response.data.results
-  
+
   const now = moment()
-  
+
   for (const record of records) {
     const ageHours = now.diff(moment(record.created_at), 'hours')
-    
+
     if (ageHours >= maxAgeHours) {
       const recordId = record[idFieldName]
       await tractionRequest.delete(`${endpointPath}/${recordId}`)
@@ -136,7 +141,7 @@ export const cleanupProofRecords = async () => {
 
 export const tractionGarbageCollection = async () => {
   const intervalInMs = 6 * 60 * 60 * 1000
-  
+
   cleanupConnections()
   cleanupExchangeRecords()
   cleanupProofRecords()
