@@ -1,17 +1,17 @@
 import type { AxiosRequestConfig } from 'axios'
-import url from 'url'
 import axios from 'axios'
 import moment from 'moment'
+import config from './config'
 
 export let agentKey = ''
 
-export const tractionBaseUrl = process.env.TRACTION_BASE_URL ?? ''
+export const tractionBaseUrl = config.get('traction:tractionBaseUrl')
 
 // Retrieve the wallet ID from the environment variables
-const walletId = process.env.WALLET_ID ?? ''
+const walletId = config.get('traction:walletId')
 
 // Retrieve the wallet secret from the environment variables
-const walletSecret = process.env.WALLET_SECRET ?? ''
+const walletSecret = config.get('traction:walletSecret')
 
 /**
  * Initializes the Traction API key updater.
