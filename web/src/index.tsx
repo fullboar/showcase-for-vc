@@ -1,5 +1,5 @@
 import { newTracker, enableActivityTracking, trackPageView } from '@snowplow/browser-tracker'
-import React from 'react'
+import { StrictMode } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
@@ -11,7 +11,8 @@ import * as Redux from './store/configureStore'
 import { KBar } from './utils/KBar'
 
 const { store, persistor } = Redux
-
+const SMode = StrictMode as any
+const PGate = PersistGate as any
 newTracker('sp1', 'spm.apps.gov.bc.ca', {
   appId: 'Snowplow_standalone_DIG',
   cookieLifetime: 86400 * 548,
@@ -23,17 +24,17 @@ newTracker('sp1', 'spm.apps.gov.bc.ca', {
 enableActivityTracking({ minimumVisitLength: 15, heartbeatDelay: 30 })
 trackPageView()
 render(
-  <React.StrictMode>
+  <SMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <KBar>
             <App />
           </KBar>
         </BrowserRouter>
-      </PersistGate>
+      </PGate>
     </Provider>
-  </React.StrictMode>,
+  </SMode>,
 
   document.getElementById('root')
 )
