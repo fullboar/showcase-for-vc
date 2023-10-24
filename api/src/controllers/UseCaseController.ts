@@ -1,5 +1,5 @@
 import { Get, JsonController, NotFoundError, Param } from 'routing-controllers'
-import { Inject, Service } from 'typedi'
+import { Service } from 'typedi'
 
 import characters from '../content/Characters'
 
