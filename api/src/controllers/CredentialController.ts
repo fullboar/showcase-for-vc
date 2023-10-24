@@ -1,5 +1,5 @@
-import { Body, Delete, Get, InternalServerError, JsonController, NotFoundError, Param, Post } from 'routing-controllers'
-import { Inject, Service } from 'typedi'
+import { Body, Get, JsonController, Param, Post } from 'routing-controllers'
+import { Service } from 'typedi'
 
 import { Credential } from '../content/types'
 import { tractionRequest } from '../utils/traction'
