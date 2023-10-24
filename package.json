@@ -20,6 +20,8 @@
   "scripts": {
     "prepare": "husky install",
     "test": "yarn run cypress open",
+    "test:lint": "eslint --ignore-path .gitignore . --color",
+    "test:format":"prettier '**/*.+(js|json|ts|md|yml|yaml)'",
     "build": "yarn workspace run build",
     "cy:open": "cypress open",
     "cy:run": "cypress run"

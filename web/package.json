@@ -29,8 +29,6 @@
     "redux-thunk": "^2.4.1"
   },
   "scripts": {
-    "test:lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "test:format": "prettier '**/*.+(js|json|ts|md|yml|yaml)'",
     "test:typecheck": "tsc --noEmit",
     "start": "GENERATE_SOURCEMAP=false react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
