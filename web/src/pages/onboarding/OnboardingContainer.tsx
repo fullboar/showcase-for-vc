@@ -1,4 +1,4 @@
-import type { Credential, CustomCharacter } from '../../slices/types'
+import type { CustomCharacter } from '../../slices/types'
 
 import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -10,14 +10,13 @@ import { useNavigate } from 'react-router-dom'
 import { fadeDelay, fadeExit } from '../../FramerAnimations'
 import { Modal } from '../../components/Modal'
 import { useAppDispatch } from '../../hooks/hooks'
-import { useDarkMode } from '../../hooks/useDarkMode'
 import { clearConnection } from '../../slices/connection/connectionSlice'
 import { useCredentials } from '../../slices/credentials/credentialsSelectors'
 import { clearCredentials } from '../../slices/credentials/credentialsSlice'
 import { completeOnboarding } from '../../slices/onboarding/onboardingSlice'
 import { basePath } from '../../utils/BasePath'
-import { isConnected, isCredIssued } from '../../utils/Helpers'
-import { Progress, addOnboardingProgress, removeOnboardingProgress } from '../../utils/OnboardingUtils'
+import { isConnected } from '../../utils/Helpers'
+import { addOnboardingProgress, removeOnboardingProgress } from '../../utils/OnboardingUtils'
 import { prependApiUrl } from '../../utils/Url'
 
 import { CharacterContent } from './components/CharacterContent'
@@ -47,7 +46,6 @@ export const OnboardingContainer: React.FC<Props> = ({
   connectionState,
   invitationUrl,
 }) => {
-  const darkMode = useDarkMode()
   const dispatch = useAppDispatch()
   const { issuedCredentials } = useCredentials()
   const idToTitle: Record<string, string> = {}

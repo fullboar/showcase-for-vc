@@ -9,10 +9,12 @@
     "@snowplow/browser-tracker": "^3.14.0",
     "@types/lodash": "^4.14.194",
     "axios": "^0.26.0",
+    "eslint": "8.10.0",
     "framer-motion": "^5.2.1",
     "insights-js": "^1.2.10",
     "js-base64": "^3.7.2",
     "kbar": "0.1.0-beta.33",
+    "prettier": "2.6.1",
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-confetti": "^6.0.1",
@@ -27,8 +29,6 @@
     "redux-thunk": "^2.4.1"
   },
   "scripts": {
-    "test:lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "test:format": "prettier '**/*.+(js|json|ts|md|yml|yaml)'",
     "test:typecheck": "tsc --noEmit",
     "start": "GENERATE_SOURCEMAP=false react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
