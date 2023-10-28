@@ -1,6 +1,5 @@
 import type { CustomCharacter } from '../../slices/types'
 
-import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
@@ -65,44 +64,14 @@ export const OnboardingContainer: React.FC<Props> = ({
     (onboardingStep === 'PICK_CHARACTER' && !currentCharacter)
 
   const jumpOnboardingPage = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'skip_credential',
-          path: currentCharacter?.name,
-          step: idToTitle[onboardingStep],
-        },
-      },
-    })
     addOnboardingProgress(dispatch, onboardingStep, currentCharacter, 2)
   }
 
   const nextOnboardingPage = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'next',
-          path: currentCharacter?.name,
-          step: idToTitle[onboardingStep],
-        },
-      },
-    })
     addOnboardingProgress(dispatch, onboardingStep, currentCharacter)
   }
 
   const prevOnboardingPage = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'back',
-          path: currentCharacter?.name,
-          step: idToTitle[onboardingStep],
-        },
-      },
-    })
     removeOnboardingProgress(dispatch, onboardingStep, currentCharacter)
   }
 
@@ -222,16 +191,6 @@ export const OnboardingContainer: React.FC<Props> = ({
   const closeLeave = () => setLeaveModal(false)
 
   const leave = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'leave',
-          path: currentCharacter?.name,
-          step: idToTitle[onboardingStep],
-        },
-      },
-    })
     navigate(`${basePath}/`)
     dispatch({ type: 'demo/RESET' })
   }
