@@ -6,7 +6,6 @@ import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
 import { useAppDispatch } from '../../../hooks/hooks'
-import { useDarkMode } from '../../../hooks/useDarkMode'
 import { setCharacter } from '../../../slices/characters/charactersSlice'
 import { prependApiUrl } from '../../../utils/Url'
 import { StepInformation } from '../components/StepInformation'
@@ -21,7 +20,6 @@ export interface Props {
 
 export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, title, text, textWithImage }) => {
   const dispatch = useAppDispatch()
-  const darkMode = useDarkMode()
   const defaultTitle = `Who do you want to be today?`
   const defaultText = `It’s time to pick your character. Every character has its own set of use cases, which explore the power of digital credentials. Don’t worry, you can change your character later.`
   const titleText = title
@@ -38,8 +36,8 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
   }
 
   const renderCharacters = characters.map((char: CustomCharacter) => {
-    const cardStyleSelected = `shadow-xl ring-4 ${darkMode ? 'ring-theme-gold' : 'ring-theme-blue'}`
-    const cardStyleUnselected = `ring-4 ${darkMode ? 'ring-theme-black' : 'ring-theme-white'}`
+    const cardStyleSelected = 'shadow-xl ring-4 ring-theme-blue dark:ring-theme-gold'
+    const cardStyleUnselected = 'ring-4 ring-theme-white dark:ring-theme-black'
 
     return (
       <motion.button
