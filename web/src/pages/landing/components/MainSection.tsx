@@ -38,7 +38,7 @@ export const MainSection: React.FC = () => {
         <motion.h1 variants={landingTitle}>BC Wallet Showcase</motion.h1>
       </div>
       <div className="overflow-hidden">
-        <motion.h2 variants={fade} className="text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey">
+        <motion.h2 variants={fade} className="text-lg font-normal mt-6 dark:text-theme-lightgrey text-theme-darkgrey">
           Explore how you can use BC Wallet to prove things about yourself, in a way that's safe and secure.
         </motion.h2>
       </div>
@@ -46,7 +46,7 @@ export const MainSection: React.FC = () => {
         <motion.button
           variants={fade}
           whileHover={buttonHover}
-          className="bg-bcgov-blue dark:bg-bcgov-white text-bcgov-white dark:text-bcgov-black py-3 px-5 mx-8 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
+          className="bg-theme-blue dark:bg-theme-white text-theme-white dark:text-theme-black py-3 px-5 mx-8 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={handleStart}
         >
           Try Demo &nbsp;
@@ -55,7 +55,7 @@ export const MainSection: React.FC = () => {
         <motion.button
           variants={fade}
           whileHover={buttonHover}
-          className="bg-white dark:bg-bcgov-blue text-black dark:text-white py-3 px-5 mx-8 mt-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
+          className="bg-white dark:bg-theme-blue text-black dark:text-white py-3 px-5 mx-8 mt-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={() => null}
         >
           Get to know us &nbsp;
@@ -66,14 +66,14 @@ export const MainSection: React.FC = () => {
   )
 
   const renderDesktopTitle = (
-    <motion.div className="flex-1 text-left text-bcgov-black dark:text-bcgov-white font-semibold text-4xl lg:text-5xl xl:text-6xl m-auto">
+    <motion.div className="flex-1 text-left text-theme-black dark:text-theme-white font-semibold text-4xl lg:text-5xl xl:text-6xl m-auto">
       <div className="overflow-hidden py-1 leading-tight">
         <motion.h1 variants={landingTitle}>BC Wallet Showcase</motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2
           variants={fadeDelay}
-          className="text-base lg:text-lg font-normal mt-6 dark:text-bcgov-lightgrey text-bcgov-darkgrey"
+          className="text-base lg:text-lg font-normal mt-6 dark:text-theme-lightgrey text-theme-darkgrey"
         >
           Explore how you can use BC Wallet to prove things about yourself, in a way that's safe and secure.
         </motion.h2>
@@ -82,7 +82,7 @@ export const MainSection: React.FC = () => {
         <motion.button
           variants={fadeDelay}
           whileHover={buttonHover}
-          className="bg-bcgov-blue dark:bg-bcgov-white text-bcgov-white dark:text-bcgov-black py-3 px-5 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
+          className="bg-theme-blue dark:bg-theme-white text-theme-white dark:text-theme-black py-3 px-5 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={handleStart}
         >
           Get started &nbsp;
@@ -92,7 +92,7 @@ export const MainSection: React.FC = () => {
           <motion.button
             variants={fadeDelay}
             whileHover={buttonHover}
-            className="bg-white dark:bg-bcgov-gold text-black dark:text-bcgov-black py-3 px-5 ml-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
+            className="bg-white dark:bg-theme-gold text-black dark:text-theme-black py-3 px-5 ml-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           >
             <p className="inline">Get to know us &nbsp;</p>
             <FiExternalLink className="inline h-6 pb-1" />

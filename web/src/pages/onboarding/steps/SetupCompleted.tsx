@@ -11,7 +11,7 @@ export interface Props {
 
 export const SetupCompleted: React.FC<Props> = ({ title, text }) => {
   const lastIndex = title.lastIndexOf(' ')
-  const lastWord = <p className="inline text-bcgov-blue dark:text-bcgov-gold">{title.substring(lastIndex + 1)}</p>
+  const lastWord = <p className="inline text-theme-blue dark:text-theme-gold">{title.substring(lastIndex + 1)}</p>
   const newTitle = title.substring(0, lastIndex)
 
   return (
@@ -26,7 +26,7 @@ export const SetupCompleted: React.FC<Props> = ({ title, text }) => {
         <div className="pt-4 flex-1 mb-6">
           <div className="dark:text-white">
             <p>{text}</p>
-            <div className="bg-bcgov-white dark:bg-bcgov-black py-4 px-8">
+            <div className="bg-theme-white dark:bg-theme-black py-4 px-8">
               <ul className="list-disc">
                 <li>You control when you use your credentials</li>
                 <li>You can share all or parts of your credentials</li>

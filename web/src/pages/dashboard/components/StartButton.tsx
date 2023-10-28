@@ -20,7 +20,7 @@ export const StartButton: React.FC<Props> = ({ text, loading, onClick, disabled,
     <div className="has-tooltip">
       <motion.button
         whileHover={buttonHover}
-        className={`text-sm bg-bcgov-blue dark:bg-bcgov-white text-white dark:text-black w-24 h-8 py-1.5 px-4 rounded font-semibold shadow-sm ${
+        className={`text-sm bg-theme-blue dark:bg-theme-white text-white dark:text-black w-24 h-8 py-1.5 px-4 rounded font-semibold shadow-sm ${
           disabled ? 'opacity-20 cursor-not-allowed' : 'opacity-100'
         }`}
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
@@ -29,7 +29,7 @@ export const StartButton: React.FC<Props> = ({ text, loading, onClick, disabled,
         data-cy="select-use-case"
       >
         {disabled && (
-          <span className="hidden sm:block tooltip rounded shadow-lg p-1 bg-bcgov-darkgrey text-white w-48 -mt-16">
+          <span className="hidden sm:block tooltip rounded shadow-lg p-1 bg-theme-darkgrey text-white w-48 -mt-16">
             You haven't unlocked the required credentials yet.
           </span>
         )}

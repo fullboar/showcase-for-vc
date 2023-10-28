@@ -38,8 +38,8 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
   }
 
   const renderCharacters = characters.map((char: CustomCharacter) => {
-    const cardStyleSelected = `shadow-xl ring-4 ${darkMode ? 'ring-bcgov-gold' : 'ring-bcgov-blue'}`
-    const cardStyleUnselected = `ring-4 ${darkMode ? 'ring-bcgov-black' : 'ring-bcgov-white'}`
+    const cardStyleSelected = `shadow-xl ring-4 ${darkMode ? 'ring-theme-gold' : 'ring-theme-blue'}`
+    const cardStyleUnselected = `ring-4 ${darkMode ? 'ring-theme-black' : 'ring-theme-white'}`
 
     return (
       <motion.button
@@ -51,7 +51,7 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
       >
         <motion.img
           whileHover={{ scale: 1.05 }}
-          className={`m-auto h-16 w-16 p-2 sm:h-20 sm:w-20 md:h-24 md:w-24 md:p-4 lg:h-36 lg:w-36 lg:p-8 rounded-full bg-bcgov-white dark:bg-bcgov-black my-6 shadow ${
+          className={`m-auto h-16 w-16 p-2 sm:h-20 sm:w-20 md:h-24 md:w-24 md:p-4 lg:h-36 lg:w-36 lg:p-8 rounded-full bg-theme-white dark:bg-theme-black my-6 shadow ${
             currentCharacter?.type === char.type ? cardStyleSelected : cardStyleUnselected
           }`}
           src={prependApiUrl(char.image)}

@@ -13,7 +13,7 @@ export interface Props {
 
 export const StepInformation: React.FC<Props> = ({ title, text, textWithImage }) => {
   const lastIndex = title.lastIndexOf(' ')
-  const lastWord = <span className="inline text-bcgov-blue dark:text-bcgov-gold">{title.substring(lastIndex + 1)}</span>
+  const lastWord = <span className="inline text-theme-blue dark:text-theme-gold">{title.substring(lastIndex + 1)}</span>
   const newTitle = title.substring(0, lastIndex)
 
   return (
@@ -30,7 +30,7 @@ export const StepInformation: React.FC<Props> = ({ title, text, textWithImage })
             <>
               {item.text && <p>{item.text}</p>}
               {item.image && (
-                <div className="bg-bcgov-white dark:bg-bcgov-black hidden lg:flex lg:w-1/3 rounded-lg flex-col justify-center select-none">
+                <div className="bg-theme-white dark:bg-theme-black hidden lg:flex lg:w-1/3 rounded-lg flex-col justify-center select-none">
                   <motion.img
                     variants={fadeExit}
                     initial="hidden"

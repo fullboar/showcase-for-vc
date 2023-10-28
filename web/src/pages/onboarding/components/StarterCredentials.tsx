@@ -21,18 +21,18 @@ export const StarterCredentials: React.FC<Props> = ({ credentials }) => {
       variants={fadeX}
       animate="show"
       exit="exit"
-      className="flex flex-col bg-bcgov-white dark:bg-bcgov-black m-4 px-4 py-2 w-auto md:w-96 h-auto rounded-lg shadow"
+      className="flex flex-col bg-theme-white dark:bg-theme-black m-4 px-4 py-2 w-auto md:w-96 h-auto rounded-lg shadow"
     >
       <div className="flex-1-1 title mb-2">
         <h1 className="font-semibold dark:text-white">Starter credentials</h1>
-        <hr className="text-bcgov-lightgrey" />
+        <hr className="text-theme-lightgrey" />
       </div>
       {credentials.map((item) => {
         const completed = issuedCredentials.includes(item.name) || issuedCredentialsStartCase.includes(item.name)
 
         return (
           <div key={item.name} className="flex-1 flex flex-row items-center justify-between my-2">
-            <div className="bg-bcgov-lightgrey rounded-lg p-2 w-12">
+            <div className="bg-theme-lightgrey rounded-lg p-2 w-12">
               <img className="h-8 m-auto" src={prependApiUrl(item.icon)} alt="icon" />
             </div>
             <div className="flex-1 px-4 justify-self-start dark:text-white text-sm sm:text-base">
