@@ -26,6 +26,7 @@ export class CredentialController {
         params: { schema_name: credential.name, schema_version: credential.version },
       })
     ).data
+    
     let schema_id = ''
     if (schemas.schema_ids.length <= 0) {
       const schemaAttrs = credential.attributes.map((attr) => attr.name)
@@ -42,10 +43,11 @@ export class CredentialController {
       schema_id = schemas.schema_ids.filter((id) => id.includes(`${credential.name}:${credential.version}`))[0]
     }
 
-    console.log('schema id = ', schema_id)
+    console.log('selected schema id = ', schema_id)
 
     const credDefs = (await tractionRequest.get(`/credential-definitions/created`, { params: { schema_id } })).data
     let cred_def_id = ''
+    
     if (credDefs.credential_definition_ids.length <= 0) {
       const resp = (
         await tractionRequest.post(`/credential-definitions`, {
@@ -57,8 +59,11 @@ export class CredentialController {
       ).data
       cred_def_id = resp.sent.credential_definition_id
     } else {
-      cred_def_id = credDefs.credential_definition_ids[0]
+      cred_def_id = credDefs.credential_definition_ids.filter((id) => id.includes(credential.name))[0]
     }
+
+    console.log('selected cred def id = ', cred_def_id)
+
     return cred_def_id
   }
 
