@@ -39,8 +39,10 @@ export class CredentialController {
       schema_id = resp.sent.schema_id
       await new Promise((r) => setTimeout(r, 5000))
     } else {
-      schema_id = schemas.schema_ids[0]
+      schema_id = schemas.schema_ids.filter((id) => id.includes(`${credential.name}:${credential.version}`))[0]
     }
+
+    console.log('schema id = ', schema_id)
 
     const credDefs = (await tractionRequest.get(`/credential-definitions/created`, { params: { schema_id } })).data
     let cred_def_id = ''
