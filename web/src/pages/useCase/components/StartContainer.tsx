@@ -1,6 +1,5 @@
 import type { CredentialRequest, UseCaseScreen } from '../../../slices/types'
 
-import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { motion } from 'framer-motion'
 import React from 'react'
 import { isMobile } from 'react-device-detect'
@@ -31,30 +30,10 @@ export const StartContainer: React.FC<Props> = ({ entity, requestedCredentials, 
   const style = isMobile ? { minHeight: '85vh' } : { maxHeight: '940px' }
 
   const leave = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'leave',
-          path: `${characterName}_${slug}`,
-          step: step.title,
-        },
-      },
-    })
     navigate(`${basePath}/dashboard`)
   }
 
   const next = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'start',
-          path: `${characterName}_${slug}`,
-          step: step.title,
-        },
-      },
-    })
     dispatch(nextStep())
   }
   return (

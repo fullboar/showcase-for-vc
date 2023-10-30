@@ -1,7 +1,6 @@
 import type { ConnectionState } from '../../slices/connection/connectionSlice'
 import type { UseCaseScreen } from '../../slices/types'
 
-import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
@@ -81,16 +80,6 @@ export const Section: React.FC<Props> = ({
   const currentCharacter = useCurrentCharacter()
 
   const leave = () => {
-    trackSelfDescribingEvent({
-      event: {
-        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-        data: {
-          action: 'leave',
-          path: `${currentCharacter?.name}_${slug}`,
-          step: step.title,
-        },
-      },
-    })
     navigate(`${basePath}/dashboard`)
     dispatch({ type: 'clearUseCase' })
     dispatch(resetStep())
@@ -102,16 +91,6 @@ export const Section: React.FC<Props> = ({
       dispatch({ type: 'clearUseCase' })
       navigate(`${basePath}/dashboard`)
       dispatch(resetStep())
-      trackSelfDescribingEvent({
-        event: {
-          schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-          data: {
-            action: 'usecase_completed',
-            path: `${currentCharacter?.name}_${slug}`,
-            step: step.title,
-          },
-        },
-      })
     }
   }, [completed, dispatch, slug])
 
@@ -157,16 +136,6 @@ export const Section: React.FC<Props> = ({
     // automatically go to next step if connection is set up
     if (step?.screenId.startsWith('CONNECTION') && isConnectionCompleted) {
       next()
-      trackSelfDescribingEvent({
-        event: {
-          schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-          data: {
-            action: 'next',
-            path: `${currentCharacter?.name}_${slug}`,
-            step: step.title,
-          },
-        },
-      })
     }
   }, [connection.state])
 
@@ -259,16 +228,6 @@ export const Section: React.FC<Props> = ({
                 <BackButton
                   onClick={() => {
                     prev()
-                    trackSelfDescribingEvent({
-                      event: {
-                        schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-                        data: {
-                          action: 'back',
-                          path: `${currentCharacter?.name}_${slug}`,
-                          step: step.title,
-                        },
-                      },
-                    })
                   }}
                   disabled={isBackDisabled}
                 />
@@ -279,16 +238,6 @@ export const Section: React.FC<Props> = ({
                     text="NEXT"
                     onClick={() => {
                       next()
-                      trackSelfDescribingEvent({
-                        event: {
-                          schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-                          data: {
-                            action: 'next',
-                            path: `${currentCharacter?.name}_${slug}`,
-                            step: step.title,
-                          },
-                        },
-                      })
                     }}
                     disabled={isForwardDisabled}
                     data-cy="use-case-next"

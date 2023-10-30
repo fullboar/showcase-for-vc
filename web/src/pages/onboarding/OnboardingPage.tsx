@@ -1,4 +1,3 @@
-import { trackPageView } from '@snowplow/browser-tracker'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -53,10 +52,6 @@ export const OnboardingPage: React.FC = () => {
       setMounted(true)
     }
   }, [dispatch])
-
-  useEffect(() => {
-    trackPageView()
-  }, [])
 
   return (
     <>

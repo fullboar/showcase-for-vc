@@ -1,6 +1,5 @@
 import type { CredentialRequest, UseCaseScreen } from '../../../slices/types'
 
-import { trackSelfDescribingEvent } from '@snowplow/browser-tracker'
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
@@ -147,16 +146,6 @@ export const StepProof: React.FC<Props> = ({
       <ActionCTA
         isCompleted={proofReceived}
         onFail={() => {
-          trackSelfDescribingEvent({
-            event: {
-              schema: 'iglu:ca.bc.gov.digital/action/jsonschema/1-0-0',
-              data: {
-                action: 'cred_not_received',
-                path: characterName,
-                step: step.title,
-              },
-            },
-          })
           showFailedRequestModal()
         }}
       />
