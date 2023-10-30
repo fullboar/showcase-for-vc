@@ -52,6 +52,7 @@ export const sendTractionRequest = async (
   const timeout = config?.timeout ?? 80000
   const url = new URL(path, tractionBaseUrl).toString()
 
+  console.log(`api: traction request: ${method} ${url}`)
   const response = await axios.request({
     method,
     url,
