@@ -16,22 +16,19 @@ export const WalletItem: React.FC<Props> = ({ icon, name, organization, recommen
   return (
     <motion.button
       whileHover={listHover}
-      className="flex rounded-lg lg:m-2 p-2 items-center cursor-pointer border border-1 sm:w-full lg:w-4/5 border-theme-white dark:border-theme-black dark:bg-theme-black m-auto mt-4 shadow "
+      className="flex rounded-lg lg:m-2 p-2 items-center cursor-pointer border border-1 sm:w-full lg:w-4/5 border-background dark:border-dark-background dark:bg-dark-background m-auto mt-4 shadow "
       variants={rowFadeX}
     >
       <div className="flex h-12 w-12 my-2 mx-2 md:mx-8 p-1">
         <img className="rounded-lg" src={prependApiUrl(icon)} alt="wallet icon" />
       </div>
-      <div className="flex flex-1 flex-col dark:text-white text-lg">
-        <div className="flex flex-1 font-medium	 dark:text-white text-lg">
+      <div className="flex flex-1 flex-col text-lg">
+        <div className="flex flex-1 font-medium	 text-lg">
           {name} {recommended && <AiFillStar style={{ color: '#FFC107' }} className="m-1" />}
         </div>
         <p className="text-sm pr-2">by {organization}</p>
       </div>
-      <div
-        className="flex flex-1-1 justify-end mr-8 md:mr-16 font-semibold  dark:text-white rounded-lg"
-        data-cy="use-wallet"
-      >
+      <div className="flex flex-1-1 justify-end mr-8 md:mr-16 font-semibold rounded-lg" data-cy="use-wallet">
         USE
       </div>
     </motion.button>

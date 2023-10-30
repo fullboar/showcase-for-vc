@@ -122,14 +122,14 @@ export const KBar: React.FC = ({ children }) => {
     outline: 'none',
     border: 'none',
     background: '#FFFFF',
-    color: 'var(--foreground)',
+    color: 'black',
   }
 
   const animatorStyle = {
     maxWidth: '500px',
     width: '100%',
     background: '#FFFFF',
-    color: 'var(--foreground)',
+    color: 'black',
     borderRadius: '8px',
     overflow: 'hidden',
     boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px',

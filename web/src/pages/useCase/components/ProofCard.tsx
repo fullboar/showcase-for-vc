@@ -14,11 +14,11 @@ export const ProofCard: React.FC<Props> = ({ requestedItems }) => {
     return (
       <div className="flex-1 flex flex-row items-center justify-between pt-4 " key={item.name}>
         {item.icon && (
-          <div className="bg-theme-lightgrey dark:bg-theme-black rounded-lg p-2 w-12">
+          <div className="bg-icon dark:bg-dark-icon rounded-lg p-2 w-12">
             <img className="h-8 m-auto" src={prependApiUrl(item.icon)} alt="icon" />
           </div>
         )}
-        <div className="flex-1 px-4 justify-self-start dark:text-white">
+        <div className="flex-1 px-4 justify-self-start">
           <p>{startCase(item.name)}</p>
         </div>
       </div>
@@ -26,10 +26,10 @@ export const ProofCard: React.FC<Props> = ({ requestedItems }) => {
   })
 
   return (
-    <div className="flex flex-col bg-white dark:bg-theme-darkgrey p-4 mb-4 h-auto rounded-lg shadow">
+    <div className="flex flex-col bg-inset dark:bg-dark-inset text-insetText dark:text-dark-insetText p-4 mb-4 h-auto rounded-lg shadow">
       <div className="flex-1-1 title">
-        <h1 className="font-semibold dark:text-white">You'll need to present</h1>
-        <hr className="text-theme-lightgrey" />
+        <h1 className="font-semibold">You'll need to present</h1>
+        <hr className="text-separator dark:text-dark-separator" />
       </div>
       {renderRequestedItems}
     </div>

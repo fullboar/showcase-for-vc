@@ -23,14 +23,14 @@ export const CharacterContent: React.FC<Props> = ({ character }) => {
             exit="exit"
             className="flex flex-col h-full justify-around"
           >
-            <div className="p-2 bg-theme-blue dark:bg-theme-gold text-white rounded-l-lg flex px-4 self-end">
+            <div className="p-2 bg-accent dark:bg-dark-accent text-dark-text rounded-l-lg flex px-4 self-end">
               <p>{character.type}</p>
             </div>
             <img className="h-72" src={prependApiUrl(character.image)} alt={character.name} />
           </motion.div>
         </AnimatePresence>
       ) : (
-        <p className="flex h-full items-center justify-center text-grey">SELECT YOUR CHARACTER</p>
+        <p className="flex h-full items-center justify-center">SELECT YOUR CHARACTER</p>
       )}
     </motion.div>
   )

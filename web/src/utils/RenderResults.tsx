@@ -111,7 +111,7 @@ export const RenderResults = () => {
       items={results}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          <div className="bg-theme-white" style={groupNameStyle}>
+          <div className="bg-background" style={groupNameStyle}>
             {item}
           </div>
         ) : (

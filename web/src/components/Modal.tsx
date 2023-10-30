@@ -40,14 +40,14 @@ export const Modal: React.FC<Props> = ({
         aria-modal="true"
       >
         <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <div className="fixed inset-0 bg-theme-black bg-opacity-50 transition-opacity" aria-hidden="true" />
+          <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" aria-hidden="true" />
           <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true" />
           <motion.div
             variants={dropIn}
             initial="hidden"
             animate="show"
             exit="exit"
-            className="bg-theme-white dark:bg-theme-black inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition transition-all duration-300 sm:my-8 sm:align-middle sm:max-w-lg sm:w-full dark:text-white"
+            className="bg-modal dark:bg-dark-modal text-modalText dark:text-dark-modalText inline-block align-bottom rounded-lg text-left overflow-hidden shadow-xl transform transition transition-all duration-300 sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
           >
             <div className=" px-4 pt-2 mt-4 sm:pb-4">
               <div className="sm:flex sm:items-start">

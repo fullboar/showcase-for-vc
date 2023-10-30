@@ -124,33 +124,21 @@ export const SetupConnection: React.FC<Props> = ({
   )
 
   return !backgroundImage || isMobile ? (
-    <motion.div
-      className="flex flex-col h-full  dark:text-white"
-      variants={fadeX}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
+    <motion.div className="flex flex-col h-full " variants={fadeX} initial="hidden" animate="show" exit="exit">
       <StepInformation title={title} text={text} />
-      <div className="max-w-xs flex flex-col self-center items-center bg-white rounded-lg p-4  dark:text-black">
+      <div className="max-w-xs flex flex-col self-center items-center bg-white text-black rounded-lg p-4">
         {renderQRCode(true)}
       </div>
       <div className="flex flex-col mt-4 text-center text-sm md:text-base font-semibold">{renderCTA}</div>
     </motion.div>
   ) : (
-    <motion.div
-      className="flex flex-col h-full  dark:text-white"
-      variants={fadeX}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
+    <motion.div className="flex flex-col h-full " variants={fadeX} initial="hidden" animate="show" exit="exit">
       <StepInformation title={title} text={text} />
       <div
         className="bg-contain position-relative bg-center bg-no-repeat h-full flex justify-center"
         style={{ backgroundImage: `url(${prependApiUrl(backgroundImage as string)})` }}
       >
-        <div className="max-w-xs flex flex-col self-center items-center bg-white rounded-lg p-4  dark:text-black">
+        <div className="max-w-xs flex flex-col self-center items-center bg-white text-black rounded-lg p-4">
           <p className="text-center mb-2">Scan the QR Code below with your digital wallet.</p>
           <div>{renderQRCode(true)}</div>
           <div className="mt-5">

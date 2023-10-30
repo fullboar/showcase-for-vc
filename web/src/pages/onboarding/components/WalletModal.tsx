@@ -46,7 +46,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div
               onClick={() => setIsWalletModalOpen(false)}
-              className="fixed inset-0 bg-theme-black bg-opacity-50 transition-opacity z-0"
+              className="fixed inset-0 bg-black bg-opacity-50 transition-opacity z-0"
               aria-hidden="true"
             />
 
@@ -57,7 +57,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
               initial="hidden"
               animate="show"
               exit="exit"
-              className="bg-theme-white z-40 dark:bg-theme-black inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition transition-all duration-300 sm:my-8 sm:align-middle sm:max-w-xl sm:w-full dark:text-white"
+              className="bg-modal dark:bg-dark-modal text-modalText dark:text-dark-modalText z-40 inline-block align-bottom rounded-lg text-left overflow-hidden shadow-xl transform transition transition-all duration-300 sm:my-8 sm:align-middle sm:max-w-xl sm:w-full"
             >
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div className="px-2 md:px-6 pt-2 sm:mt-4 sm:pb-4">

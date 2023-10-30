@@ -12,9 +12,9 @@ export interface Props {
 export const DarkModeSwitch: React.FC<Props> = ({ darkMode, handleDarkMode }) => {
   return (
     <button onClick={() => handleDarkMode()} className="flex items-center text-sm text-center py-3">
-      <p className={`${!darkMode && 'font-semibold'}  flex-none w-16 dark:text-white`}>LIGHT</p>
+      <p className={`${!darkMode && 'font-semibold'} flex-none w-16 dark:text-dark-text`}>LIGHT</p>
       <div className="flex-1 p-2">{darkMode ? <Line color={'white'} /> : <Line color={'black'} />}</div>
-      <p className={`${darkMode && 'font-semibold'} flex-none w-16  dark:text-white`}>DARK</p>
+      <p className={`${darkMode && 'font-semibold'} flex-none w-16 dark:text-dark-text`}>DARK</p>
       <div className="absolute cursor-pointer">{darkMode ? <TriangleDark /> : <TriangleLight />}</div>
     </button>
   )
@@ -24,7 +24,7 @@ export const MiniDarkModeSwitch: React.FC<Props> = ({ darkMode, handleDarkMode }
   return (
     <div className="flex">
       <button onClick={() => handleDarkMode()}>
-        <div className={`w-8 h-8 relative rounded-lg text-white`}>
+        <div className={`w-8 h-8 relative rounded-lg text-text dark:text-dark-text`}>
           {darkMode ? (
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
@@ -35,7 +35,7 @@ export const MiniDarkModeSwitch: React.FC<Props> = ({ darkMode, handleDarkMode }
               />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" stroke="#000000">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
