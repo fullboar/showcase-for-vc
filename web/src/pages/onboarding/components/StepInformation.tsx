@@ -13,24 +13,24 @@ export interface Props {
 
 export const StepInformation: React.FC<Props> = ({ title, text, textWithImage }) => {
   const lastIndex = title.lastIndexOf(' ')
-  const lastWord = <span className="inline text-bcgov-blue dark:text-bcgov-gold">{title.substring(lastIndex + 1)}</span>
+  const lastWord = <span className="inline text-accent dark:text-dark-accent">{title.substring(lastIndex + 1)}</span>
   const newTitle = title.substring(0, lastIndex)
 
   return (
     <div className="flex flex-col leading-loose">
       <div className="flex-1 my-4">
-        <h2 className="text-3xl md:text-4xl font-semibold dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-semibold">
           {newTitle}&nbsp;
           {lastWord}
         </h2>
       </div>
-      <div className="pt-4 flex-1 mb-6 dark:text-white">
+      <div className="pt-4 flex-1 mb-6">
         {textWithImage ? (
           textWithImage.map((item) => (
             <>
               {item.text && <p>{item.text}</p>}
               {item.image && (
-                <div className="bg-bcgov-white dark:bg-bcgov-black hidden lg:flex lg:w-1/3 rounded-lg flex-col justify-center select-none">
+                <div className="bg-background dark:bg-dark-background hidden lg:flex lg:w-1/3 rounded-lg flex-col justify-center select-none">
                   <motion.img
                     variants={fadeExit}
                     initial="hidden"

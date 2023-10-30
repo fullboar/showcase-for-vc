@@ -49,7 +49,7 @@ export const SideView: React.FC<Props> = ({ steps, currentStep, entity, showLeav
       initial="hidden"
       animate="show"
       exit="exit"
-      className="flex flex-col lg:mx-6 dark:text-white w-auto lg:w-1/3"
+      className="flex flex-col lg:mx-6 w-auto lg:w-1/3"
     >
       <ConnectionCard icon={entity.icon} entity={entity.name} />
       {requestedCredentials && <ProofCard requestedItems={requestedCredentials} />}

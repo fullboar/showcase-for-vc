@@ -50,7 +50,7 @@ export const UseCaseContainer: React.FC<Props> = ({ currentCharacter, completedU
   })
 
   return (
-    <div className="flex flex-col mx-4 lg:mx-4 my-2 p-4 md:p-6 lg:p-8 bg-white dark:bg-bcgov-darkgrey dark:text-white rounded-lg shadow-sm">
+    <div className="flex flex-col mx-4 lg:mx-4 my-2 p-4 md:p-6 lg:p-8 bg-inset dark:bg-dark-inset text-insetText dark:text-dark-insetText rounded-lg shadow-sm">
       <motion.h1 variants={dashboardTitle} className="text-3xl md:text-4xl font-bold mb-2">
         Using your credentials
       </motion.h1>

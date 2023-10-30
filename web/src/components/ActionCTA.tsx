@@ -31,7 +31,7 @@ export const ActionCTA: React.FC<Props> = ({ isCompleted, onFail }) => {
   )
 
   return (
-    <div className="flex flex-col my-4 text-center font-semibold dark:text-white">
+    <div className="flex flex-col my-4 text-center font-semibold">
       {renderCTA}
       <motion.p variants={fadeDelay} className={`text-sm mt-2  ${!isCompleted ? 'visible' : 'invisible'}`}>
         <u className="m-auto cursor-pointer" onClick={onFail}>

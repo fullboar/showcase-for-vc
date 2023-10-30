@@ -15,7 +15,7 @@ export const BackButton: React.FC<Props> = ({ onClick, disabled }) => {
       whileHover={{ opacity: 0.8 }}
       whileTap={{ scale: 0.8 }}
       onClick={onClick}
-      className={`cursor-pointer dark:text-white ${disabled ? 'invisible' : ''}`}
+      className={`cursor-pointer text-text dark:text-dark-text ${disabled ? 'invisible' : ''}`}
     >
       <p className="inline text-sm">
         <u></u>

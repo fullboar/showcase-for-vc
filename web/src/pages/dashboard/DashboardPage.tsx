@@ -93,7 +93,7 @@ export const DashboardPage: React.FC = () => {
                 />
               )}
             </div>
-            <div className="flex flex-1 flex-col p-2 mx-2 dark:text-white">
+            <div className="flex flex-1 flex-col p-2 mx-2">
               <ProfileCard currentCharacter={currentCharacter} />
             </div>
           </div>

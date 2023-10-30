@@ -11,22 +11,22 @@ export interface Props {
 
 export const SetupCompleted: React.FC<Props> = ({ title, text }) => {
   const lastIndex = title.lastIndexOf(' ')
-  const lastWord = <p className="inline text-bcgov-blue dark:text-bcgov-gold">{title.substring(lastIndex + 1)}</p>
+  const lastWord = <p className="inline text-accent dark:text-dark-accent">{title.substring(lastIndex + 1)}</p>
   const newTitle = title.substring(0, lastIndex)
 
   return (
     <motion.div className="h-full" variants={fadeX} initial="hidden" animate="show" exit="exit">
       <div className="flex flex-col leading-loose">
         <div className="flex-1 my-4">
-          <h2 className="text-3xl md:text-4xl font-semibold dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-semibold">
             {newTitle}&nbsp;
             {lastWord}
           </h2>
         </div>
         <div className="pt-4 flex-1 mb-6">
-          <div className="dark:text-white">
+          <div>
             <p>{text}</p>
-            <div className="bg-bcgov-white dark:bg-bcgov-black py-4 px-8">
+            <div className="bg-background dark:bg-dark-background py-4 px-8">
               <ul className="list-disc">
                 <li>You control when you use your credentials</li>
                 <li>You can share all or parts of your credentials</li>

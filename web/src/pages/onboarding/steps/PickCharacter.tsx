@@ -6,7 +6,6 @@ import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
 import { useAppDispatch } from '../../../hooks/hooks'
-import { useDarkMode } from '../../../hooks/useDarkMode'
 import { setCharacter } from '../../../slices/characters/charactersSlice'
 import { prependApiUrl } from '../../../utils/Url'
 import { StepInformation } from '../components/StepInformation'
@@ -21,7 +20,6 @@ export interface Props {
 
 export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, title, text, textWithImage }) => {
   const dispatch = useAppDispatch()
-  const darkMode = useDarkMode()
   const defaultTitle = `Who do you want to be today?`
   const defaultText = `It’s time to pick your character. Every character has its own set of use cases, which explore the power of digital credentials. Don’t worry, you can change your character later.`
   const titleText = title
@@ -38,8 +36,8 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
   }
 
   const renderCharacters = characters.map((char: CustomCharacter) => {
-    const cardStyleSelected = `shadow-xl ring-4 ${darkMode ? 'ring-bcgov-gold' : 'ring-bcgov-blue'}`
-    const cardStyleUnselected = `ring-4 ${darkMode ? 'ring-bcgov-black' : 'ring-bcgov-white'}`
+    const cardStyleSelected = 'shadow-xl ring-4 ring-accent dark:ring-dark-accent'
+    const cardStyleUnselected = 'ring-4 ring-background dark:ring-dark-background'
 
     return (
       <motion.button
@@ -51,13 +49,13 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
       >
         <motion.img
           whileHover={{ scale: 1.05 }}
-          className={`m-auto h-16 w-16 p-2 sm:h-20 sm:w-20 md:h-24 md:w-24 md:p-4 lg:h-36 lg:w-36 lg:p-8 rounded-full bg-bcgov-white dark:bg-bcgov-black my-6 shadow ${
+          className={`m-auto h-16 w-16 p-2 sm:h-20 sm:w-20 md:h-24 md:w-24 md:p-4 lg:h-36 lg:w-36 lg:p-8 rounded-full bg-background dark:bg-dark-background my-6 shadow ${
             currentCharacter?.type === char.type ? cardStyleSelected : cardStyleUnselected
           }`}
           src={prependApiUrl(char.image)}
           alt={char.name}
         />
-        <div className="m-auto p-4 flex flex-1 flex-col text-left lg:text-center dark:text-white">
+        <div className="m-auto p-4 flex flex-1 flex-col text-left lg:text-center">
           <h2 className="font-bold">{char.name}</h2>
           <p>{char.type}</p>
         </div>

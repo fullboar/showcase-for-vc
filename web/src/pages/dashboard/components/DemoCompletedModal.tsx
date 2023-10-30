@@ -25,19 +25,19 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
         aria-modal="true"
       >
         <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <div className="fixed inset-0 bg-bcgov-black bg-opacity-50 transition-opacity" aria-hidden="true" />
+          <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" aria-hidden="true" />
           <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true" />
           <motion.div
             variants={dropIn}
             initial="hidden"
             animate="show"
             exit="exit"
-            className="bg-bcgov-white dark:bg-bcgov-black inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full dark:text-white"
+            className="bg-modal dark:bg-dark-modal text-modalText dark:text-dark-modalText inline-block align-bottom rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
           >
             <div className=" px-4 pt-2 mt-4 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <h2 className="text-xl font-medium text-grey-900">{TITLE}</h2>
+                  <h2 className="text-xl font-medium">{TITLE}</h2>
                   <div className="mt-2 text-sm">
                     <p>{DESCRIPTION}</p>
 
@@ -47,7 +47,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                     >
                       <motion.button
                         whileTap={{ scale: 0.8 }}
-                        className={`bg-bcgov-blue dark:bg-white text-white font-semibold dark:text-bcgov-black my-5 py-2.5 px-10 rounded transition duration-300 ease-in-out transform text-sm shadow-sm`}
+                        className={`bg-primaryBtn dark:bg-dark-primaryBtn text-primaryBtnText dark:text-dark-primaryBtnText font-semibold my-5 py-2.5 px-10 rounded transition duration-300 ease-in-out transform text-sm shadow-sm`}
                         data-cy="standard-button"
                       >
                         {'Give feedback'}

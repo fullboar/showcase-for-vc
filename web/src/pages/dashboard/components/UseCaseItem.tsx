@@ -46,7 +46,7 @@ export const UseCaseItem: React.FC<Props> = ({
   return (
     <motion.div variants={rowFadeX} key={slug}>
       <div
-        className={`flex flex-col bg-bcgov-white dark:bg-bcgov-black rounded-lg my-2 p-4 lg:p-4 lg:px-8 mt-2 h-auto shadow-sm`}
+        className={`flex flex-col bg-background dark:bg-dark-background rounded-lg my-2 p-4 lg:p-4 lg:px-8 mt-2 h-auto shadow-sm`}
       >
         <h1 className="flex-none font-bold text-lg mb-2 h-6">{title}</h1>
         <div className="flex h-32 mt-2">

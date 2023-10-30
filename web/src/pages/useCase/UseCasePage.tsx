@@ -82,7 +82,7 @@ export const UseCasePage: React.FC = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      className="container flex flex-col h-auto lg:h-screen p-4 lg:p-6 xl:p-8 dark:text-white"
+      className="container flex flex-col h-auto lg:h-screen p-4 lg:p-6 xl:p-8"
     >
       {isLoading ? (
         <div className="m-auto">

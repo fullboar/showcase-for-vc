@@ -20,15 +20,15 @@ export const StepperItem: React.FC<Props> = ({ item, currentStep, currentCharact
   const currentStepIsLower = stepNames.indexOf(currentStep) < stepNames.indexOf(item.onboardingStep)
   return (
     <>
-      <div className="flex text-grey dark:text-white relative">
+      <div className="flex text-progress dark:text-dark-progress relative">
         <div
           className={`rounded-full transition duration-1000 ease-in-out py-3 h-12 w-12 border-2 ${
             currentStepIsEqual
-              ? 'bg-white dark:bg-bcgov-black border-2 border-bcgov-blue dark:border-bcgov-gold '
+              ? 'bg-inset dark:bg-dark-inset border-2 border-accent dark:border-dark-accent '
               : `${currentStepIsLower && currentStepIsNotEqual ? 'grayscale' : ''}`
           } ${
             currentStepIsHigher && currentStepIsNotEqual
-              ? ' border-2 border-bcgov-blue dark:border-bcgov-gold bg-white dark:bg-bcgov-black text-white'
+              ? ' border-2 border-accent dark:border-dark-accent bg-background dark:bg-dark-background'
               : ''
           } `}
         >
@@ -41,10 +41,10 @@ export const StepperItem: React.FC<Props> = ({ item, currentStep, currentCharact
       </div>
       {item.onboardingStep !== 'SETUP_COMPLETED' && (
         <div
-          className={`flex-auto  transition duration-300 ease-in-out  ${
+          className={`flex-auto transition duration-300 ease-in-out  ${
             currentStepIsHigher && currentStepIsNotEqual
-              ? ' border-t-4 border-bcgov-blue dark:border-bcgov-gold bg-bcgov-blue dark:bg-bcgov-gold'
-              : ' border-t-2 border-grey bg-grey'
+              ? ' border-t-4 border-accent dark:border-dark-accent'
+              : ' border-t-2 border-progress dark:border-dark-progress'
           }`}
         />
       )}
