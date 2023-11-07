@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
+import { localizationBC } from '../../assets/localizationBC'
 import { CustomUpload } from '../../components/CustomUpload'
 import { useAppDispatch } from '../../hooks/hooks'
 import { useTitle } from '../../hooks/useTitle'
@@ -22,7 +23,7 @@ import { OnboardingContainer } from './OnboardingContainer'
 import { Stepper } from './components/Stepper'
 
 export const OnboardingPage: React.FC = () => {
-  useTitle('Get Started | BC Wallet Self-Sovereign Identity Demo')
+  useTitle(localizationBC.onboarding.title)
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()

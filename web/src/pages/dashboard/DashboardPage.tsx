@@ -4,7 +4,10 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
+import { localizationBC } from '../../assets/localizationBC'
+import { Footer } from '../../components/Footer'
 import { Modal } from '../../components/Modal'
+import { NavBar } from '../../components/Navbar'
 import { useAppDispatch } from '../../hooks/hooks'
 import { useTitle } from '../../hooks/useTitle'
 import { useCurrentCharacter } from '../../slices/characters/charactersSelectors'
@@ -12,8 +15,6 @@ import { useCredentials } from '../../slices/credentials/credentialsSelectors'
 import { usePreferences } from '../../slices/preferences/preferencesSelectors'
 import { setDemoCompleted } from '../../slices/preferences/preferencesSlice'
 import { basePath } from '../../utils/BasePath'
-import { Footer } from '../landing/components/Footer'
-import { NavBar } from '../landing/components/Navbar'
 
 import { DemoCompletedModal } from './components/DemoCompletedModal'
 import { ProfileCard } from './components/ProfileCard'
@@ -21,7 +22,7 @@ import { RevocationContainer } from './components/RevocationContainer'
 import { UseCaseContainer } from './components/UseCaseContainer'
 
 export const DashboardPage: React.FC = () => {
-  useTitle('Dashboard | BC Wallet Self-Sovereign Identity Demo')
+  useTitle(localizationBC.dashboard.title)
 
   const navigate = useNavigate()
   const dispatch = useAppDispatch()

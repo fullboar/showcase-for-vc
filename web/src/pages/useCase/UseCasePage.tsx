@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
+import { localizationBC } from '../../assets/localizationBC'
 import { Loader } from '../../components/Loader'
 import { Modal } from '../../components/Modal'
 import { useAppDispatch } from '../../hooks/hooks'
@@ -36,7 +37,7 @@ export const UseCasePage: React.FC = () => {
   const [currentUseCase, setCurrentUseCase] = useState<CustomUseCase>()
 
   const navigate = useNavigate()
-  useTitle(`${currentUseCase?.name ?? 'Use case'} | BC Wallet Self-Sovereign Identity Demo`)
+  useTitle(`${currentUseCase?.name ?? 'Use case'}${localizationBC.useCase.title}`)
 
   useEffect(() => {
     if (currentCharacter && slug) {
