@@ -36,6 +36,45 @@ export const localizationBC = {
         demoCompletedModal: {
           title: 'Showcase Completed!',
           description: 'Looking to leave some feedback? Take our survey and connect with us!',
+          giveFeedback: 'Give feedback',
+          basedOnCodeBy: 'Based on code by ',
+          animoName: 'Animo',
+          businessIllustrations: 'Business illustrations by ',
+          storyset: 'Storyset',
+          iconsMade: 'Icons made by ',
+          freepik: 'Freepik',
+          from: ' from ',
+          flaticonCom: 'Flaticon.com',
+          URL: {
+            submitDigitalGovBC:
+              'https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de',
+            animo: 'https://animo.id/',
+            storyset: 'https://storyset.com/business',
+            freepik: 'https://www.freepik.com',
+            flaticon: 'https://www.flaticon.com/',
+          },
+        },
+        profileCard: {
+          modalTitle: 'This will reset your dashboard.',
+          modalDescription:
+            "Your current credentials will become invalid. Please make sure you've completed all the use cases before you do this.",
+          leave: 'LEAVE',
+        },
+        revocationContainer: {
+          revokingYourCred: 'Revoking your dredentials',
+          ensuringTheSafety: 'Ensure the safety of your personal information if your device is lost or stolen.',
+        },
+        revocationItem: {
+          revoke: 'REVOKE',
+        },
+        startButton: {
+          haventUnlocked: "You haven't unlocked the required credentials yet.",
+        },
+        useCaseContainer: {
+          usingYourCredentials: 'Using your credentials',
+        },
+        useCaseItem: {
+          start: 'START',
         },
       },
     },

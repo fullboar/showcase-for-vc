@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 
 import { rowFadeX } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { prependApiUrl } from '../../../utils/Url'
 
 import { StartButton } from './StartButton'
@@ -18,6 +19,8 @@ export interface Props {
   isCompleted: boolean
   isLoading?: boolean
 }
+
+const localization = localizationBC.pages.dashboard.components.revocationItem
 
 export const RevocationItem: React.FC<Props> = ({
   title,
@@ -67,7 +70,7 @@ export const RevocationItem: React.FC<Props> = ({
             <div className="flex flex-1 items-end justify-end">
               <StartButton
                 onClick={callback}
-                text={'REVOKE'}
+                text={localization.revoke}
                 disabled={false}
                 isCompleted={isCompleted}
                 loading={isLoading}

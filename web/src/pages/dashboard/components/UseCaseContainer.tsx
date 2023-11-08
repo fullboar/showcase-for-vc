@@ -5,10 +5,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { dashboardTitle, rowContainer } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { basePath } from '../../../utils/BasePath'
 
 import { UseCaseItem } from './UseCaseItem'
 
+const localization = localizationBC.pages.dashboard.components.useCaseContainer
 export interface Props {
   currentCharacter: CustomCharacter
   issuedCredentials: any[]
@@ -52,7 +54,7 @@ export const UseCaseContainer: React.FC<Props> = ({ currentCharacter, completedU
   return (
     <div className="flex flex-col mx-4 lg:mx-4 my-2 p-4 md:p-6 lg:p-8 bg-inset dark:bg-dark-inset text-insetText dark:text-dark-insetText rounded-lg shadow-sm">
       <motion.h1 variants={dashboardTitle} className="text-3xl md:text-4xl font-bold mb-2">
-        Using your credentials
+        {localization.usingYourCredentials}
       </motion.h1>
       <motion.div variants={rowContainer} className="flex flex-col w-auto overflow-x-hidden md:overflow-x-visible">
         {renderUseCases}

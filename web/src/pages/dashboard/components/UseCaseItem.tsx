@@ -5,10 +5,12 @@ import { startCase } from 'lodash'
 import React from 'react'
 
 import { rowFadeX } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { prependApiUrl } from '../../../utils/Url'
 
 import { StartButton } from './StartButton'
 
+const localization = localizationBC.pages.dashboard.components.useCaseItem
 export interface Props {
   slug: string
   title: string
@@ -70,7 +72,7 @@ export const UseCaseItem: React.FC<Props> = ({
                 onClick={() => {
                   start(slug)
                 }}
-                text={'START'}
+                text={localization.start}
                 disabled={isLocked}
                 isCompleted={isCompleted}
               />

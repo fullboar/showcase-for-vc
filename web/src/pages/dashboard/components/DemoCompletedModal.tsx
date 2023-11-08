@@ -43,7 +43,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                     <p>{DESCRIPTION}</p>
 
                     <a
-                      href="https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de"
+                      href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.submitDigitalGovBC}
                       target="_blank"
                     >
                       <motion.button
@@ -51,28 +51,36 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                         className={`bg-primaryBtn dark:bg-dark-primaryBtn text-primaryBtnText dark:text-dark-primaryBtnText font-semibold my-5 py-2.5 px-10 rounded transition duration-300 ease-in-out transform text-sm shadow-sm`}
                         data-cy="standard-button"
                       >
-                        {'Give feedback'}
+                        {localizationBC.pages.dashboard.components.demoCompletedModal.giveFeedback}
                       </motion.button>
                     </a>
 
                     <br />
-                    <a href="https://animo.id/">
-                      Based on code by <u>Animo</u>
+                    <a href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.animo}>
+                      {localizationBC.pages.dashboard.components.demoCompletedModal.basedOnCodeBy}
+                      <u>{localizationBC.pages.dashboard.components.demoCompletedModal.animoName}</u>
                     </a>
                     <br />
-                    <a href="https://storyset.com/business">
-                      Business illustrations by <u>Storyset</u>
+                    <a href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.storyset}>
+                      {localizationBC.pages.dashboard.components.demoCompletedModal.businessIllustrations}
+                      <u>{localizationBC.pages.dashboard.components.demoCompletedModal.storyset}</u>
                     </a>
                     <div>
-                      Icons made by{' '}
+                      {localizationBC.pages.dashboard.components.demoCompletedModal.iconsMade}
                       <u>
-                        <a href="https://www.freepik.com" title="Freepik">
-                          Freepik
+                        <a
+                          href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.freepik}
+                          title="Freepik"
+                        >
+                          {localizationBC.pages.dashboard.components.demoCompletedModal.freepik}
                         </a>
-                      </u>{' '}
-                      from{' '}
-                      <a href="https://www.flaticon.com/" title="Flaticon">
-                        <u>Flaticon.com</u>
+                      </u>
+                      {localizationBC.pages.dashboard.components.demoCompletedModal.from}
+                      <a
+                        href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.flaticon}
+                        title="Flaticon"
+                      >
+                        <u>{localizationBC.pages.dashboard.components.demoCompletedModal.flaticonCom}</u>
                       </a>
                     </div>
                   </div>
