@@ -22,7 +22,7 @@ import { RevocationContainer } from './components/RevocationContainer'
 import { UseCaseContainer } from './components/UseCaseContainer'
 
 export const DashboardPage: React.FC = () => {
-  useTitle(localizationBC.dashboard.title)
+  useTitle(localizationBC.pages.dashboard.title)
 
   const navigate = useNavigate()
   const dispatch = useAppDispatch()

@@ -10,7 +10,7 @@ import { useTitle } from '../../hooks/useTitle'
 import { MainSection } from './components/MainSection'
 
 export const LandingPage: React.FC = () => {
-  useTitle(localizationBC.landingPage.title)
+  useTitle(localizationBC.pages.landingPage.title)
   return (
     <motion.div
       className="container p-4 flex flex-col h-screen"

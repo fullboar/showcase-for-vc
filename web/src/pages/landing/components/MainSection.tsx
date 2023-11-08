@@ -25,11 +25,11 @@ export const MainSection: React.FC = () => {
   const renderMobileTitle = (
     <motion.div className="flex-1 text-left text-4xl font-semibold my-8 leading-snug ">
       <div className="overflow-hidden py-1">
-        <motion.h1 variants={landingTitle}>{localizationBC.landingPage.title}</motion.h1>
+        <motion.h1 variants={landingTitle}>{localizationBC.pages.landingPage.title}</motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2 variants={fade} className="text-lg font-normal mt-6">
-          {localizationBC.landingPage.description}
+          {localizationBC.pages.landingPage.description}
         </motion.h2>
       </div>
       <div className="flex flex-col justify-center text-base sxl:text-lg font-normal mt-6 m-auto">
@@ -48,7 +48,7 @@ export const MainSection: React.FC = () => {
           className="bg-secondaryBtn dark:bg-dark-secondaryBtn text-secondaryBtnText dark:text-dark-secondaryBtnText py-3 px-5 mx-8 mt-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={() => null}
         >
-          {localizationBC.landingPage.buttons.getToKnowUs} &nbsp;
+          {localizationBC.pages.landingPage.buttons.getToKnowUs} &nbsp;
           <FiExternalLink className="inline h-6 pb-1" />
         </motion.button>
       </div>
@@ -58,11 +58,11 @@ export const MainSection: React.FC = () => {
   const renderDesktopTitle = (
     <motion.div className="flex-1 text-left font-semibold text-4xl lg:text-5xl xl:text-6xl m-auto">
       <div className="overflow-hidden py-1 leading-tight">
-        <motion.h1 variants={landingTitle}>{localizationBC.landingPage.title}</motion.h1>
+        <motion.h1 variants={landingTitle}>{localizationBC.pages.landingPage.title}</motion.h1>
       </div>
       <div className="overflow-hidden">
         <motion.h2 variants={fadeDelay} className="text-base lg:text-lg font-normal mt-6">
-          {localizationBC.landingPage.description}
+          {localizationBC.pages.landingPage.description}
         </motion.h2>
       </div>
       <div className="flex flex-row justify-start text-base sxl:text-lg  font-normal mt-6">
@@ -72,16 +72,16 @@ export const MainSection: React.FC = () => {
           className="bg-primaryBtn dark:bg-dark-primaryBtn text-primaryBtnText dark:text-dark-primaryBtnText py-3 px-5 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={handleStart}
         >
-          {localizationBC.landingPage.buttons.getStarted} &nbsp;
+          {localizationBC.pages.landingPage.buttons.getStarted} &nbsp;
           <FiArrowRight className="inline h-6 pb-1" />
         </motion.button>
-        <a href={localizationBC.landingPage.digitalTrustURL} target="_blank">
+        <a href={localizationBC.pages.landingPage.digitalTrustURL} target="_blank">
           <motion.button
             variants={fadeDelay}
             whileHover={buttonHover}
             className="bg-secondaryBtn dark:bg-dark-secondaryBtn text-secondaryBtnText dark:text-dark-secondaryBtnText py-3 px-5 ml-4 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           >
-            <p className="inline">{localizationBC.landingPage.buttons.getToKnowUs} &nbsp;</p>
+            <p className="inline">{localizationBC.pages.landingPage.buttons.getToKnowUs} &nbsp;</p>
             <FiExternalLink className="inline h-6 pb-1" />
           </motion.button>
         </a>

@@ -37,7 +37,7 @@ export const UseCasePage: React.FC = () => {
   const [currentUseCase, setCurrentUseCase] = useState<CustomUseCase>()
 
   const navigate = useNavigate()
-  useTitle(`${currentUseCase?.name ?? 'Use case'}${localizationBC.useCase.title}`)
+  useTitle(`${currentUseCase?.name ?? 'Use case'}${localizationBC.pages.useCase.title}`)
 
   useEffect(() => {
     if (currentCharacter && slug) {

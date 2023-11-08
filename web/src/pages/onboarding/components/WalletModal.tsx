@@ -63,13 +63,13 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div className="px-2 md:px-6 pt-2 sm:mt-4 sm:pb-4">
                   <div className="mt-5">
-                    <p className="font-semibold">{localizationBC.onboarding.walletModal.downloadBCWallet}</p>
+                    <p className="font-semibold">{localizationBC.pages.onboarding.walletModal.downloadBCWallet}</p>
                     <p className="mt-5 mb-5">
                       To download,{' '}
                       {isMobile()
                         ? 'select the apps store icon below'
                         : 'scan this QR code with your phone or select the apps store icon below'}
-                      {localizationBC.onboarding.walletModal.searchBCWallet}
+                      {localizationBC.pages.onboarding.walletModal.searchBCWallet}
                     </p>
                     <div
                       style={{
@@ -78,7 +78,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                         marginBottom: '10px',
                       }}
                     >
-                      <a href={localizationBC.onboarding.walletModal.URL.appStore} target="_blank">
+                      <a href={localizationBC.pages.onboarding.walletModal.URL.appStore} target="_blank">
                         <img
                           src={appStore}
                           style={
@@ -89,7 +89,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                           alt="app store"
                         />
                       </a>
-                      <a href={localizationBC.onboarding.walletModal.URL.playStore} target="_blank">
+                      <a href={localizationBC.pages.onboarding.walletModal.URL.playStore} target="_blank">
                         <img
                           src={playStore}
                           style={isMobile() ? { width: '200px' } : { height: '50px' }}

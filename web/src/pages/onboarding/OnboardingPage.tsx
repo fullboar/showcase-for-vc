@@ -23,7 +23,7 @@ import { OnboardingContainer } from './OnboardingContainer'
 import { Stepper } from './components/Stepper'
 
 export const OnboardingPage: React.FC = () => {
-  useTitle(localizationBC.onboarding.title)
+  useTitle(localizationBC.pages.onboarding.title)
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
