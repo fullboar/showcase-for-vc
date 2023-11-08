@@ -30,6 +30,14 @@ export const localizationBC = {
     },
     dashboard: {
       title: 'Dashboard | BC Wallet Self-Sovereign Identity Demo',
+      errorTitle: 'Woops...',
+      errorDescription: "That's not gone well. Please restart the demo.",
+      components: {
+        demoCompletedModal: {
+          title: 'Showcase Completed!',
+          description: 'Looking to leave some feedback? Take our survey and connect with us!',
+        },
+      },
     },
   },
   footer: {

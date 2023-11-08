@@ -37,8 +37,8 @@ export const DashboardPage: React.FC = () => {
     }
   }, [completedUseCaseSlugs, useCases])
 
-  const ERROR_TITLE = `Woops...`
-  const ERROR_DESCRIPTION = `That's not gone well. Please restart the demo.`
+  const ERROR_TITLE = localizationBC.pages.dashboard.errorTitle
+  const ERROR_DESCRIPTION = localizationBC.pages.dashboard.errorDescription
   const routeError = () => {
     navigate(`${basePath}/demo`)
     dispatch({ type: 'demo/RESET' })

@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { standardFade, dropIn } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { SmallButton } from '../../../components/SmallButton'
 import { SmallButtonText } from '../../../components/SmallButtonText'
 export interface Props {
@@ -9,8 +10,8 @@ export interface Props {
 }
 
 export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
-  const TITLE = 'Showcase Completed!'
-  const DESCRIPTION = 'Looking to leave some feedback? Take our survey and connect with us!'
+  const TITLE = localizationBC.pages.dashboard.components.demoCompletedModal.title
+  const DESCRIPTION = localizationBC.pages.dashboard.components.demoCompletedModal.description
 
   return (
     <AnimatePresence>
