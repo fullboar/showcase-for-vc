@@ -39,7 +39,7 @@ export const MainSection: React.FC = () => {
           className="bg-primaryBtn dark:bg-dark-primaryBtn text-primaryBtnText dark:text-dark-primaryBtnText  py-3 px-5 mx-8 rounded-lg font-semibold shadow-sm dark:shadow-none select-none "
           onClick={handleStart}
         >
-          Try Demo &nbsp;
+          {localizationBC.pages.landingPage.buttons.tryDemo}
           <FiArrowRight className="inline h-6 pb-1" />
         </motion.button>
         <motion.button

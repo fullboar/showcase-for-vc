@@ -10,6 +10,7 @@ export const localizationBC = {
       buttons: {
         getStarted: 'Get started',
         getToKnowUs: 'Get to know us',
+        tryDemo: 'Try Demo ',
       },
     },
     // /digital-trust/showcase/demo
