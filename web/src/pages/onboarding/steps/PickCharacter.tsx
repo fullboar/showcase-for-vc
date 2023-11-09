@@ -5,6 +5,7 @@ import { track } from 'insights-js'
 import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { setCharacter } from '../../../slices/characters/charactersSlice'
 import { prependApiUrl } from '../../../utils/Url'
@@ -20,8 +21,8 @@ export interface Props {
 
 export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, title, text, textWithImage }) => {
   const dispatch = useAppDispatch()
-  const defaultTitle = `Who do you want to be today?`
-  const defaultText = `It’s time to pick your character. Every character has its own set of use cases, which explore the power of digital credentials. Don’t worry, you can change your character later.`
+  const defaultTitle = localizationBC.pages.onboarding.steps.pickCharacter.defaultTitle
+  const defaultText = localizationBC.pages.onboarding.steps.pickCharacter.defaultText
   const titleText = title
   const mainText = text
 

@@ -15,8 +15,6 @@ export interface Props {
   revocationInfo: RevocationInfoItem[]
 }
 
-const localization = localizationBC.pages.dashboard.components.revocationContainer
-
 export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocationInfo }) => {
   const [completedRevocations, setCompletedRevocations] = useState<string[]>([])
   const [loadingRevocations, setLoadingRevocations] = useState<string[]>([])
@@ -59,9 +57,9 @@ export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocat
   return (
     <div className="flex flex-col mx-4 lg:mx-4 my-2 p-4 md:p-6 lg:p-8 bg-inset dark:bg-dark-inset text-insetText dark:text-dark-insetText rounded-lg shadow-sm">
       <motion.h1 variants={dashboardTitle} className="text-3xl md:text-4xl font-bold mb-2">
-        {localization.revokingYourCred}
+        {localizationBC.pages.dashboard.components.revocationContainer.revokingYourCred}
       </motion.h1>
-      <p className="font-bold">{localization.ensuringTheSafety}</p>
+      <p className="font-bold">{localizationBC.pages.dashboard.components.revocationContainer.ensuringTheSafety}</p>
       {menuExpanded && (
         <motion.div variants={rowContainer} className="flex flex-col w-auto overflow-x-hidden md:overflow-x-visible">
           {renderUseCases}
@@ -77,7 +75,9 @@ export const RevocationContainer: React.FC<Props> = ({ revocationRecord, revocat
             setMenuExpanded(!menuExpanded)
           }}
         >
-          {menuExpanded ? 'READ LESS' : 'READ MORE'}
+          {menuExpanded
+            ? localizationBC.pages.dashboard.components.revocationContainer.readLess
+            : localizationBC.pages.dashboard.components.revocationContainer.readMore}
         </motion.button>
       </motion.div>
     </div>

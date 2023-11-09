@@ -42,10 +42,52 @@ export const localizationBC = {
           proofTrue: 'send another proof request.',
           proofFalse: 'send another credential.',
         },
+        starterCredentials: {
+          starterCredentials: 'Starter credentials',
+        },
         walletItem: {
           use: 'USE',
           by: 'by ',
         },
+      },
+      steps: {
+        acceptCredential: {
+          errorMsg: {
+            requestFailedWithErr: 'The request has failed with the following error: ',
+            wereSorryRestart:
+              ". We're sorry, but you're going to have to restart. If this issue persists, please contact us. ",
+            requestTimedOut:
+              "The request timed out. We're sorry, but you're going to have to restart the demo. If this issue persists, please contact us.",
+          },
+        },
+        pickCharacter: {
+          defaultTitle: 'Who do you want to be today?',
+          defaultText:
+            "It's time to pick your character. Every character has its own set of use cases, which explore the power of digital credentials. Don't worry, you can change your character later.",
+        },
+        setupCompleted: {
+          listDisc: {
+            0: 'You control when you use your credentials',
+            1: 'You can share all or parts of your credentials',
+            2: 'No one else is told when you use them',
+            3: 'The information on your credentials is always shared over a secure connection',
+            4: 'Anyone who receives information from your credentials can trust its legitimacy',
+          },
+          wereDoneWithStep: "We're done with this step. Next, we'll explore ways you can use your credentials.",
+        },
+        setupConnection: {
+          scanQRCode: 'Scan the QR-code with your ',
+          wallet: 'wallet',
+          or: 'or',
+          openInWallet: 'open in wallet',
+          alreadyHaveCredential: 'I Already Have my Credential',
+          successContinue: 'Success! You can continue.',
+          scanQRCodeDigitalWallet: 'Scan the QR-code with your digital wallet ',
+        },
+      },
+      onboardingContainer: {
+        leaveModalTitle: 'Are you sure you want to leave?',
+        leaveModalDescription: "You're progress will be lost and you'll be redirected to the homepage.",
       },
     },
     useCase: {
@@ -120,6 +162,7 @@ export const localizationBC = {
           freepik: 'Freepik',
           from: ' from ',
           flaticonCom: 'Flaticon.com',
+          flaticon: 'Flaticon',
           URL: {
             submitDigitalGovBC:
               'https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de',
@@ -138,6 +181,8 @@ export const localizationBC = {
         revocationContainer: {
           revokingYourCred: 'Revoking your dredentials',
           ensuringTheSafety: 'Ensure the safety of your personal information if your device is lost or stolen.',
+          readLess: 'READ LESS',
+          readMore: 'READ MORE',
         },
         revocationItem: {
           revoke: 'REVOKE',
@@ -154,8 +199,27 @@ export const localizationBC = {
       },
     },
   },
-  footer: {
-    mailTo: 'ditrust@gov.bc.ca',
-    copyright: 'Copyright © 2022 Government of British Columbia',
+  components: {
+    actionCTA: {
+      acceptRequest: 'Accept the request in your ',
+      wallet: 'wallet',
+      or: 'or',
+      openInWallet: 'open in wallet',
+      success: 'Success! You can continue.',
+      didntReceieveAnything: "I didn't receive anything",
+    },
+    backButton: {
+      back: 'BACK',
+    },
+    customUpload: {
+      uploadCustomCharacter: 'Upload custom character',
+      upload: 'UPLOAD',
+      loadingText:
+        'Adding new schemas and credential defenitions to the ledger. Please be patient, this can take a few minutes.',
+    },
+    footer: {
+      mailTo: 'ditrust@gov.bc.ca',
+      copyright: 'Copyright © 2022 Government of British Columbia',
+    },
   },
 }

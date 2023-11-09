@@ -70,7 +70,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                       <u>
                         <a
                           href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.freepik}
-                          title="Freepik"
+                          title={localizationBC.pages.dashboard.components.demoCompletedModal.freepik}
                         >
                           {localizationBC.pages.dashboard.components.demoCompletedModal.freepik}
                         </a>
@@ -78,7 +78,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                       {localizationBC.pages.dashboard.components.demoCompletedModal.from}
                       <a
                         href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.flaticon}
-                        title="Flaticon"
+                        title={localizationBC.pages.dashboard.components.demoCompletedModal.flaticon}
                       >
                         <u>{localizationBC.pages.dashboard.components.demoCompletedModal.flaticonCom}</u>
                       </a>

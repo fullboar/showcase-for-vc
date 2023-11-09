@@ -10,7 +10,6 @@ import { prependApiUrl } from '../../../utils/Url'
 
 import { StartButton } from './StartButton'
 
-const localization = localizationBC.pages.dashboard.components.useCaseItem
 export interface Props {
   slug: string
   title: string
@@ -72,7 +71,7 @@ export const UseCaseItem: React.FC<Props> = ({
                 onClick={() => {
                   start(slug)
                 }}
-                text={localization.start}
+                text={localizationBC.pages.dashboard.components.useCaseItem.start}
                 disabled={isLocked}
                 isCompleted={isCompleted}
               />

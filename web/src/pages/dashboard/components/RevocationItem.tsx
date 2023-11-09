@@ -20,8 +20,6 @@ export interface Props {
   isLoading?: boolean
 }
 
-const localization = localizationBC.pages.dashboard.components.revocationItem
-
 export const RevocationItem: React.FC<Props> = ({
   title,
   credentialName,
@@ -70,7 +68,7 @@ export const RevocationItem: React.FC<Props> = ({
             <div className="flex flex-1 items-end justify-end">
               <StartButton
                 onClick={callback}
-                text={localization.revoke}
+                text={localizationBC.pages.dashboard.components.revocationItem.revoke}
                 disabled={false}
                 isCompleted={isCompleted}
                 loading={isLoading}

@@ -18,9 +18,8 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
   const [isChangeModalOpen, setIsChangeModalOpen] = useState(false)
   const dispatch = useAppDispatch()
 
-  const localization = localizationBC.pages.dashboard.components.profileCard
-  const MODAL_TITLE = localization.modalTitle
-  const MODAL_DESCRIPTION = localization.modalDescription
+  const MODAL_TITLE = localizationBC.pages.dashboard.components.profileCard.modalTitle
+  const MODAL_DESCRIPTION = localizationBC.pages.dashboard.components.profileCard.modalDescription
 
   const reset = () => {
     dispatch({ type: 'demo/RESET' })
@@ -46,7 +45,11 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
             currentCharacter?.onboarding.find((screen) => screen.screenId === 'PICK_CHARACTER')?.text}
         </p>
         <div className="flex flex-1 items-end justify-end mt-2">
-          <SmallButtonText text={localization.leave} onClick={() => setIsChangeModalOpen(true)} disabled={false} />
+          <SmallButtonText
+            text={localizationBC.pages.dashboard.components.profileCard.leave}
+            onClick={() => setIsChangeModalOpen(true)}
+            disabled={false}
+          />
         </div>
 
         {isChangeModalOpen && (

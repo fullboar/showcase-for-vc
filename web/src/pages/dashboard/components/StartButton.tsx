@@ -8,7 +8,6 @@ import { buttonHover } from '../../../FramerAnimations'
 import { localizationBC } from '../../../assets/localizationBC'
 import { Loader } from '../../../components/Loader'
 
-const localization = localizationBC.pages.dashboard.components.startButton
 export interface Props {
   text: string
   disabled: boolean
@@ -32,7 +31,7 @@ export const StartButton: React.FC<Props> = ({ text, loading, onClick, disabled,
       >
         {disabled && (
           <span className="hidden sm:block tooltip rounded shadow-lg p-1 bg-popup dark:bg-dark-popup text-popupText dark:text-dark-popupText w-48 -mt-16">
-            {localization.haventUnlocked}
+            {localizationBC.pages.dashboard.components.startButton.haventUnlocked}
           </span>
         )}
 

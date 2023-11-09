@@ -4,6 +4,7 @@ import { isMobile } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeX } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { Button } from '../../../components/Button'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
@@ -102,24 +103,31 @@ export const SetupConnection: React.FC<Props> = ({
     <motion.div variants={fade} key="openWallet">
       <>
         <p>
-          Scan the QR-code with your <a href={deepLink}>wallet {isMobile && 'or'} </a>
+          {localizationBC.pages.onboarding.steps.setupConnection.scanQRCode}
+          <a href={deepLink}>
+            {localizationBC.pages.onboarding.steps.setupConnection.wallet + isMobile &&
+              localizationBC.pages.onboarding.steps.setupConnection.or}
+          </a>
         </p>
         {isMobile && (
           <a onClick={handleDeepLink} className="underline underline-offset-2 mt-2">
-            open in wallet
+            {localizationBC.pages.onboarding.steps.setupConnection.openInWallet}
             <FiExternalLink className="inline pb-1" />
           </a>
         )}
       </>
       {!disableSkipConnection && (
         <div className="my-5">
-          <Button text="I Already Have my Credential" onClick={skipIssuance}></Button>
+          <Button
+            text={localizationBC.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
+            onClick={skipIssuance}
+          ></Button>
         </div>
       )}
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>Success! You can continue.</p>
+      <p>{localizationBC.pages.onboarding.steps.setupConnection.successContinue}</p>
     </motion.div>
   )
 
@@ -139,10 +147,15 @@ export const SetupConnection: React.FC<Props> = ({
         style={{ backgroundImage: `url(${prependApiUrl(backgroundImage as string)})` }}
       >
         <div className="max-w-xs flex flex-col self-center items-center bg-white text-black rounded-lg p-4">
-          <p className="text-center mb-2">Scan the QR Code below with your digital wallet.</p>
+          <p className="text-center mb-2">
+            {localizationBC.pages.onboarding.steps.setupConnection.scanQRCodeDigitalWallet}
+          </p>
           <div>{renderQRCode(true)}</div>
           <div className="mt-5">
-            <Button text="I Already Have my Credential" onClick={skipIssuance}></Button>
+            <Button
+              text={localizationBC.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
+              onClick={skipIssuance}
+            ></Button>
           </div>
         </div>
       </div>
