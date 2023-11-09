@@ -7,6 +7,7 @@ import { isMobile } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeX } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useInterval } from '../../../hooks/useInterval'
@@ -57,19 +58,21 @@ export const StepConnection: React.FC<Props> = ({ step, connection, newConnectio
   const renderCTA = !isCompleted ? (
     <motion.div variants={fade} key="openWallet">
       <p>
-        Scan the QR-code with your digital wallet {isMobile && 'or '}
+        {localizationBC.pages.useCase.steps.stepConnection.scanQRCode +
+          isMobile +
+          localizationBC.pages.useCase.steps.stepConnection.or}
         {isMobile && (
           <a onClick={handleDeepLink} className="underline underline-offset-2 mt-2">
-            open in your wallet
+            {localizationBC.pages.useCase.steps.stepConnection.openInYourWallet}
             <FiExternalLink className="inline pb-1" />
           </a>
         )}{' '}
-        to prove things about yourself
+        {localizationBC.pages.useCase.steps.stepConnection.toProveThings}
       </p>
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>Success! You can continue.</p>
+      <p>{localizationBC.pages.useCase.steps.stepConnection.successContinue}</p>
     </motion.div>
   )
 

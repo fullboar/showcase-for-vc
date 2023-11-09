@@ -3,6 +3,8 @@ import type { CredentialRequest } from '../../../slices/types'
 import { motion } from 'framer-motion'
 import React from 'react'
 
+import { localizationBC } from '../../../assets/localizationBC'
+
 import { ActionCard } from './ActionCard'
 
 export interface Props {
@@ -18,16 +20,21 @@ export const StarterInfo: React.FC<Props> = ({ title, description, entity, reque
       <h1 className="text-4xl	font-bold my-4">{title}</h1>
       <p className="leading-loose">{description}</p>
       <div className="flex flex-col items-center justify-center h-full">
-        {entity && <ActionCard title={"You're connecting with"} items={[entity]} />}
+        {entity && (
+          <ActionCard
+            title={localizationBC.pages.useCase.components.starterInfo.youreConnectingWith}
+            items={[entity]}
+          />
+        )}
         {requestedCredentials && (
           <ActionCard
-            title={"You'll need to present"}
+            title={localizationBC.pages.useCase.components.starterInfo.youllNeedToPresent}
             items={requestedCredentials.map((item) => {
               return { name: item.name, icon: item.icon }
             })}
           />
         )}
-        {/* {issueCredentials && <ActionCard title={"You'll receive"} items={issueCredentials} />} */}
+        {/* {issueCredentials && <ActionCard title={localizationBC.pages.useCase.components.starterInfo.youllReceive} items={issueCredentials} />} */}
       </div>
     </motion.div>
   )

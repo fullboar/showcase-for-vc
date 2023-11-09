@@ -3,6 +3,8 @@ import type { UseCaseScreen } from '../../../slices/types'
 import { motion } from 'framer-motion'
 import React from 'react'
 
+import { localizationBC } from '../../../assets/localizationBC'
+
 export interface Props {
   steps: UseCaseScreen[]
   currentStep: string
@@ -37,7 +39,7 @@ export const StepperCard: React.FC<Props> = ({ steps, currentStep }) => {
   return (
     <motion.div className="flex flex-col bg-inset dark:bg-dark-inset text-insetText dark:text-dark-insetText rounded-lg p-4 h-auto shadow mb-4">
       <div className="flex-1-1 title mb-2">
-        <h1 className="font-semibold">Follow this path</h1>
+        <h1 className="font-semibold">{localizationBC.pages.useCase.components.stepperCard.followThisPath}</h1>
         <hr className="text-separator dark:text-dark-separator" />
       </div>
       <div className="my-4">{stepViewItems}</div>

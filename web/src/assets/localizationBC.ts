@@ -50,6 +50,58 @@ export const localizationBC = {
     },
     useCase: {
       title: ' | BC Wallet Self-Sovereign Identity Demo',
+      components: {
+        connectionCard: {
+          youreInteractingWith: "You're interacting with",
+        },
+        endContainer: {
+          buttons: {
+            complete: 'COMPLETE',
+          },
+        },
+        proofAttributesCard: {
+          wouldLikeToKnow: ' would like to know:',
+        },
+        proofCard: {
+          youllNeedToPresent: "You'll need to present",
+        },
+        starterInfo: {
+          youllNeedToPresent: "You'll need to present",
+          youreConnectingWith: "You're connecting with",
+          youllReceive: "You'll receive",
+        },
+        stepperCard: {
+          followThisPath: 'Follow this path',
+        },
+      },
+      steps: {
+        stepConnection: {
+          scanQRCode: 'Scan the QR-code with your digital wallet ',
+          or: 'or ',
+          openInYourWallet: 'open in your wallet',
+          toProveThings: 'to prove things about yourself',
+          successContinue: 'Success! You can continue.',
+        },
+        stepProofOOB: {
+          scanOOBQR: 'Scan the OOB QR-code with your ',
+          wallet: 'wallet ',
+          or: 'or',
+          openInWallet: 'open in wallet',
+          successContinue: 'Success! You can continue.',
+        },
+      },
+      section: {
+        leaveModalTitle: 'Are you sure you want to leave?',
+        leaveModalDescription: "You'll be redirected to the dashboard.",
+        button: {
+          complete: 'COMPLETE',
+          next: 'NEXT',
+        },
+      },
+      useCasePage: {
+        errorTitle: 'Woops...',
+        errorDescription: "You haven't picked your character yet. Please restart the demo.",
+      },
     },
     dashboard: {
       title: 'Dashboard | BC Wallet Self-Sovereign Identity Demo',

@@ -7,6 +7,7 @@ import { isMobile } from 'react-device-detect'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { fadeExit } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { Button } from '../../../components/Button'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useCaseCompleted } from '../../../slices/preferences/preferencesSlice'
@@ -72,7 +73,10 @@ export const EndContainer: React.FC<Props> = ({ step }) => {
       </div>
       {/* <div className="flex flex-col md:flex-row m-auto ">{renderEndSteps}</div> */}
       <div className="flex items-end self-end ">
-        <Button text="COMPLETE" onClick={() => setCompleted(true)} />
+        <Button
+          text={localizationBC.pages.useCase.components.endContainer.buttons.complete}
+          onClick={() => setCompleted(true)}
+        />
       </div>
     </motion.div>
   )
