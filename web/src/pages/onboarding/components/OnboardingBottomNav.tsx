@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
 import { fadeDelay, fadeExit } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { BackButton } from '../../../components/BackButton'
 import { Button } from '../../../components/Button'
 

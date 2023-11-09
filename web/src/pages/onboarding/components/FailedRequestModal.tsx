@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { standardFade, dropIn } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { SmallButton } from '../../../components/SmallButton'
 
 export interface Props {
@@ -10,7 +11,7 @@ export interface Props {
 }
 
 export const FailedRequestModal: React.FC<Props> = ({ action, close, proof }) => {
-  const MODAL_TITLE = `That's not what we expected.`
+  const MODAL_TITLE = localizationBC.pages.onboarding.components.failedRequestModal.modalTitle
 
   return (
     <AnimatePresence>
@@ -46,9 +47,11 @@ export const FailedRequestModal: React.FC<Props> = ({ action, close, proof }) =>
                   <h2 className="text-xl font-medium">{MODAL_TITLE}</h2>
                   <div className="mt-2">
                     <p className="text-sm">
-                      Try closing the wallet on your phone and opening it again. If the problem continues,{' '}
+                      {localizationBC.pages.onboarding.components.failedRequestModal.tryClosingWallet}
                       <u className="cursor-pointer" onClick={action}>
-                        send another {proof ? 'proof request' : 'credential'}.
+                        {proof
+                          ? localizationBC.pages.onboarding.components.failedRequestModal.proofTrue
+                          : localizationBC.pages.onboarding.components.failedRequestModal.proofFalse}
                       </u>
                     </p>
                   </div>

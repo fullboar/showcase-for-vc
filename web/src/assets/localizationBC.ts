@@ -16,13 +16,35 @@ export const localizationBC = {
     // /digital-trust/showcase/demo
     onboarding: {
       title: 'Get Started | BC Wallet Self-Sovereign Identity Demo',
-      walletModal: {
-        downloadBCWallet: '1. Download BC Wallet on your phone',
-        searchBCWallet: `. You can also search for BC Wallet in your phone's apps store.`,
-        URL: {
-          // Could be more specific, kept consistent with Asset names used.
-          appStore: 'https://apps.apple.com/us/app/bc-wallet/id1587380443',
-          playStore: 'https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet',
+      components: {
+        walletModal: {
+          downloadBCWallet: '1. Download BC Wallet on your phone',
+          toDownload: 'To download, ',
+          searchBCWallet: `. You can also search for BC Wallet in your phone's apps store.`,
+          step2: '2. Complete the setup',
+          haveMyWallet: 'I HAVE MY WALLET',
+          completeOnboarding: 'Complete the onboarding process in the app.',
+          selectAppStore: 'select the apps store icon below',
+          scanThisQR: 'scan this QR code with your phone or select the apps store icon below',
+          URL: {
+            // Could be more specific, kept consistent with Asset names used.
+            appStore: 'https://apps.apple.com/us/app/bc-wallet/id1587380443',
+            playStore: 'https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet',
+          },
+        },
+        characterContent: {
+          selectYourCharacter: 'SELECT YOUR CHARACTER',
+        },
+        failedRequestModal: {
+          modalTitle: "That's not what we expected.",
+          tryClosingWallet: 'Try closing the wallet on your phone and opening it again. If the problem continues, ',
+          sendAnother: 'send another ',
+          proofTrue: 'send another proof request.',
+          proofFalse: 'send another credential.',
+        },
+        walletItem: {
+          use: 'USE',
+          by: 'by ',
         },
       },
     },

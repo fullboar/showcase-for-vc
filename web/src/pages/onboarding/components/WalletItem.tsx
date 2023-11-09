@@ -3,6 +3,7 @@ import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 
 import { listHover, rowFadeX } from '../../../FramerAnimations'
+import { localizationBC } from '../../../assets/localizationBC'
 import { prependApiUrl } from '../../../utils/Url'
 
 export interface Props {
@@ -26,10 +27,10 @@ export const WalletItem: React.FC<Props> = ({ icon, name, organization, recommen
         <div className="flex flex-1 font-medium	 text-lg">
           {name} {recommended && <AiFillStar style={{ color: '#FFC107' }} className="m-1" />}
         </div>
-        <p className="text-sm pr-2">by {organization}</p>
+        <p className="text-sm pr-2">{localizationBC.pages.onboarding.components.walletItem.by + organization}</p>
       </div>
       <div className="flex flex-1-1 justify-end mr-8 md:mr-16 font-semibold rounded-lg" data-cy="use-wallet">
-        USE
+        {localizationBC.pages.onboarding.components.walletItem.use}
       </div>
     </motion.button>
   )
