@@ -22,14 +22,7 @@ export interface Props {
   entityName: string
 }
 
-export const StepProof: React.FC<Props> = ({
-  proof,
-  step,
-  connectionId,
-  requestedCredentials,
-  entityName,
-  characterName,
-}) => {
+export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requestedCredentials, entityName }) => {
   const dispatch = useAppDispatch()
   const proofReceived =
     (proof?.state as string) === 'presentation_received' ||
