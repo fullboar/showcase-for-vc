@@ -5,7 +5,7 @@ import React from 'react'
 import { FiCheck, FiLock } from 'react-icons/fi'
 
 import { buttonHover } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { Loader } from '../../../components/Loader'
 
 export interface Props {
@@ -31,7 +31,7 @@ export const StartButton: React.FC<Props> = ({ text, loading, onClick, disabled,
       >
         {disabled && (
           <span className="hidden sm:block tooltip rounded shadow-lg p-1 bg-popup dark:bg-dark-popup text-popupText dark:text-dark-popupText w-48 -mt-16">
-            {localizationBC.pages.dashboard.components.startButton.haventUnlocked}
+            {localization.pages.dashboard.components.startButton.haventUnlocked}
           </span>
         )}
 

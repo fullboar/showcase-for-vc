@@ -6,7 +6,7 @@ import { isMobile, isBrowser } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeExit, fadeX } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useInterval } from '../../../hooks/useInterval'
 import { createProofOOB, fetchProofById } from '../../../slices/proof/proofThunks'
@@ -87,22 +87,22 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
   const renderCTA = !proofReceived ? (
     <motion.div variants={fade} key="openWallet">
       <p>
-        {localizationBC.pages.useCase.steps.stepProofOOB.scanOOBQR}
+        {localization.pages.useCase.steps.stepProofOOB.scanOOBQR}
         <a href={deepLink}>
-          {localizationBC.pages.useCase.steps.stepProofOOB.wallet + isMobile &&
-            localizationBC.pages.useCase.steps.stepProofOOB.or}
+          {localization.pages.useCase.steps.stepProofOOB.wallet + isMobile &&
+            localization.pages.useCase.steps.stepProofOOB.or}
         </a>
       </p>
       {isMobile && (
         <a href={deepLink} className="underline underline-offset-2 mt-2">
-          {localizationBC.pages.useCase.steps.stepProofOOB.openInWallet}
+          {localization.pages.useCase.steps.stepProofOOB.openInWallet}
           <FiExternalLink className="inline pb-1" />
         </a>
       )}
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>{localizationBC.pages.useCase.steps.stepProofOOB.successContinue}</p>
+      <p>{localization.pages.useCase.steps.stepProofOOB.successContinue}</p>
     </motion.div>
   )
 

@@ -5,7 +5,7 @@ import { startCase } from 'lodash'
 import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { StateIndicator } from '../../../components/StateIndicator'
 import { useCredentials } from '../../../slices/credentials/credentialsSelectors'
 import { prependApiUrl } from '../../../utils/Url'
@@ -26,7 +26,7 @@ export const StarterCredentials: React.FC<Props> = ({ credentials }) => {
     >
       <div className="flex-1-1 title mb-2">
         <h1 className="font-semibold">
-          {localizationBC.pages.onboarding.components.starterCredentials.starterCredentials}
+          {localization.pages.onboarding.components.starterCredentials.starterCredentials}
         </h1>
         <hr className="text-separator dark:text-dark-separator" />
       </div>

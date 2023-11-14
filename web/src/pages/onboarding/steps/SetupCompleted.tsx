@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 
 export interface Props {
   title: string
@@ -29,14 +29,14 @@ export const SetupCompleted: React.FC<Props> = ({ title, text }) => {
             <p>{text}</p>
             <div className="bg-background dark:bg-dark-background py-4 px-8">
               <ul className="list-disc">
-                <li>{localizationBC.pages.onboarding.steps.setupCompleted.listDisc[0]}</li>
-                <li>{localizationBC.pages.onboarding.steps.setupCompleted.listDisc[1]}</li>
-                <li>{localizationBC.pages.onboarding.steps.setupCompleted.listDisc[2]}</li>
-                <li>{localizationBC.pages.onboarding.steps.setupCompleted.listDisc[3]}</li>
-                <li>{localizationBC.pages.onboarding.steps.setupCompleted.listDisc[4]}</li>
+                <li>{localization.pages.onboarding.steps.setupCompleted.listDisc[0]}</li>
+                <li>{localization.pages.onboarding.steps.setupCompleted.listDisc[1]}</li>
+                <li>{localization.pages.onboarding.steps.setupCompleted.listDisc[2]}</li>
+                <li>{localization.pages.onboarding.steps.setupCompleted.listDisc[3]}</li>
+                <li>{localization.pages.onboarding.steps.setupCompleted.listDisc[4]}</li>
               </ul>
             </div>
-            <p>{localizationBC.pages.onboarding.steps.setupCompleted.wereDoneWithStep}</p>
+            <p>{localization.pages.onboarding.steps.setupCompleted.wereDoneWithStep}</p>
           </div>
         </div>
       </div>

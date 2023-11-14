@@ -4,12 +4,11 @@ import { standardFade, dropIn } from '../../../FramerAnimations'
 import { baseUrl } from '../../../api/BaseUrl'
 import appStore from '../../../assets/light/app-store-badge.svg'
 import playStore from '../../../assets/light/google-play-badge.png'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { SmallButton } from '../../../components/SmallButton'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const QRCode = require('qrcode.react')
-const localization = localizationBC.pages.onboarding.components.walletModal
 export interface Wallet {
   id: number
   name: string
@@ -63,15 +62,13 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div className="px-2 md:px-6 pt-2 sm:mt-4 sm:pb-4">
                   <div className="mt-5">
-                    <p className="font-semibold">
-                      {localizationBC.pages.onboarding.components.walletModal.downloadBCWallet}
-                    </p>
+                    <p className="font-semibold"> {localization.pages.onboarding.components.walletModal.step1}</p>
                     <p className="mt-5 mb-5">
-                      {localizationBC.pages.onboarding.components.walletModal.toDownload}
+                      {localization.pages.onboarding.components.walletModal.toDownload}
                       {isMobile()
-                        ? localizationBC.pages.onboarding.components.walletModal.selectAppStore
-                        : localizationBC.pages.onboarding.components.walletModal.scanThisQR}
-                      {localizationBC.pages.onboarding.components.walletModal.searchBCWallet}
+                        ? localization.pages.onboarding.components.walletModal.selectAppStore
+                        : localization.pages.onboarding.components.walletModal.scanThisQR}
+                      {localization.pages.onboarding.components.walletModal.searchGovWallet}
                     </p>
                     <div
                       style={{
@@ -80,7 +77,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                         marginBottom: '10px',
                       }}
                     >
-                      <a href={localization.URL.appStore} target="_blank">
+                      <a href={localization.pages.onboarding.components.walletModal.URL.appStore} target="_blank">
                         <img
                           src={appStore}
                           style={
@@ -91,7 +88,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                           alt="app store"
                         />
                       </a>
-                      <a href={localization.URL.playStore} target="_blank">
+                      <a href={localization.pages.onboarding.components.walletModal.URL.playStore} target="_blank">
                         <img
                           src={playStore}
                           style={isMobile() ? { width: '200px' } : { height: '50px' }}
@@ -101,8 +98,8 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                     </div>
                   </div>
                   <div>
-                    <p className="font-semibold">{localization.step2}</p>
-                    <p className="mt-5">{localization.completeOnboarding}</p>
+                    <p className="font-semibold">{localization.pages.onboarding.components.walletModal.step2}</p>
+                    <p className="mt-5">{localization.pages.onboarding.components.walletModal.completeOnboarding}</p>
                   </div>
                 </div>
                 {!isMobile() && (
@@ -112,7 +109,10 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                 )}
               </div>
               <div className="px-4 pb-4 flex justify-end">
-                <SmallButton onClick={onCompleted} text={localization.haveMyWallet} />
+                <SmallButton
+                  onClick={onCompleted}
+                  text={localization.pages.onboarding.components.walletModal.haveMyWallet}
+                />
               </div>
             </motion.div>
           </div>

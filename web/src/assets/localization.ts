@@ -1,33 +1,30 @@
-export const localizationBC = {
-  // /digital-trust/showcase
+export const localization = {
   pages: {
     landingPage: {
       title: 'BC Wallet Showcase',
       description: "Explore how you can use BC Wallet to prove things about yourself, in a way that's safe and secure.",
-      //!! Should we change /pages/landing/MainSection line 78 to the below URL, or leave the URL defined.
-      digitalTrustURL: 'https://digital.gov.bc.ca/digital-trust/',
-      // Buttons are optional, added for French translation potential.
+      URL: {
+        digitalTrust: 'https://digital.gov.bc.ca/digital-trust/',
+      },
       buttons: {
         getStarted: 'Get started',
         getToKnowUs: 'Get to know us',
         tryDemo: 'Try Demo ',
       },
     },
-    // /digital-trust/showcase/demo
     onboarding: {
       title: 'Get Started | BC Wallet Self-Sovereign Identity Demo',
       components: {
         walletModal: {
-          downloadBCWallet: '1. Download BC Wallet on your phone',
+          step1: '1. Download BC Wallet on your phone',
           toDownload: 'To download, ',
-          searchBCWallet: `. You can also search for BC Wallet in your phone's apps store.`,
+          searchGovWallet: `. You can also search for BC Wallet in your phone's apps store.`,
           step2: '2. Complete the setup',
           haveMyWallet: 'I HAVE MY WALLET',
           completeOnboarding: 'Complete the onboarding process in the app.',
           selectAppStore: 'select the apps store icon below',
           scanThisQR: 'scan this QR code with your phone or select the apps store icon below',
           URL: {
-            // Could be more specific, kept consistent with Asset names used.
             appStore: 'https://apps.apple.com/us/app/bc-wallet/id1587380443',
             playStore: 'https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet',
           },
@@ -38,9 +35,11 @@ export const localizationBC = {
         failedRequestModal: {
           modalTitle: "That's not what we expected.",
           tryClosingWallet: 'Try closing the wallet on your phone and opening it again. If the problem continues, ',
-          sendAnother: 'send another ',
           proofTrue: 'send another proof request.',
           proofFalse: 'send another credential.',
+          button: {
+            OK: 'OK',
+          },
         },
         starterCredentials: {
           starterCredentials: 'Starter credentials',
@@ -81,7 +80,7 @@ export const localizationBC = {
           or: 'or',
           openInWallet: 'open in wallet',
           alreadyHaveCredential: 'I Already Have my Credential',
-          successContinue: 'Success! You can continue.',
+          success: 'Success! You can continue.',
           scanQRCodeDigitalWallet: 'Scan the QR-code with your digital wallet ',
         },
       },
@@ -163,9 +162,12 @@ export const localizationBC = {
           from: ' from ',
           flaticonCom: 'Flaticon.com',
           flaticon: 'Flaticon',
+          button: {
+            finish: 'FINISH',
+            cancel: 'CANCEL',
+          },
           URL: {
-            submitDigitalGovBC:
-              'https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de',
+            submitFeedback: 'https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de',
             animo: 'https://animo.id/',
             storyset: 'https://storyset.com/business',
             freepik: 'https://www.freepik.com',

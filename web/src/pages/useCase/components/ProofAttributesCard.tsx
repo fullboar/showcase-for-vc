@@ -3,7 +3,7 @@ import type { Attribute, CredentialRequest } from '../../../slices/types'
 import { startCase } from 'lodash'
 import React, { useEffect, useState } from 'react'
 
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { CheckMark } from '../../../components/Checkmark'
 import { Loader } from '../../../components/Loader'
 import { isDataUrl } from '../../../utils/Helpers'
@@ -90,7 +90,7 @@ export const ProofAttributesCard: React.FC<Props> = ({ entityName, requestedCred
       <div className="flex-1-1 title">
         <div className="flex flex-row">
           <h1 className="flex flex-1 font-semibold">
-            {entityName + localizationBC.pages.useCase.components.proofAttributesCard.wouldLikeToKnow}
+            {entityName + localization.pages.useCase.components.proofAttributesCard.wouldLikeToKnow}
           </h1>
           <div className="flex-1-1 h-8 mb-2">{proofReceived ? <CheckMark /> : <Loader />}</div>
         </div>

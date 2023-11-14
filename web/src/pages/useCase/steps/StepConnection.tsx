@@ -7,7 +7,7 @@ import { isMobile } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeX } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useInterval } from '../../../hooks/useInterval'
@@ -58,21 +58,21 @@ export const StepConnection: React.FC<Props> = ({ step, connection, newConnectio
   const renderCTA = !isCompleted ? (
     <motion.div variants={fade} key="openWallet">
       <p>
-        {localizationBC.pages.useCase.steps.stepConnection.scanQRCode +
+        {localization.pages.useCase.steps.stepConnection.scanQRCode +
           isMobile +
-          localizationBC.pages.useCase.steps.stepConnection.or}
+          localization.pages.useCase.steps.stepConnection.or}
         {isMobile && (
           <a onClick={handleDeepLink} className="underline underline-offset-2 mt-2">
-            {localizationBC.pages.useCase.steps.stepConnection.openInYourWallet}
+            {localization.pages.useCase.steps.stepConnection.openInYourWallet}
             <FiExternalLink className="inline pb-1" />
           </a>
         )}{' '}
-        {localizationBC.pages.useCase.steps.stepConnection.toProveThings}
+        {localization.pages.useCase.steps.stepConnection.toProveThings}
       </p>
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>{localizationBC.pages.useCase.steps.stepConnection.successContinue}</p>
+      <p>{localization.pages.useCase.steps.stepConnection.successContinue}</p>
     </motion.div>
   )
 

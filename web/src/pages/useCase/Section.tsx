@@ -7,7 +7,7 @@ import { isMobile } from 'react-device-detect'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { fadeExit } from '../../FramerAnimations'
-import { localizationBC } from '../../assets/localizationBC'
+import { localization } from '../../assets/localization'
 import { BackButton } from '../../components/BackButton'
 import { Button } from '../../components/Button'
 import { Modal } from '../../components/Modal'
@@ -56,8 +56,8 @@ export const Section: React.FC<Props> = ({
   const [isForwardDisabled, setIsForwardDisabled] = useState(false)
 
   const [leaveModal, setLeaveModal] = useState(false)
-  const LEAVE_MODAL_TITLE = localizationBC.pages.useCase.section.leaveModalTitle
-  const LEAVE_MODAL_DESCRIPTION = localizationBC.pages.useCase.section.leaveModalDescription
+  const LEAVE_MODAL_TITLE = localization.pages.useCase.section.leaveModalTitle
+  const LEAVE_MODAL_DESCRIPTION = localization.pages.useCase.section.leaveModalDescription
 
   const showLeaveModal = () => setLeaveModal(true)
   const closeLeave = () => setLeaveModal(false)
@@ -234,12 +234,12 @@ export const Section: React.FC<Props> = ({
                 />
                 {step.screenId.startsWith('STEP_END') ? (
                   <Button
-                    text={localizationBC.pages.useCase.section.button.complete}
+                    text={localization.pages.useCase.section.button.complete}
                     onClick={() => setCompleted(true)}
                   />
                 ) : (
                   <SmallButton
-                    text={localizationBC.pages.useCase.section.button.next}
+                    text={localization.pages.useCase.section.button.next}
                     onClick={() => {
                       next()
                     }}

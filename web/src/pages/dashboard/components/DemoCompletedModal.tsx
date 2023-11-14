@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { standardFade, dropIn } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { SmallButton } from '../../../components/SmallButton'
 import { SmallButtonText } from '../../../components/SmallButtonText'
 export interface Props {
@@ -10,8 +10,8 @@ export interface Props {
 }
 
 export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
-  const TITLE = localizationBC.pages.dashboard.components.demoCompletedModal.title
-  const DESCRIPTION = localizationBC.pages.dashboard.components.demoCompletedModal.description
+  const TITLE = localization.pages.dashboard.components.demoCompletedModal.title
+  const DESCRIPTION = localization.pages.dashboard.components.demoCompletedModal.description
 
   return (
     <AnimatePresence>
@@ -43,7 +43,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                     <p>{DESCRIPTION}</p>
 
                     <a
-                      href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.submitDigitalGovBC}
+                      href={localization.pages.dashboard.components.demoCompletedModal.URL.submitFeedback}
                       target="_blank"
                     >
                       <motion.button
@@ -51,36 +51,36 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                         className={`bg-primaryBtn dark:bg-dark-primaryBtn text-primaryBtnText dark:text-dark-primaryBtnText font-semibold my-5 py-2.5 px-10 rounded transition duration-300 ease-in-out transform text-sm shadow-sm`}
                         data-cy="standard-button"
                       >
-                        {localizationBC.pages.dashboard.components.demoCompletedModal.giveFeedback}
+                        {localization.pages.dashboard.components.demoCompletedModal.giveFeedback}
                       </motion.button>
                     </a>
 
                     <br />
-                    <a href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.animo}>
-                      {localizationBC.pages.dashboard.components.demoCompletedModal.basedOnCodeBy}
-                      <u>{localizationBC.pages.dashboard.components.demoCompletedModal.animoName}</u>
+                    <a href={localization.pages.dashboard.components.demoCompletedModal.URL.animo}>
+                      {localization.pages.dashboard.components.demoCompletedModal.basedOnCodeBy}
+                      <u>{localization.pages.dashboard.components.demoCompletedModal.animoName}</u>
                     </a>
                     <br />
-                    <a href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.storyset}>
-                      {localizationBC.pages.dashboard.components.demoCompletedModal.businessIllustrations}
-                      <u>{localizationBC.pages.dashboard.components.demoCompletedModal.storyset}</u>
+                    <a href={localization.pages.dashboard.components.demoCompletedModal.URL.storyset}>
+                      {localization.pages.dashboard.components.demoCompletedModal.businessIllustrations}
+                      <u>{localization.pages.dashboard.components.demoCompletedModal.storyset}</u>
                     </a>
                     <div>
-                      {localizationBC.pages.dashboard.components.demoCompletedModal.iconsMade}
+                      {localization.pages.dashboard.components.demoCompletedModal.iconsMade}
                       <u>
                         <a
-                          href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.freepik}
-                          title={localizationBC.pages.dashboard.components.demoCompletedModal.freepik}
+                          href={localization.pages.dashboard.components.demoCompletedModal.URL.freepik}
+                          title={localization.pages.dashboard.components.demoCompletedModal.freepik}
                         >
-                          {localizationBC.pages.dashboard.components.demoCompletedModal.freepik}
+                          {localization.pages.dashboard.components.demoCompletedModal.freepik}
                         </a>
                       </u>
-                      {localizationBC.pages.dashboard.components.demoCompletedModal.from}
+                      {localization.pages.dashboard.components.demoCompletedModal.from}
                       <a
-                        href={localizationBC.pages.dashboard.components.demoCompletedModal.URL.flaticon}
-                        title={localizationBC.pages.dashboard.components.demoCompletedModal.flaticon}
+                        href={localization.pages.dashboard.components.demoCompletedModal.URL.flaticon}
+                        title={localization.pages.dashboard.components.demoCompletedModal.flaticon}
                       >
-                        <u>{localizationBC.pages.dashboard.components.demoCompletedModal.flaticonCom}</u>
+                        <u>{localization.pages.dashboard.components.demoCompletedModal.flaticonCom}</u>
                       </a>
                     </div>
                   </div>
@@ -88,8 +88,8 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
               </div>
             </div>
             <div className="px-4 pb-4 sm:px-6 sm:flex sm:flex-row-reverse">
-              <SmallButton onClick={action} text={'FINISH'} disabled={false} />
-              {cancel && <SmallButtonText onClick={cancel} text={'CANCEL'} disabled={false} />}
+              <SmallButton onClick={action} text={localization.pages.dashboard.components.demoCompletedModal.button.finish} disabled={false} />
+              {cancel && <SmallButtonText onClick={cancel} text={localization.pages.dashboard.components.demoCompletedModal.button.cancel} disabled={false} />}
             </div>
           </motion.div>
         </div>

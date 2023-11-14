@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { standardFade, dropIn } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { SmallButton } from '../../../components/SmallButton'
 
 export interface Props {
@@ -11,7 +11,7 @@ export interface Props {
 }
 
 export const FailedRequestModal: React.FC<Props> = ({ action, close, proof }) => {
-  const MODAL_TITLE = localizationBC.pages.onboarding.components.failedRequestModal.modalTitle
+  const MODAL_TITLE = localization.pages.onboarding.components.failedRequestModal.modalTitle
 
   return (
     <AnimatePresence>
@@ -47,11 +47,11 @@ export const FailedRequestModal: React.FC<Props> = ({ action, close, proof }) =>
                   <h2 className="text-xl font-medium">{MODAL_TITLE}</h2>
                   <div className="mt-2">
                     <p className="text-sm">
-                      {localizationBC.pages.onboarding.components.failedRequestModal.tryClosingWallet}
+                      {localization.pages.onboarding.components.failedRequestModal.tryClosingWallet}
                       <u className="cursor-pointer" onClick={action}>
                         {proof
-                          ? localizationBC.pages.onboarding.components.failedRequestModal.proofTrue
-                          : localizationBC.pages.onboarding.components.failedRequestModal.proofFalse}
+                          ? localization.pages.onboarding.components.failedRequestModal.proofTrue
+                          : localization.pages.onboarding.components.failedRequestModal.proofFalse}
                       </u>
                     </p>
                   </div>
@@ -59,7 +59,11 @@ export const FailedRequestModal: React.FC<Props> = ({ action, close, proof }) =>
               </div>
             </div>
             <div className="px-4 pb-4 sm:px-6 flex flex-row-reverse">
-              <SmallButton onClick={close} text={'OK'} disabled={false} />
+              <SmallButton
+                onClick={close}
+                text={localization.pages.onboarding.components.failedRequestModal.button.OK}
+                disabled={false}
+              />
             </div>
           </motion.div>
         </div>

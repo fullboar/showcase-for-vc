@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
-import { localizationBC } from '../../assets/localizationBC'
+import { localization } from '../../assets/localization'
 import { CustomUpload } from '../../components/CustomUpload'
 import { useAppDispatch } from '../../hooks/hooks'
 import { useTitle } from '../../hooks/useTitle'
@@ -23,7 +23,7 @@ import { OnboardingContainer } from './OnboardingContainer'
 import { Stepper } from './components/Stepper'
 
 export const OnboardingPage: React.FC = () => {
-  useTitle(localizationBC.pages.onboarding.title)
+  useTitle(localization.pages.onboarding.title)
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()

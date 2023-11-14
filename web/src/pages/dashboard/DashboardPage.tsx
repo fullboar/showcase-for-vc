@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
-import { localizationBC } from '../../assets/localizationBC'
+import { localization } from '../../assets/localization'
 import { Footer } from '../../components/Footer'
 import { Modal } from '../../components/Modal'
 import { NavBar } from '../../components/Navbar'
@@ -22,7 +22,7 @@ import { RevocationContainer } from './components/RevocationContainer'
 import { UseCaseContainer } from './components/UseCaseContainer'
 
 export const DashboardPage: React.FC = () => {
-  useTitle(localizationBC.pages.dashboard.title)
+  useTitle(localization.pages.dashboard.title)
 
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
@@ -37,8 +37,8 @@ export const DashboardPage: React.FC = () => {
     }
   }, [completedUseCaseSlugs, useCases])
 
-  const ERROR_TITLE = localizationBC.pages.dashboard.errorTitle
-  const ERROR_DESCRIPTION = localizationBC.pages.dashboard.errorDescription
+  const ERROR_TITLE = localization.pages.dashboard.errorTitle
+  const ERROR_DESCRIPTION = localization.pages.dashboard.errorDescription
   const routeError = () => {
     navigate(`${basePath}/demo`)
     dispatch({ type: 'demo/RESET' })

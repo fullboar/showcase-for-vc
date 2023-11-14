@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 
 import { fade } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { Modal } from '../../../components/Modal'
 import { SmallButtonText } from '../../../components/SmallButtonText'
 import { useAppDispatch } from '../../../hooks/hooks'
@@ -18,8 +18,8 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
   const [isChangeModalOpen, setIsChangeModalOpen] = useState(false)
   const dispatch = useAppDispatch()
 
-  const MODAL_TITLE = localizationBC.pages.dashboard.components.profileCard.modalTitle
-  const MODAL_DESCRIPTION = localizationBC.pages.dashboard.components.profileCard.modalDescription
+  const MODAL_TITLE = localization.pages.dashboard.components.profileCard.modalTitle
+  const MODAL_DESCRIPTION = localization.pages.dashboard.components.profileCard.modalDescription
 
   const reset = () => {
     dispatch({ type: 'demo/RESET' })
@@ -46,7 +46,7 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
         </p>
         <div className="flex flex-1 items-end justify-end mt-2">
           <SmallButtonText
-            text={localizationBC.pages.dashboard.components.profileCard.leave}
+            text={localization.pages.dashboard.components.profileCard.leave}
             onClick={() => setIsChangeModalOpen(true)}
             disabled={false}
           />

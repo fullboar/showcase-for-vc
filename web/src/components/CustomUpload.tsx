@@ -2,7 +2,7 @@ import type { CustomCharacter } from '../slices/types'
 
 import { useEffect, useState } from 'react'
 
-import { localizationBC } from '../assets/localizationBC'
+import { localization } from '../assets/localization'
 import { useAppDispatch } from '../hooks/hooks'
 import { useCharacters } from '../slices/characters/charactersSelectors'
 import { uploadCharacter, setUploadingStatus } from '../slices/characters/charactersSlice'
@@ -52,12 +52,12 @@ export const CustomUpload: React.FC = () => {
   return (
     <>
       <Modal
-        title={localizationBC.components.customUpload.uploadCustomCharacter}
+        title={localization.components.customUpload.uploadCustomCharacter}
         onOk={onSubmitHandler}
-        okText={localizationBC.components.customUpload.upload}
+        okText={localization.components.customUpload.upload}
         okDisabled={!uploadFile}
         loading={isUploading}
-        loadingText={localizationBC.components.customUpload.loadingText}
+        loadingText={localization.components.customUpload.loadingText}
         onCancel={close}
         description=""
       >

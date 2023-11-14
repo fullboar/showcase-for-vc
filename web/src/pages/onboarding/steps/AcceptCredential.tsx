@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { fade, fadeX } from '../../../FramerAnimations'
 import { getOrCreateCredDefId } from '../../../api/CredentialApi'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { ActionCTA } from '../../../components/ActionCTA'
 import { Loader } from '../../../components/Loader'
 import { Modal } from '../../../components/Modal'
@@ -90,7 +90,7 @@ export const AcceptCredential: React.FC<Props> = ({
 
   const handleCredentialTimeout = () => {
     if (!isIssueCredentialLoading || !error) return
-    setErrorMsg(localizationBC.pages.onboarding.steps.acceptCredential.errorMsg.requestTimedOut)
+    setErrorMsg(localization.pages.onboarding.steps.acceptCredential.errorMsg.requestTimedOut)
     setIsRejectedModalOpen(true)
   }
 
@@ -106,9 +106,9 @@ export const AcceptCredential: React.FC<Props> = ({
     if (error) {
       const msg = error.message ?? 'Issue Credential Error'
       setErrorMsg(
-        localizationBC.pages.onboarding.steps.acceptCredential.errorMsg.requestFailedWithErr +
+        localization.pages.onboarding.steps.acceptCredential.errorMsg.requestFailedWithErr +
           msg +
-          localizationBC.pages.onboarding.steps.acceptCredential.errorMsg.wereSorryRestart
+          localization.pages.onboarding.steps.acceptCredential.errorMsg.wereSorryRestart
       )
       setIsRejectedModalOpen(true)
     }

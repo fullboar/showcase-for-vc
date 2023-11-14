@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { FiArrowLeft } from 'react-icons/fi'
 
-import { localizationBC } from '../assets/localizationBC'
+import { localization } from '../assets/localization'
 
 export interface Props {
   disabled?: boolean
@@ -22,7 +22,7 @@ export const BackButton: React.FC<Props> = ({ onClick, disabled }) => {
       <p className="inline text-sm">
         <u></u>
         <FiArrowLeft className="inline h-4 w-6 mb-1" />
-        {localizationBC.components.backButton.back}
+        {localization.components.backButton.back}
       </p>
     </motion.button>
   )

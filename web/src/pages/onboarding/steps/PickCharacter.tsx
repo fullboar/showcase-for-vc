@@ -5,7 +5,7 @@ import { track } from 'insights-js'
 import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { setCharacter } from '../../../slices/characters/charactersSlice'
 import { prependApiUrl } from '../../../utils/Url'
@@ -21,8 +21,8 @@ export interface Props {
 
 export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, title, text, textWithImage }) => {
   const dispatch = useAppDispatch()
-  const defaultTitle = localizationBC.pages.onboarding.steps.pickCharacter.defaultTitle
-  const defaultText = localizationBC.pages.onboarding.steps.pickCharacter.defaultText
+  const defaultTitle = localization.pages.onboarding.steps.pickCharacter.defaultTitle
+  const defaultText = localization.pages.onboarding.steps.pickCharacter.defaultText
   const titleText = title
   const mainText = text
 

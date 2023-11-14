@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
-import { localizationBC } from '../../assets/localizationBC'
+import { localization } from '../../assets/localization'
 import { Loader } from '../../components/Loader'
 import { Modal } from '../../components/Modal'
 import { useAppDispatch } from '../../hooks/hooks'
@@ -37,7 +37,7 @@ export const UseCasePage: React.FC = () => {
   const [currentUseCase, setCurrentUseCase] = useState<CustomUseCase>()
 
   const navigate = useNavigate()
-  useTitle(`${currentUseCase?.name ?? 'Use case'}${localizationBC.pages.useCase.title}`)
+  useTitle(`${currentUseCase?.name ?? 'Use case'}${localization.pages.useCase.title}`)
 
   useEffect(() => {
     if (currentCharacter && slug) {
@@ -66,8 +66,8 @@ export const UseCasePage: React.FC = () => {
     }
   }, [currentUseCase, sectionCount])
 
-  const ERROR_TITLE = localizationBC.pages.useCase.useCasePage.errorTitle
-  const ERROR_DESCRIPTION = localizationBC.pages.useCase.useCasePage.errorDescription
+  const ERROR_TITLE = localization.pages.useCase.useCasePage.errorTitle
+  const ERROR_DESCRIPTION = localization.pages.useCase.useCasePage.errorDescription
   const routeError = () => {
     navigate(`${basePath}/demo`)
   }

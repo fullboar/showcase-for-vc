@@ -4,7 +4,7 @@ import { isMobile } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeX } from '../../../FramerAnimations'
-import { localizationBC } from '../../../assets/localizationBC'
+import { localization } from '../../../assets/localization'
 import { Button } from '../../../components/Button'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
@@ -103,15 +103,15 @@ export const SetupConnection: React.FC<Props> = ({
     <motion.div variants={fade} key="openWallet">
       <>
         <p>
-          {localizationBC.pages.onboarding.steps.setupConnection.scanQRCode}
+          {localization.pages.onboarding.steps.setupConnection.scanQRCode}
           <a href={deepLink}>
-            {localizationBC.pages.onboarding.steps.setupConnection.wallet + isMobile &&
-              localizationBC.pages.onboarding.steps.setupConnection.or}
+            {localization.pages.onboarding.steps.setupConnection.wallet + isMobile &&
+              localization.pages.onboarding.steps.setupConnection.or}
           </a>
         </p>
         {isMobile && (
           <a onClick={handleDeepLink} className="underline underline-offset-2 mt-2">
-            {localizationBC.pages.onboarding.steps.setupConnection.openInWallet}
+            {localization.pages.onboarding.steps.setupConnection.openInWallet}
             <FiExternalLink className="inline pb-1" />
           </a>
         )}
@@ -119,7 +119,7 @@ export const SetupConnection: React.FC<Props> = ({
       {!disableSkipConnection && (
         <div className="my-5">
           <Button
-            text={localizationBC.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
+            text={localization.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
             onClick={skipIssuance}
           ></Button>
         </div>
@@ -127,7 +127,7 @@ export const SetupConnection: React.FC<Props> = ({
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>{localizationBC.pages.onboarding.steps.setupConnection.successContinue}</p>
+      <p>{localization.pages.onboarding.steps.setupConnection.success}</p>
     </motion.div>
   )
 
@@ -148,12 +148,12 @@ export const SetupConnection: React.FC<Props> = ({
       >
         <div className="max-w-xs flex flex-col self-center items-center bg-white text-black rounded-lg p-4">
           <p className="text-center mb-2">
-            {localizationBC.pages.onboarding.steps.setupConnection.scanQRCodeDigitalWallet}
+            {localization.pages.onboarding.steps.setupConnection.scanQRCodeDigitalWallet}
           </p>
           <div>{renderQRCode(true)}</div>
           <div className="mt-5">
             <Button
-              text={localizationBC.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
+              text={localization.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
               onClick={skipIssuance}
             ></Button>
           </div>
