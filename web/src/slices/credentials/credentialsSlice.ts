@@ -60,7 +60,7 @@ const credentialSlice = createSlice({
             .filter(
               (item: any) =>
                 item.revoc_reg_id !== undefined &&
-                !state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id)
+                !state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id),
             )
             .map((item: any) => {
               return {

@@ -14,7 +14,7 @@ export const issueCredential = createAsyncThunk(
   async (data: { connectionId: string; cred: Credential; credDefId: string }) => {
     const response = await Api.issueCredential(data.connectionId, data.cred, data.credDefId)
     return response.data
-  }
+  },
 )
 
 export const issueDeepCredential = createAsyncThunk(
@@ -31,7 +31,7 @@ export const issueDeepCredential = createAsyncThunk(
       }
     }
     return response?.data
-  }
+  },
 )
 
 export const fetchCredentialById = createAsyncThunk('credentials/fetchById', async (id: string) => {

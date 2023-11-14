@@ -37,7 +37,7 @@ export const StepConnection: React.FC<Props> = ({ step, connection, newConnectio
     () => {
       if (id && document.visibilityState === 'visible') dispatch(fetchConnectionById(id))
     },
-    !isCompleted ? 1000 : null
+    !isCompleted ? 1000 : null,
   )
 
   const handleDeepLink = () => {

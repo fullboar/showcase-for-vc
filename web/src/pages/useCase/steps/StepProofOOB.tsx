@@ -64,7 +64,7 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
         attributes: proofs,
         predicates: predicates,
         requestOptions: { name: step.requestOptions?.title, comment: step.requestOptions?.text },
-      })
+      }),
     )
   }
 
@@ -78,7 +78,7 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
         dispatch(fetchProofById(proof.id))
       }
     },
-    !proofReceived ? 1000 : null
+    !proofReceived ? 1000 : null,
   )
 
   const deepLink = `bcwallet://aries_connection_invitation?${proofUrl?.split('?')[1]}`

@@ -80,7 +80,7 @@ export const SetupConnection: React.FC<Props> = ({
         dispatch(fetchConnectionById(connectionId))
       }
     },
-    !isCompleted ? 1000 : null
+    !isCompleted ? 1000 : null,
   )
 
   const renderQRCode = (overlay?: boolean) => {

@@ -26,5 +26,5 @@ render(
     </Provider>
   </SMode>,
 
-  document.getElementById('root')
+  document.getElementById('root'),
 )
