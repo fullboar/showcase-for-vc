@@ -21,20 +21,17 @@ export const StarterInfo: React.FC<Props> = ({ title, description, entity, reque
       <p className="leading-loose">{description}</p>
       <div className="flex flex-col items-center justify-center h-full">
         {entity && (
-          <ActionCard
-            title={localization.pages.useCase.components.starterInfo.youreConnectingWith}
-            items={[entity]}
-          />
+          <ActionCard title={localization.pages.useCase.components.starterInfo.entityTitle} items={[entity]} />
         )}
         {requestedCredentials && (
           <ActionCard
-            title={localization.pages.useCase.components.starterInfo.youllNeedToPresent}
+            title={localization.pages.useCase.components.starterInfo.reqCredentialsTitle}
             items={requestedCredentials.map((item) => {
               return { name: item.name, icon: item.icon }
             })}
           />
         )}
-        {/* {issueCredentials && <ActionCard title={localizationBC.pages.useCase.components.starterInfo.youllReceive} items={issueCredentials} />} */}
+        {/* {issueCredentials && <ActionCard title={localization.pages.useCase.components.starterInfo.issueCredTitle} items={issueCredentials} />} */}
       </div>
     </motion.div>
   )

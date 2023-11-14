@@ -52,12 +52,12 @@ export const CustomUpload: React.FC = () => {
   return (
     <>
       <Modal
-        title={localization.components.customUpload.uploadCustomCharacter}
+        title={localization.components.customUpload.title}
         onOk={onSubmitHandler}
         okText={localization.components.customUpload.upload}
         okDisabled={!uploadFile}
         loading={isUploading}
-        loadingText={localization.components.customUpload.loadingText}
+        loadingText={localization.components.customUpload.loading}
         onCancel={close}
         description=""
       >

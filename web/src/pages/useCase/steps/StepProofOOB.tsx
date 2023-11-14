@@ -102,7 +102,7 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>{localization.pages.useCase.steps.stepProofOOB.successContinue}</p>
+      <p>{localization.pages.useCase.steps.stepProofOOB.success}</p>
     </motion.div>
   )
 

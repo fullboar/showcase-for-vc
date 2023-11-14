@@ -32,7 +32,7 @@ export const CharacterContent: React.FC<Props> = ({ character }) => {
         </AnimatePresence>
       ) : (
         <p className="flex h-full items-center justify-center">
-          {localization.pages.onboarding.components.characterContent.selectYourCharacter}
+          {localization.pages.onboarding.components.characterContent.select}
         </p>
       )}
     </motion.div>

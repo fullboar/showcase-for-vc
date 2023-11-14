@@ -36,7 +36,7 @@ export const ActionCTA: React.FC<Props> = ({ isCompleted, onFail }) => {
       {renderCTA}
       <motion.p variants={fadeDelay} className={`text-sm mt-2  ${!isCompleted ? 'visible' : 'invisible'}`}>
         <u className="m-auto cursor-pointer" onClick={onFail}>
-          {localization.components.actionCTA.didntReceieveAnything}
+          {localization.components.actionCTA.fail}
         </u>
       </motion.p>
     </div>

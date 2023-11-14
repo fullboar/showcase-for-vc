@@ -72,7 +72,7 @@ export const StepConnection: React.FC<Props> = ({ step, connection, newConnectio
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>{localization.pages.useCase.steps.stepConnection.successContinue}</p>
+      <p>{localization.pages.useCase.steps.stepConnection.success}</p>
     </motion.div>
   )
 

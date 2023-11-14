@@ -90,7 +90,7 @@ export const ProofAttributesCard: React.FC<Props> = ({ entityName, requestedCred
       <div className="flex-1-1 title">
         <div className="flex flex-row">
           <h1 className="flex flex-1 font-semibold">
-            {entityName + localization.pages.useCase.components.proofAttributesCard.wouldLikeToKnow}
+            {entityName + localization.pages.useCase.components.proofAttributesCard.requestInfo}
           </h1>
           <div className="flex-1-1 h-8 mb-2">{proofReceived ? <CheckMark /> : <Loader />}</div>
         </div>

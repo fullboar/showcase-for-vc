@@ -30,7 +30,7 @@ export const localization = {
           },
         },
         characterContent: {
-          selectYourCharacter: 'SELECT YOUR CHARACTER',
+          select: 'SELECT YOUR CHARACTER',
         },
         failedRequestModal: {
           modalTitle: "That's not what we expected.",
@@ -42,7 +42,7 @@ export const localization = {
           },
         },
         starterCredentials: {
-          starterCredentials: 'Starter credentials',
+          title: 'Starter credentials',
         },
         walletItem: {
           use: 'USE',
@@ -93,7 +93,7 @@ export const localization = {
       title: ' | BC Wallet Self-Sovereign Identity Demo',
       components: {
         connectionCard: {
-          youreInteractingWith: "You're interacting with",
+          title: "You're interacting with",
         },
         endContainer: {
           buttons: {
@@ -101,18 +101,18 @@ export const localization = {
           },
         },
         proofAttributesCard: {
-          wouldLikeToKnow: ' would like to know:',
+          requestInfo: ' would like to know:',
         },
         proofCard: {
-          youllNeedToPresent: "You'll need to present",
+          title: "You'll need to present",
         },
         starterInfo: {
-          youllNeedToPresent: "You'll need to present",
-          youreConnectingWith: "You're connecting with",
-          youllReceive: "You'll receive",
+          reqCredentialsTitle: "You'll need to present",
+          entityTitle: "You're connecting with",
+          issueCredTitle: "You'll receive",
         },
         stepperCard: {
-          followThisPath: 'Follow this path',
+          title: 'Follow this path',
         },
       },
       steps: {
@@ -121,14 +121,14 @@ export const localization = {
           or: 'or ',
           openInYourWallet: 'open in your wallet',
           toProveThings: 'to prove things about yourself',
-          successContinue: 'Success! You can continue.',
+          success: 'Success! You can continue.',
         },
         stepProofOOB: {
           scanOOBQR: 'Scan the OOB QR-code with your ',
           wallet: 'wallet ',
           or: 'or',
           openInWallet: 'open in wallet',
-          successContinue: 'Success! You can continue.',
+          success: 'Success! You can continue.',
         },
       },
       section: {
@@ -181,8 +181,8 @@ export const localization = {
           leave: 'LEAVE',
         },
         revocationContainer: {
-          revokingYourCred: 'Revoking your dredentials',
-          ensuringTheSafety: 'Ensure the safety of your personal information if your device is lost or stolen.',
+          revoke: 'Revoking your dredentials',
+          description: 'Ensure the safety of your personal information if your device is lost or stolen.',
           readLess: 'READ LESS',
           readMore: 'READ MORE',
         },
@@ -190,10 +190,10 @@ export const localization = {
           revoke: 'REVOKE',
         },
         startButton: {
-          haventUnlocked: "You haven't unlocked the required credentials yet.",
+          disabled: "You haven't unlocked the required credentials yet.",
         },
         useCaseContainer: {
-          usingYourCredentials: 'Using your credentials',
+          title: 'Using your credentials',
         },
         useCaseItem: {
           start: 'START',
@@ -208,15 +208,15 @@ export const localization = {
       or: 'or',
       openInWallet: 'open in wallet',
       success: 'Success! You can continue.',
-      didntReceieveAnything: "I didn't receive anything",
+      fail: "I didn't receive anything",
     },
     backButton: {
       back: 'BACK',
     },
     customUpload: {
-      uploadCustomCharacter: 'Upload custom character',
+      title: 'Upload custom character',
       upload: 'UPLOAD',
-      loadingText:
+      loading:
         'Adding new schemas and credential defenitions to the ledger. Please be patient, this can take a few minutes.',
     },
     footer: {
