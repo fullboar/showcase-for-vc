@@ -9,8 +9,8 @@ This application provides a showcase to illustrate the use cases for verifiable 
 
 ## Running 
 ### Copy env files
-Copy the files server/.env.example  and client/.env.example to server/.env  and client/.env  
-Edit the .env files to match your project needs  
+Copy the files `api/.env.example` and `web/.env.example` to `api/.env ` and `web/.env`
+Edit the `.env` files to match your project needs
   
 
 ### Option 1 - Native
@@ -21,7 +21,7 @@ These steps are executed from the root folder of the project:
   
 > yarn dev  
   
-The application will now be running at http://localhost:3000
+The application will now be running at http://localhost:3000/digital-trust/showcase
 
 ### Option 2 - Docker
 These steps assume that you have docker installed  
