@@ -1,3 +1,5 @@
+import type { PropsWithChildren } from 'react'
+
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { dropIn, standardFade } from '../FramerAnimations'
@@ -5,7 +7,7 @@ import { dropIn, standardFade } from '../FramerAnimations'
 import { SmallButton } from './SmallButton'
 import { SmallButtonText } from './SmallButtonText'
 
-export interface Props {
+export interface Props extends PropsWithChildren {
   onOk(): void
   onCancel?(): void
   okDisabled?: boolean
