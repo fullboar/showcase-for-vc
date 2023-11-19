@@ -19,11 +19,20 @@ export const localization = {
           step1: '1. Download BC Wallet on your phone',
           toDownload: 'To download, ',
           searchGovWallet: `. You can also search for BC Wallet in your phone's apps store.`,
-          step2: '2. Complete the setup',
+          step2() {
+            return (
+              <div>
+                <p className="font-semibold">{'2. Complete the setup'}</p>
+                <p className="mt-5">{'Complete the onboarding process in the app.'}</p>
+              </div>)
+          },
           haveMyWallet: 'I HAVE MY WALLET',
-          completeOnboarding: 'Complete the onboarding process in the app.',
           selectAppStore: 'select the apps store icon below',
           scanThisQR: 'scan this QR code with your phone or select the apps store icon below',
+          isMobile(isMobile: boolean) {
+            let mobileStr: string = isMobile ? this.selectAppStore : this.scanThisQR
+            return (this.toDownload + mobileStr + this.searchGovWallet)
+          },
           URL: {
             appStore: 'https://apps.apple.com/us/app/bc-wallet/id1587380443',
             playStore: 'https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet',

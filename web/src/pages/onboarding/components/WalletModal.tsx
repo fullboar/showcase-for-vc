@@ -64,11 +64,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                   <div className="mt-5">
                     <p className="font-semibold"> {localization.pages.onboarding.components.walletModal.step1}</p>
                     <p className="mt-5 mb-5">
-                      {localization.pages.onboarding.components.walletModal.toDownload}
-                      {isMobile()
-                        ? localization.pages.onboarding.components.walletModal.selectAppStore
-                        : localization.pages.onboarding.components.walletModal.scanThisQR}
-                      {localization.pages.onboarding.components.walletModal.searchGovWallet}
+                      {localization.pages.onboarding.components.walletModal.isMobile(isMobile())}
                     </p>
                     <div
                       style={{
@@ -97,10 +93,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                       </a>
                     </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">{localization.pages.onboarding.components.walletModal.step2}</p>
-                    <p className="mt-5">{localization.pages.onboarding.components.walletModal.completeOnboarding}</p>
-                  </div>
+                  {localization.pages.onboarding.components.walletModal.step2()}
                 </div>
                 {!isMobile() && (
                   <div className="mt-10 mr-10">
