@@ -31,10 +31,10 @@ These steps are executed from the root folder of the project:
 Build the client and server: 
 > docker-compose build
   
-Start the server:
+Start the server and frontend:
 > docker-compose up
 
-Shutdown the server:
+Shutdown the server and frontend:
 > docker-compose down
 
 The application will now be running at http://localhost:3000/digital-trust/showcase
