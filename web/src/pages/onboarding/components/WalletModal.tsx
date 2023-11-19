@@ -64,7 +64,9 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                   <div className="mt-5">
                     <p className="font-semibold"> {localization.pages.onboarding.components.walletModal.step1}</p>
                     <p className="mt-5 mb-5">
-                      {localization.pages.onboarding.components.walletModal.isMobile(isMobile())}
+                      {isMobile()
+                        ? localization.pages.onboarding.components.walletModal.isMobile
+                        : localization.pages.onboarding.components.walletModal.isNotMobile}
                     </p>
                     <div
                       style={{
@@ -93,7 +95,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                       </a>
                     </div>
                   </div>
-                  {localization.pages.onboarding.components.walletModal.step2()}
+                  {localization.pages.onboarding.components.walletModal.step2}
                 </div>
                 {!isMobile() && (
                   <div className="mt-10 mr-10">
@@ -104,7 +106,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
               <div className="px-4 pb-4 flex justify-end">
                 <SmallButton
                   onClick={onCompleted}
-                  text={localization.pages.onboarding.components.walletModal.haveMyWallet}
+                  text={localization.pages.onboarding.components.walletModal.button.haveMyWallet}
                 />
               </div>
             </motion.div>
