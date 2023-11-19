@@ -1,13 +1,14 @@
-FROM node:fermium as base
+FROM node:18.18
 
-WORKDIR /app
+WORKDIR /usr/src/app
+
+COPY package.json ./
+RUN yarn
+
 COPY . .
-RUN npm install -g typescript
-RUN npm install -g ts-node
-RUN yarn install
 
-WORKDIR /app/server
+RUN yarn build
 
-EXPOSE 5000
+EXPOSE 3100
 
-ENTRYPOINT [ "ts-node", "src/index.ts"]
+CMD [ "yarn", "dev"]

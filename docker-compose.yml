@@ -1,14 +1,14 @@
 version: "3.9"
 services:
   frontend:
-    image: showcase-web
+    container_name: vc-showcase-frontend
     build: 
-      context: ./
-      dockerfile: ./web/Dockerfile
+      context: ./web
+      dockerfile: Dockerfile
+    image: showcase-web
     volumes:
-      - type: bind
-        source: ./web/Caddyfile
-        target: /etc/caddy/Caddyfile
+      - ./web:/usr/src/app
+        /app/node_modules
     ports:
       - "3000:3000"
     depends_on: 
@@ -16,14 +16,18 @@ services:
     env_file:
       - ./web/.env
   backend:
-    image: showcase-api
+    container_name: vc-showcase-backend
     build: 
-      context: ./
-      dockerfile: ./api/Dockerfile
+      context: ./api
+      dockerfile: Dockerfile
+    image: showcase-api
     ports:
-      - "5000:5000"
+      - "3100:3100"
     env_file:
       - ./api/.env
+    volumes:
+      - ./api:/usr/src/app
+        /app/node_modules
   # dev:
   #   image: showcase-dev
   #   build:

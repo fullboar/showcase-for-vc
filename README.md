@@ -28,19 +28,13 @@ These steps assume that you have docker installed
   
 These steps are executed from the root folder of the project: 
   
-Build the client: 
-> docker build -t bc-wallet-demo-client . -f DockerfileClient  
-  
-Build the server:
-> docker build -t bc-wallet-demo-server . -f DockerfileServer  
+Build the client and server: 
+> docker-compose build
   
 Start the server:
-> docker run --name bc-wallet-demo-server -p5000:5000 --rm --env-file server/.env bc-wallet-demo-server  
-  
-Start the client:
-> docker run --name bc-wallet-demo-client -p3000:3000 -v \`pwd\`/Caddyfile:/etc/caddy/Caddyfile --rm --env-file client/.env bc-wallet-demo-client
+> docker-compose up
 
-The application will now be running at http://localhost:3000
+The application will now be running at http://localhost:3000/digital-trust/showcase
 
 ## Contributing
 
