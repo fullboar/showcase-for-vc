@@ -34,6 +34,9 @@ Build the client and server:
 Start the server:
 > docker-compose up
 
+Shutdown the server:
+> docker-compose down
+
 The application will now be running at http://localhost:3000/digital-trust/showcase
 
 ## Contributing
