@@ -21,7 +21,7 @@ These steps are executed from the root folder of the project:
   
 > yarn dev  
   
-The application will now be running at http://localhost:3000/
+The application will now be running at http://localhost:3000
 
 ### Option 2 - Docker
 These steps assume that you have docker installed  
