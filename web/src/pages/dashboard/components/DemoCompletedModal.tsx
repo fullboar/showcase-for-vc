@@ -88,8 +88,18 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
               </div>
             </div>
             <div className="px-4 pb-4 sm:px-6 sm:flex sm:flex-row-reverse">
-              <SmallButton onClick={action} text={localization.pages.dashboard.components.demoCompletedModal.button.finish} disabled={false} />
-              {cancel && <SmallButtonText onClick={cancel} text={localization.pages.dashboard.components.demoCompletedModal.button.cancel} disabled={false} />}
+              <SmallButton
+                onClick={action}
+                text={localization.pages.dashboard.components.demoCompletedModal.button.finish}
+                disabled={false}
+              />
+              {cancel && (
+                <SmallButtonText
+                  onClick={cancel}
+                  text={localization.pages.dashboard.components.demoCompletedModal.button.cancel}
+                  disabled={false}
+                />
+              )}
             </div>
           </motion.div>
         </div>

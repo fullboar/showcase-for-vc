@@ -102,6 +102,7 @@ export const SetupConnection: React.FC<Props> = ({
   const renderCTA = !isCompleted ? (
     <motion.div variants={fade} key="openWallet">
       <>
+        {isMobile ? <></> : <></>}
         <p>
           {localization.pages.onboarding.steps.setupConnection.scanQRCode}
           <a href={deepLink}>
