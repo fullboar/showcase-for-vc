@@ -58,9 +58,9 @@ export const StepConnection: React.FC<Props> = ({ step, connection, newConnectio
   const renderCTA = !isCompleted ? (
     <motion.div variants={fade} key="openWallet">
       <p>
-        {localization.pages.useCase.steps.stepConnection.scanQRCode +
-          isMobile +
-          localization.pages.useCase.steps.stepConnection.or}
+        {isMobile
+          ? localization.pages.useCase.steps.stepProofOOB.isMobile
+          : localization.pages.useCase.steps.stepProofOOB.isNotMobile}
         {isMobile && (
           <a onClick={handleDeepLink} className="underline underline-offset-2 mt-2">
             {localization.pages.useCase.steps.stepConnection.openInYourWallet}

@@ -81,9 +81,11 @@ export const localization = {
           wereDoneWithStep: "We're done with this step. Next, we'll explore ways you can use your credentials.",
         },
         setupConnection: {
+          isMobile: 'wallet or ',
+          isNotMobile: 'wallet',
           scanQRCode: 'Scan the QR-code with your ',
-          wallet: 'wallet',
-          or: 'or',
+          wallet: 'wallet ',
+          or: 'or ',
           openInWallet: 'open in wallet',
           alreadyHaveCredential: 'I Already Have my Credential',
           success: 'Success! You can continue.',
@@ -123,16 +125,16 @@ export const localization = {
       },
       steps: {
         stepConnection: {
-          scanQRCode: 'Scan the QR-code with your digital wallet ',
-          or: 'or ',
+          isMobile: 'Scan the QR-code with your digital wallet or',
+          isNotMobile: 'Scan the QR-code with your digital wallet',
           openInYourWallet: 'open in your wallet',
           toProveThings: 'to prove things about yourself',
           success: 'Success! You can continue.',
         },
         stepProofOOB: {
+          isMobile: 'wallet or ',
+          isNotMobile: 'wallet',
           scanOOBQR: 'Scan the OOB QR-code with your ',
-          wallet: 'wallet ',
-          or: 'or',
           openInWallet: 'open in wallet',
           success: 'Success! You can continue.',
         },
@@ -159,10 +161,6 @@ export const localization = {
           title: 'Showcase Completed!',
           description: 'Looking to leave some feedback? Take our survey and connect with us!',
           giveFeedback: 'Give feedback',
-          basedOnCodeBy: 'Based on code by ',
-          animoName: 'Animo',
-          businessIllustrations: 'Business illustrations by ',
-          storyset: 'Storyset',
           iconsMade: 'Icons made by ',
           freepik: 'Freepik',
           from: ' from ',
@@ -174,10 +172,40 @@ export const localization = {
           },
           URL: {
             submitFeedback: 'https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de',
-            animo: 'https://animo.id/',
-            storyset: 'https://storyset.com/business',
             freepik: 'https://www.freepik.com',
             flaticon: 'https://www.flaticon.com/',
+          },
+          link: {
+            animo: (
+              <>
+                <a href={'https://animo.id/'}>
+                  {'Based on code by '}
+                  <u>{'Animo'}</u>
+                </a>
+              </>
+            ),
+            storyset: (
+              <>
+                <a href={'https://storyset.com/business'}>
+                  {'Business illustrations by '}
+                  <u>{'Storyset'}</u>
+                </a>
+              </>
+            ),
+            freepikAndFlaticon: (
+              <>
+                {'Icons made by '}
+                <u>
+                  <a href={'https://www.freepik.com'} title={'Freepik'}>
+                    {'Freepik'}
+                  </a>
+                </u>
+                {' from '}
+                <a href={'https://www.flaticon.com/'} title={'https://www.flaticon.com/'}>
+                  <u>{'Flaticon.com'}</u>
+                </a>
+              </>
+            ),
           },
         },
         profileCard: {
@@ -209,9 +237,22 @@ export const localization = {
   },
   components: {
     actionCTA: {
-      acceptRequest: 'Accept the request in your ',
-      wallet: 'wallet',
-      or: 'or',
+      isMobile: (
+        <>
+          <p>
+            {'Accept the request in your '}
+            <a href="bcwallet://">{'wallet or'}</a>
+          </p>
+        </>
+      ),
+      isNotMobile: (
+        <>
+          <p>
+            {'Accept the request in your '}
+            <a href="bcwallet://">{'wallet'}</a>
+          </p>
+        </>
+      ),
       openInWallet: 'open in wallet',
       success: 'Success! You can continue.',
       fail: "I didn't receive anything",

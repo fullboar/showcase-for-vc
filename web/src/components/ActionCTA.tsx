@@ -15,9 +15,7 @@ interface Props {
 export const ActionCTA: React.FC<Props> = ({ isCompleted, onFail }) => {
   const renderCTA = !isCompleted ? (
     <motion.div variants={fade} key="openWallet">
-      <p>
-        {localization.components.actionCTA.acceptRequest}<a href="bcwallet://">{localization.components.actionCTA.wallet + isMobile && localization.components.actionCTA.or}</a>
-      </p>
+      {isMobile ? localization.components.actionCTA.isMobile : localization.components.actionCTA.isNotMobile}
       {isMobile && (
         <a href="bcwallet://" className="underline underline-offset-2 mt-2">
           {localization.components.actionCTA.openInWallet}

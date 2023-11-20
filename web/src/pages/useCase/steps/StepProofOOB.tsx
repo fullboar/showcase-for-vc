@@ -89,8 +89,9 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
       <p>
         {localization.pages.useCase.steps.stepProofOOB.scanOOBQR}
         <a href={deepLink}>
-          {localization.pages.useCase.steps.stepProofOOB.wallet + isMobile &&
-            localization.pages.useCase.steps.stepProofOOB.or}
+          {isMobile
+            ? localization.pages.useCase.steps.stepProofOOB.isMobile
+            : localization.pages.useCase.steps.stepProofOOB.isNotMobile}
         </a>
       </p>
       {isMobile && (

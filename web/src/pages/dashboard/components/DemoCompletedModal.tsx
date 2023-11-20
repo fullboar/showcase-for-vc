@@ -56,33 +56,10 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                     </a>
 
                     <br />
-                    <a href={localization.pages.dashboard.components.demoCompletedModal.URL.animo}>
-                      {localization.pages.dashboard.components.demoCompletedModal.basedOnCodeBy}
-                      <u>{localization.pages.dashboard.components.demoCompletedModal.animoName}</u>
-                    </a>
+                    {localization.pages.dashboard.components.demoCompletedModal.link.animo}
                     <br />
-                    <a href={localization.pages.dashboard.components.demoCompletedModal.URL.storyset}>
-                      {localization.pages.dashboard.components.demoCompletedModal.businessIllustrations}
-                      <u>{localization.pages.dashboard.components.demoCompletedModal.storyset}</u>
-                    </a>
-                    <div>
-                      {localization.pages.dashboard.components.demoCompletedModal.iconsMade}
-                      <u>
-                        <a
-                          href={localization.pages.dashboard.components.demoCompletedModal.URL.freepik}
-                          title={localization.pages.dashboard.components.demoCompletedModal.freepik}
-                        >
-                          {localization.pages.dashboard.components.demoCompletedModal.freepik}
-                        </a>
-                      </u>
-                      {localization.pages.dashboard.components.demoCompletedModal.from}
-                      <a
-                        href={localization.pages.dashboard.components.demoCompletedModal.URL.flaticon}
-                        title={localization.pages.dashboard.components.demoCompletedModal.flaticon}
-                      >
-                        <u>{localization.pages.dashboard.components.demoCompletedModal.flaticonCom}</u>
-                      </a>
-                    </div>
+                    {localization.pages.dashboard.components.demoCompletedModal.link.storyset}
+                    <div>{localization.pages.dashboard.components.demoCompletedModal.link.freepikAndFlaticon}</div>
                   </div>
                 </div>
               </div>
