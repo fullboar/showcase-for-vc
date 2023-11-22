@@ -60,7 +60,7 @@ export const AcceptCredential: React.FC<Props> = ({
 
   const issuedCredentialsStartCase = issuedCredentials.map((name) => startCase(name))
   const credentialsAccepted = credentials.every(
-    (cred) => issuedCredentials.includes(cred.name) || issuedCredentialsStartCase.includes(cred.name)
+    (cred) => issuedCredentials.includes(cred.name) || issuedCredentialsStartCase.includes(cred.name),
   )
 
   useEffect(() => {
@@ -118,7 +118,7 @@ export const AcceptCredential: React.FC<Props> = ({
     () => {
       if (document.visibilityState === 'visible') dispatch(fetchCredentialsByConId(connectionId))
     },
-    !credentialsAccepted ? 3000 : null
+    !credentialsAccepted ? 3000 : null,
   )
 
   const routeError = () => {

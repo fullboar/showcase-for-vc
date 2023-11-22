@@ -74,7 +74,7 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
           attributes: proofs,
           predicates: predicates,
           requestOptions: { name: step.requestOptions?.title, comment: step.requestOptions?.text },
-        })
+        }),
       )
     } else {
       dispatch(
@@ -83,7 +83,7 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
           attributes: proofs,
           predicates: predicates,
           requestOptions: { name: step.requestOptions?.title, comment: step.requestOptions?.text },
-        })
+        }),
       )
     }
   }
@@ -103,7 +103,7 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
         dispatch(fetchProofById(proof.id))
       }
     },
-    !proofReceived ? 1000 : null
+    !proofReceived ? 1000 : null,
   )
 
   // remove proof record after we're done with it
