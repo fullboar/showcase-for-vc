@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DarkModeContainer } from '../../../components/DarkModeContainer'
+import { DarkModeContainer } from './DarkModeContainer'
 
 export const NavBar: React.FC = () => {
   return (

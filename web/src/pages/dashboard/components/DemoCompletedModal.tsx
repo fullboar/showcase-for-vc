@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { standardFade, dropIn } from '../../../FramerAnimations'
+import { localization } from '../../../assets/localization'
 import { SmallButton } from '../../../components/SmallButton'
 import { SmallButtonText } from '../../../components/SmallButtonText'
 export interface Props {
@@ -9,8 +10,8 @@ export interface Props {
 }
 
 export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
-  const TITLE = 'Showcase Completed!'
-  const DESCRIPTION = 'Looking to leave some feedback? Take our survey and connect with us!'
+  const TITLE = localization.pages.dashboard.components.demoCompletedModal.title
+  const DESCRIPTION = localization.pages.dashboard.components.demoCompletedModal.description
 
   return (
     <AnimatePresence>
@@ -42,7 +43,7 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                     <p>{DESCRIPTION}</p>
 
                     <a
-                      href="https://submit.digital.gov.bc.ca/app/form/submit?f=d61da710-acc3-46fc-b692-111cf6e348de"
+                      href={localization.pages.dashboard.components.demoCompletedModal.URL.submitFeedback}
                       target="_blank"
                     >
                       <motion.button
@@ -50,37 +51,32 @@ export const DemoCompletedModal: React.FC<Props> = ({ action, cancel }) => {
                         className={`bg-primaryBtn dark:bg-dark-primaryBtn text-primaryBtnText dark:text-dark-primaryBtnText font-semibold my-5 py-2.5 px-10 rounded transition duration-300 ease-in-out transform text-sm shadow-sm`}
                         data-cy="standard-button"
                       >
-                        {'Give feedback'}
+                        {localization.pages.dashboard.components.demoCompletedModal.giveFeedback}
                       </motion.button>
                     </a>
 
                     <br />
-                    <a href="https://animo.id/">
-                      Based on code by <u>Animo</u>
-                    </a>
+                    {localization.pages.dashboard.components.demoCompletedModal.link.animo}
                     <br />
-                    <a href="https://storyset.com/business">
-                      Business illustrations by <u>Storyset</u>
-                    </a>
-                    <div>
-                      Icons made by{' '}
-                      <u>
-                        <a href="https://www.freepik.com" title="Freepik">
-                          Freepik
-                        </a>
-                      </u>{' '}
-                      from{' '}
-                      <a href="https://www.flaticon.com/" title="Flaticon">
-                        <u>Flaticon.com</u>
-                      </a>
-                    </div>
+                    {localization.pages.dashboard.components.demoCompletedModal.link.storyset}
+                    <div>{localization.pages.dashboard.components.demoCompletedModal.link.freepikAndFlaticon}</div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="px-4 pb-4 sm:px-6 sm:flex sm:flex-row-reverse">
-              <SmallButton onClick={action} text={'FINISH'} disabled={false} />
-              {cancel && <SmallButtonText onClick={cancel} text={'CANCEL'} disabled={false} />}
+              <SmallButton
+                onClick={action}
+                text={localization.pages.dashboard.components.demoCompletedModal.button.finish}
+                disabled={false}
+              />
+              {cancel && (
+                <SmallButtonText
+                  onClick={cancel}
+                  text={localization.pages.dashboard.components.demoCompletedModal.button.cancel}
+                  disabled={false}
+                />
+              )}
             </div>
           </motion.div>
         </div>

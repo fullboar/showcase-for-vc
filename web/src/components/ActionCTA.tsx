@@ -5,6 +5,7 @@ import { isMobile } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeDelay } from '../FramerAnimations'
+import { localization } from '../assets/localization'
 
 interface Props {
   isCompleted: boolean
@@ -14,19 +15,17 @@ interface Props {
 export const ActionCTA: React.FC<Props> = ({ isCompleted, onFail }) => {
   const renderCTA = !isCompleted ? (
     <motion.div variants={fade} key="openWallet">
-      <p>
-        Accept the request in your <a href="bcwallet://">wallet {isMobile && 'or'}</a>
-      </p>
+      {isMobile ? localization.components.actionCTA.isMobile : localization.components.actionCTA.isNotMobile}
       {isMobile && (
         <a href="bcwallet://" className="underline underline-offset-2 mt-2">
-          open in wallet
+          {localization.components.actionCTA.openInWallet}
           <FiExternalLink className="inline pb-1" />
         </a>
       )}
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>Success! You can continue.</p>
+      <p>{localization.components.actionCTA.success}</p>
     </motion.div>
   )
 
@@ -35,7 +34,7 @@ export const ActionCTA: React.FC<Props> = ({ isCompleted, onFail }) => {
       {renderCTA}
       <motion.p variants={fadeDelay} className={`text-sm mt-2  ${!isCompleted ? 'visible' : 'invisible'}`}>
         <u className="m-auto cursor-pointer" onClick={onFail}>
-          I didn't receive anything
+          {localization.components.actionCTA.fail}
         </u>
       </motion.p>
     </div>
