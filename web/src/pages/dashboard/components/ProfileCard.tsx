@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import React, { useState } from 'react'
 
 import { fade } from '../../../FramerAnimations'
+import { localization } from '../../../assets/localization'
 import { Modal } from '../../../components/Modal'
 import { SmallButtonText } from '../../../components/SmallButtonText'
 import { useAppDispatch } from '../../../hooks/hooks'
@@ -17,9 +18,8 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
   const [isChangeModalOpen, setIsChangeModalOpen] = useState(false)
   const dispatch = useAppDispatch()
 
-  const MODAL_TITLE = 'This will reset your dashboard.'
-  const MODAL_DESCRIPTION = `Your current credentials will become invalid. Please make sure you've completed all the use cases
-  before you do this.`
+  const MODAL_TITLE = localization.pages.dashboard.components.profileCard.modalTitle
+  const MODAL_DESCRIPTION = localization.pages.dashboard.components.profileCard.modalDescription
 
   const reset = () => {
     dispatch({ type: 'demo/RESET' })
@@ -45,7 +45,11 @@ export const ProfileCard: React.FC<Props> = ({ currentCharacter }) => {
             currentCharacter?.onboarding.find((screen) => screen.screenId === 'PICK_CHARACTER')?.text}
         </p>
         <div className="flex flex-1 items-end justify-end mt-2">
-          <SmallButtonText text="LEAVE" onClick={() => setIsChangeModalOpen(true)} disabled={false} />
+          <SmallButtonText
+            text={localization.pages.dashboard.components.profileCard.leave}
+            onClick={() => setIsChangeModalOpen(true)}
+            disabled={false}
+          />
         </div>
 
         {isChangeModalOpen && (

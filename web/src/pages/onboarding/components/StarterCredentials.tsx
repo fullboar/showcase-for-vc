@@ -5,6 +5,7 @@ import { startCase } from 'lodash'
 import React from 'react'
 
 import { fadeX } from '../../../FramerAnimations'
+import { localization } from '../../../assets/localization'
 import { StateIndicator } from '../../../components/StateIndicator'
 import { useCredentials } from '../../../slices/credentials/credentialsSelectors'
 import { prependApiUrl } from '../../../utils/Url'
@@ -24,7 +25,7 @@ export const StarterCredentials: React.FC<Props> = ({ credentials }) => {
       className="flex flex-col bg-background dark:bg-dark-background m-4 px-4 py-2 w-auto md:w-96 h-auto rounded-lg shadow"
     >
       <div className="flex-1-1 title mb-2">
-        <h1 className="font-semibold">Starter credentials</h1>
+        <h1 className="font-semibold"> {localization.pages.onboarding.components.starterCredentials.title}</h1>
         <hr className="text-separator dark:text-dark-separator" />
       </div>
       {credentials.map((item) => {
