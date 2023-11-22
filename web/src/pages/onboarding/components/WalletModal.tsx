@@ -4,11 +4,11 @@ import { standardFade, dropIn } from '../../../FramerAnimations'
 import { baseUrl } from '../../../api/BaseUrl'
 import appStore from '../../../assets/light/app-store-badge.svg'
 import playStore from '../../../assets/light/google-play-badge.png'
+import { localization } from '../../../assets/localization'
 import { SmallButton } from '../../../components/SmallButton'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const QRCode = require('qrcode.react')
-
 export interface Wallet {
   id: number
   name: string
@@ -62,13 +62,11 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
               <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div className="px-2 md:px-6 pt-2 sm:mt-4 sm:pb-4">
                   <div className="mt-5">
-                    <p className="font-semibold">1. Download BC Wallet on your phone</p>
+                    <p className="font-semibold"> {localization.pages.onboarding.components.walletModal.step1}</p>
                     <p className="mt-5 mb-5">
-                      To download,{' '}
                       {isMobile()
-                        ? 'select the apps store icon below'
-                        : 'scan this QR code with your phone or select the apps store icon below'}
-                      . You can also search for BC Wallet in your phone's apps store.
+                        ? localization.pages.onboarding.components.walletModal.isMobile
+                        : localization.pages.onboarding.components.walletModal.isNotMobile}
                     </p>
                     <div
                       style={{
@@ -77,7 +75,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                         marginBottom: '10px',
                       }}
                     >
-                      <a href="https://apps.apple.com/us/app/bc-wallet/id1587380443" target="_blank">
+                      <a href={localization.pages.onboarding.components.walletModal.URL.appStore} target="_blank">
                         <img
                           src={appStore}
                           style={
@@ -88,7 +86,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                           alt="app store"
                         />
                       </a>
-                      <a href="https://play.google.com/store/apps/details?id=ca.bc.gov.BCWallet" target="_blank">
+                      <a href={localization.pages.onboarding.components.walletModal.URL.playStore} target="_blank">
                         <img
                           src={playStore}
                           style={isMobile() ? { width: '200px' } : { height: '50px' }}
@@ -97,10 +95,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                       </a>
                     </div>
                   </div>
-                  <div>
-                    <p className="font-semibold">2. Complete the setup</p>
-                    <p className="mt-5">Complete the onboarding process in the app.</p>
-                  </div>
+                  {localization.pages.onboarding.components.walletModal.step2}
                 </div>
                 {!isMobile() && (
                   <div className="mt-10 mr-10">
@@ -109,7 +104,10 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                 )}
               </div>
               <div className="px-4 pb-4 flex justify-end">
-                <SmallButton onClick={onCompleted} text={'I HAVE MY WALLET'} />
+                <SmallButton
+                  onClick={onCompleted}
+                  text={localization.pages.onboarding.components.walletModal.button.haveMyWallet}
+                />
               </div>
             </motion.div>
           </div>

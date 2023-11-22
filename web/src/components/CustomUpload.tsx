@@ -2,6 +2,7 @@ import type { CustomCharacter } from '../slices/types'
 
 import { useEffect, useState } from 'react'
 
+import { localization } from '../assets/localization'
 import { useAppDispatch } from '../hooks/hooks'
 import { useCharacters } from '../slices/characters/charactersSelectors'
 import { uploadCharacter, setUploadingStatus } from '../slices/characters/charactersSlice'
@@ -51,12 +52,12 @@ export const CustomUpload: React.FC = () => {
   return (
     <>
       <Modal
-        title="Upload custom character"
+        title={localization.components.customUpload.title}
         onOk={onSubmitHandler}
-        okText="UPLOAD"
+        okText={localization.components.customUpload.upload}
         okDisabled={!uploadFile}
         loading={isUploading}
-        loadingText="Adding new schemas and credential defenitions to the ledger. Please be patient, this can take a few minutes."
+        loadingText={localization.components.customUpload.loading}
         onCancel={close}
         description=""
       >
