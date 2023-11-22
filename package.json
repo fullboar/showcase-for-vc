@@ -18,6 +18,9 @@
     "api"
   ],
   "scripts": {
+    "client": "cd web && yarn start",
+    "server": "cd api && yarn dev",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
     "test": "yarn run cypress open",
     "test:lint": "eslint --ignore-path .gitignore . --color",
     "test:format": "prettier '**/*.+(js|json|ts|md|yml|yaml)'",
