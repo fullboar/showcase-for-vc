@@ -7,6 +7,7 @@ import { FiLogOut } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 
 import { fadeDelay, fadeExit } from '../../FramerAnimations'
+import { localization } from '../../assets/localization'
 import { Modal } from '../../components/Modal'
 import { useAppDispatch } from '../../hooks/hooks'
 import { clearConnection } from '../../slices/connection/connectionSlice'
@@ -185,8 +186,8 @@ export const OnboardingContainer: React.FC<Props> = ({
   const style = isMobile ? { minHeight: '85vh' } : { minHeight: '680px', height: '75vh', maxHeight: '940px' }
 
   const [leaveModal, setLeaveModal] = useState(false)
-  const LEAVE_MODAL_TITLE = 'Are you sure you want to leave?'
-  const LEAVE_MODAL_DESCRIPTION = `You're progress will be lost and you'll be redirected to the homepage.`
+  const LEAVE_MODAL_TITLE = localization.pages.onboarding.onboardingContainer.leaveModalTitle
+  const LEAVE_MODAL_DESCRIPTION = localization.pages.onboarding.onboardingContainer.leaveModalDescription
   const showLeaveModal = () => setLeaveModal(true)
   const closeLeave = () => setLeaveModal(false)
 

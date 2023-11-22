@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React from 'react'
 
 import { characterFade, fadeExit } from '../../../FramerAnimations'
+import { localization } from '../../../assets/localization'
 import { prependApiUrl } from '../../../utils/Url'
 
 export interface Props {
@@ -30,7 +31,9 @@ export const CharacterContent: React.FC<Props> = ({ character }) => {
           </motion.div>
         </AnimatePresence>
       ) : (
-        <p className="flex h-full items-center justify-center">SELECT YOUR CHARACTER</p>
+        <p className="flex h-full items-center justify-center">
+          {localization.pages.onboarding.components.characterContent.select}
+        </p>
       )}
     </motion.div>
   )

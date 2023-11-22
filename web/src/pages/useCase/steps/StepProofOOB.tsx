@@ -6,6 +6,7 @@ import { isMobile, isBrowser } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeExit, fadeX } from '../../../FramerAnimations'
+import { localization } from '../../../assets/localization'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useInterval } from '../../../hooks/useInterval'
 import { createProofOOB, fetchProofById } from '../../../slices/proof/proofThunks'
@@ -86,18 +87,23 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
   const renderCTA = !proofReceived ? (
     <motion.div variants={fade} key="openWallet">
       <p>
-        Scan the OOB QR-code with your <a href={deepLink}>wallet {isMobile && 'or'} </a>
+        {localization.pages.useCase.steps.stepProofOOB.scanOOBQR}
+        <a href={deepLink}>
+          {isMobile
+            ? localization.pages.useCase.steps.stepProofOOB.isMobile
+            : localization.pages.useCase.steps.stepProofOOB.isNotMobile}
+        </a>
       </p>
       {isMobile && (
         <a href={deepLink} className="underline underline-offset-2 mt-2">
-          open in wallet
+          {localization.pages.useCase.steps.stepProofOOB.openInWallet}
           <FiExternalLink className="inline pb-1" />
         </a>
       )}
     </motion.div>
   ) : (
     <motion.div variants={fade} key="ctaCompleted">
-      <p>Success! You can continue.</p>
+      <p>{localization.pages.useCase.steps.stepProofOOB.success}</p>
     </motion.div>
   )
 

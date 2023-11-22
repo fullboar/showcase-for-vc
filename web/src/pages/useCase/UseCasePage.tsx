@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import { page } from '../../FramerAnimations'
+import { localization } from '../../assets/localization'
 import { Loader } from '../../components/Loader'
 import { Modal } from '../../components/Modal'
 import { useAppDispatch } from '../../hooks/hooks'
@@ -36,7 +37,7 @@ export const UseCasePage: React.FC = () => {
   const [currentUseCase, setCurrentUseCase] = useState<CustomUseCase>()
 
   const navigate = useNavigate()
-  useTitle(`${currentUseCase?.name ?? 'Use case'} | BC Wallet Self-Sovereign Identity Demo`)
+  useTitle(`${currentUseCase?.name ?? 'Use case'}${localization.pages.useCase.title}`)
 
   useEffect(() => {
     if (currentCharacter && slug) {
@@ -65,8 +66,8 @@ export const UseCasePage: React.FC = () => {
     }
   }, [currentUseCase, sectionCount])
 
-  const ERROR_TITLE = `Woops...`
-  const ERROR_DESCRIPTION = `You haven't picked your character yet. Please restart the demo.`
+  const ERROR_TITLE = localization.pages.useCase.useCasePage.errorTitle
+  const ERROR_DESCRIPTION = localization.pages.useCase.useCasePage.errorDescription
   const routeError = () => {
     navigate(`${basePath}/demo`)
   }

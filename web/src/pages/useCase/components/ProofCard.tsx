@@ -3,6 +3,7 @@ import type { CredentialRequest } from '../../../slices/types'
 import { startCase } from 'lodash'
 import React from 'react'
 
+import { localization } from '../../../assets/localization'
 import { prependApiUrl } from '../../../utils/Url'
 
 export interface Props {
@@ -28,7 +29,7 @@ export const ProofCard: React.FC<Props> = ({ requestedItems }) => {
   return (
     <div className="flex flex-col bg-inset dark:bg-dark-inset text-insetText dark:text-dark-insetText p-4 mb-4 h-auto rounded-lg shadow">
       <div className="flex-1-1 title">
-        <h1 className="font-semibold">You'll need to present</h1>
+        <h1 className="font-semibold">{localization.pages.useCase.components.proofCard.title}</h1>
         <hr className="text-separator dark:text-dark-separator" />
       </div>
       {renderRequestedItems}

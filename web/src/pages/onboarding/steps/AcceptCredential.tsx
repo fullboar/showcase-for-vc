@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { fade, fadeX } from '../../../FramerAnimations'
 import { getOrCreateCredDefId } from '../../../api/CredentialApi'
+import { localization } from '../../../assets/localization'
 import { ActionCTA } from '../../../components/ActionCTA'
 import { Loader } from '../../../components/Loader'
 import { Modal } from '../../../components/Modal'
@@ -89,9 +90,7 @@ export const AcceptCredential: React.FC<Props> = ({
 
   const handleCredentialTimeout = () => {
     if (!isIssueCredentialLoading || !error) return
-    setErrorMsg(
-      `The request timed out. We're sorry, but you're going to have to restart the demo. If this issue persists, please contact us.`
-    )
+    setErrorMsg(localization.pages.onboarding.steps.acceptCredential.errorMsg.requestTimedOut)
     setIsRejectedModalOpen(true)
   }
 
@@ -107,7 +106,9 @@ export const AcceptCredential: React.FC<Props> = ({
     if (error) {
       const msg = error.message ?? 'Issue Credential Error'
       setErrorMsg(
-        `The request has failed with the following error: ${msg}. We're sorry, but you're going to have to restart. If this issue persists, please contact us. `
+        localization.pages.onboarding.steps.acceptCredential.errorMsg.requestFailedWithErr +
+          msg +
+          localization.pages.onboarding.steps.acceptCredential.errorMsg.wereSorryRestart
       )
       setIsRejectedModalOpen(true)
     }
