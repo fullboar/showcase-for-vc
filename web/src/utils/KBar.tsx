@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { KBarProvider, KBarPortal, KBarPositioner, KBarAnimator, KBarSearch } from 'kbar'
-import { useEffect, useState } from 'react'
+import { type PropsWithChildren, useEffect, useState } from 'react'
 import Confetti from 'react-confetti'
 import { useNavigate } from 'react-router-dom'
 
@@ -19,7 +19,7 @@ import { fetchWallets } from '../slices/wallets/walletsThunks'
 import { basePath } from './BasePath'
 import { RenderResults } from './RenderResults'
 
-export const KBar: React.FC = ({ children }) => {
+export const KBar: React.FC<PropsWithChildren> = ({ children }) => {
   const dispatch = useAppDispatch()
   const { demoCompleted } = usePreferences()
   const [confettiPieces, setConfettiPieces] = useState(0)

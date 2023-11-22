@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { isMobile } from 'react-device-detect'
 import { FiLogOut } from 'react-icons/fi'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { fadeExit } from '../../../FramerAnimations'
 import { SmallButton } from '../../../components/SmallButton'
@@ -22,10 +22,9 @@ export interface Props {
   requestedCredentials?: CredentialRequest[]
 }
 
-export const StartContainer: React.FC<Props> = ({ entity, requestedCredentials, step, characterName }) => {
+export const StartContainer: React.FC<Props> = ({ entity, requestedCredentials, step }) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const { slug } = useParams()
 
   const style = isMobile ? { minHeight: '85vh' } : { maxHeight: '940px' }
 
