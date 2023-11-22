@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -12,8 +12,9 @@ import { KBar } from './utils/KBar'
 const { store, persistor } = Redux
 const SMode = StrictMode as any
 const PGate = PersistGate as any
+const root = createRoot(document.getElementById('root') as HTMLElement)
 
-render(
+root.render(
   <SMode>
     <Provider store={store}>
       <PGate loading={null} persistor={persistor}>
@@ -24,7 +25,5 @@ render(
         </BrowserRouter>
       </PGate>
     </Provider>
-  </SMode>,
-
-  document.getElementById('root')
+  </SMode>
 )

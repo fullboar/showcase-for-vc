@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
+import { QRCodeSVG } from 'qrcode.react'
 
 import { standardFade, dropIn } from '../../../FramerAnimations'
 import { baseUrl } from '../../../api/BaseUrl'
@@ -7,8 +8,6 @@ import playStore from '../../../assets/light/google-play-badge.png'
 import { localization } from '../../../assets/localization'
 import { SmallButton } from '../../../components/SmallButton'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const QRCode = require('qrcode.react')
 export interface Wallet {
   id: number
   name: string
@@ -99,7 +98,7 @@ export const WalletModal: React.FC<Props> = ({ isWalletModalOpen, setIsWalletMod
                 </div>
                 {!isMobile() && (
                   <div className="mt-10 mr-10">
-                    <QRCode value={`${baseUrl}/qr`} size={125} />
+                    <QRCodeSVG value={`${baseUrl}/qr`} size={125} />
                   </div>
                 )}
               </div>
