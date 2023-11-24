@@ -1972,13 +1972,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/object-schema@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@humanwhocodes/object-schema@npm:2.0.1"
-  checksum: 24929487b1ed48795d2f08346a0116cc5ee4634848bce64161fb947109352c562310fd159fc64dda0e8b853307f5794605191a9547f7341158559ca3c8262a45
-  languageName: node
-  linkType: hard
-
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -4817,6 +4810,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bundle-name@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "bundle-name@npm:3.0.0"
+  dependencies:
+    run-applescript: ^5.0.0
+  checksum: edf2b1fbe6096ed32e7566947ace2ea937ee427391744d7510a2880c4b9a5b3543d3f6c551236a29e5c87d3195f8e2912516290e638c15bcbede7b37cc375615
+  languageName: node
+  linkType: hard
+
 "busboy@npm:^1.0.0":
   version: 1.6.0
   resolution: "busboy@npm:1.6.0"
@@ -5140,7 +5142,7 @@ __metadata:
     kbar: 0.1.0-beta.43
     postcss: ^8.4.31
     postcss-loader: ^7.3.3
-    prettier: 2.8.8
+    prettier: ^3.0.3
     qrcode.react: ^3.1.0
     react: ^18.2.0
     react-confetti: ^6.1.0
@@ -8456,6 +8458,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"human-signals@npm:^4.3.0":
+  version: 4.3.1
+  resolution: "human-signals@npm:4.3.1"
+  checksum: 6f12958df3f21b6fdaf02d90896c271df00636a31e2bbea05bddf817a35c66b38a6fdac5863e2df85bd52f34958997f1f50350ff97249e1dff8452865d5235d1
+  languageName: node
+  linkType: hard
+
 "hyphenate-style-name@npm:^1.0.0":
   version: 1.0.4
   resolution: "hyphenate-style-name@npm:1.0.4"
@@ -10946,6 +10955,15 @@ __metadata:
   dependencies:
     path-key: ^3.0.0
   checksum: 5374c0cea4b0bbfdfae62da7bbdf1e1558d338335f4cacf2515c282ff358ff27b2ecb91ffa5330a8b14390ac66a1e146e10700440c1ab868208430f56b5f4d23
+  languageName: node
+  linkType: hard
+
+"npm-run-path@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "npm-run-path@npm:5.1.0"
+  dependencies:
+    path-key: ^4.0.0
+  checksum: dc184eb5ec239d6a2b990b43236845332ef12f4e0beaa9701de724aa797fe40b6bbd0157fb7639d24d3ab13f5d5cf22d223a19c6300846b8126f335f788bee66
   languageName: node
   linkType: hard
 
@@ -13778,7 +13796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"signal-exit@npm:^3.0.2, signal-exit@npm:^3.0.3":
+"signal-exit@npm:^3.0.2, signal-exit@npm:^3.0.3, signal-exit@npm:^3.0.7":
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
@@ -14248,6 +14266,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strip-final-newline@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "strip-final-newline@npm:3.0.0"
+  checksum: 23ee263adfa2070cd0f23d1ac14e2ed2f000c9b44229aec9c799f1367ec001478469560abefd00c5c99ee6f0b31c137d53ec6029c53e9f32a93804e18c201050
+  languageName: node
+  linkType: hard
+
 "strip-json-comments@npm:^3.1.1":
   version: 3.1.1
   resolution: "strip-json-comments@npm:3.1.1"
@@ -14389,6 +14414,16 @@ __metadata:
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
   checksum: 6e8fc7e1486b8b54bea91199d9535bb72f10842e40c79e882fc94fb7b14b89866adf2fd79efa5ebb5b658bc07fb459ccce5ac0e99ef3d72f474e74aaf284029d
+  languageName: node
+  linkType: hard
+
+"synckit@npm:^0.8.5":
+  version: 0.8.5
+  resolution: "synckit@npm:0.8.5"
+  dependencies:
+    "@pkgr/utils": ^2.3.1
+    tslib: ^2.5.0
+  checksum: 8a9560e5d8f3d94dc3cf5f7b9c83490ffa30d320093560a37b88f59483040771fd1750e76b9939abfbb1b5a23fd6dfbae77f6b338abffe7cae7329cd9b9bb86b
   languageName: node
   linkType: hard
 
@@ -14596,6 +14631,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"titleize@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "titleize@npm:3.0.0"
+  checksum: 71fbbeabbfb36ccd840559f67f21e356e1d03da2915b32d2ae1a60ddcc13a124be2739f696d2feb884983441d159a18649e8d956648d591bdad35c430a6b6d28
+  languageName: node
+  linkType: hard
+
 "tmp@npm:~0.2.1":
   version: 0.2.1
   resolution: "tmp@npm:0.2.1"
@@ -14765,7 +14807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
+"tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
