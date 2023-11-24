@@ -32,7 +32,7 @@ jobs:
       shell: bash
       run: |
         corepack enable && \
-        yarn set version berry && \
+        yarn set version 3.6 && \
         yarn install --immutable
 
     # - name: Run tests and linting
