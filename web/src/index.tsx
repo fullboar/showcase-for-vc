@@ -25,5 +25,5 @@ root.render(
         </BrowserRouter>
       </PGate>
     </Provider>
-  </SMode>
+  </SMode>,
 )
