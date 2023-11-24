@@ -108,7 +108,7 @@ export const AcceptCredential: React.FC<Props> = ({
       setErrorMsg(
         localization.pages.onboarding.steps.acceptCredential.errorMsg.requestFailedWithErr +
           msg +
-          localization.pages.onboarding.steps.acceptCredential.errorMsg.wereSorryRestart
+          localization.pages.onboarding.steps.acceptCredential.errorMsg.wereSorryRestart,
       )
       setIsRejectedModalOpen(true)
     }
