@@ -33,7 +33,9 @@ export interface Props {
   connection: ConnectionState
   stepCount: number
   sectionCount: number
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   credentials: any[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   proof?: any
   proofUrl?: string
 }

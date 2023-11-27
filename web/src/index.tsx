@@ -10,8 +10,8 @@ import * as Redux from './store/configureStore'
 import { KBar } from './utils/KBar'
 
 const { store, persistor } = Redux
-const SMode = StrictMode as any
-const PGate = PersistGate as any
+const SMode = StrictMode
+const PGate = PersistGate
 const root = createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
