@@ -145,7 +145,7 @@ export const OnboardingContainer: React.FC<Props> = ({
         <SetupCompleted key={progress} title={title} text={text} characterName={currentCharacter?.name ?? 'Unknown'} />
       )
     } else {
-      return <BasicSlide title={title} text={text} />
+      return <BasicSlide key={progress} title={title} text={text} />
     }
   }
 
