@@ -25,7 +25,7 @@ export const QRCode: React.FC<Props> = ({ invitationUrl, connectionState, overla
 
   const renderQRCode = invitationUrl && (
     <div className={`relative ${overlay ? 'bg-none' : 'rounded-lg bg-lightGrey p-4 m-auto'}`}>
-      <QRCodeSVG value={invitationUrl} size={165} />
+      <QRCodeSVG value={invitationUrl} size={180} />
       {isCompleted && (
         <div className="absolute inset-0 flex justify-center items-center bg-grey bg-opacity-60 rounded-lg">
           <CheckMark height="64" colorCircle="grey" />

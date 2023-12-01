@@ -164,6 +164,7 @@ export const person: CustomCharacter = {
               {
                 icon: '/public/person/scenarios/store/icon-card.png',
                 name: 'Person',
+                properties: ['picture'],
                 predicates: {
                   name: 'birthdate_dateint',
                   type: '<=',
