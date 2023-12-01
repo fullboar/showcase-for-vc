@@ -61,8 +61,14 @@ export const MainSection: React.FC = () => {
     requestOptions: { name: 'Bell Island Beer & Wine', comment: 'TEMP Expiry date check' },
   }
 
-  // Update state
-  useEffect(() => {}, [id])
+  // Initial state, delete old connections and start new.
+  useEffect(() => {
+    dispatch(clearConnection())
+    dispatch(clearCredentials())
+    dispatch(clearProof())
+    dispatch(createInvitation('QR Verifier Demo'))
+    dispatch(createProof(proofData))
+  }, [])
 
   // Check for new connection every 1s
   useInterval(
