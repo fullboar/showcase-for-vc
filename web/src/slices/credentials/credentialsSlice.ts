@@ -47,6 +47,7 @@ const credentialSlice = createSlice({
         const results = action.payload.results
         let revocationObjects: RevocationRecord[] = []
         if (results?.length) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           results.forEach((cred: any) => {
             if (isCredIssued(cred.state)) {
               const credDefParts = cred.credential_definition_id.split(':')
@@ -58,10 +59,12 @@ const credentialSlice = createSlice({
           })
           revocationObjects = results
             .filter(
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               (item: any) =>
                 item.revoc_reg_id !== undefined &&
                 !state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id),
             )
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             .map((item: any) => {
               return {
                 revocationRegId: item.revoc_reg_id,

@@ -12,7 +12,7 @@ import { UseCaseItem } from './UseCaseItem'
 
 export interface Props {
   currentCharacter: CustomCharacter
-  issuedCredentials: any[]
+  issuedCredentials: string[]
   completedUseCaseSlugs: string[]
 }
 
