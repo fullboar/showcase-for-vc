@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.build.json",
 
-  "include": ["web", "api", "cypress", "./.eslintrc.js"],
+  "include": ["web", "api", "verifier", "cypress", "./.eslintrc.js"],
   "exclude": ["node_modules", "build"]
 }

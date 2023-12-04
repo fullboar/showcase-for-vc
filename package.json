@@ -15,9 +15,11 @@
   },
   "workspaces": [
     "web",
+    "verifier",
     "api"
   ],
   "scripts": {
+    "verifier": "cd verifier && yarn start",
     "client": "cd web && yarn start",
     "server": "cd api && yarn dev",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
