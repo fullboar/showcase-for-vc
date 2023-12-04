@@ -14,15 +14,13 @@
     "type": "git"
   },
   "workspaces": [
-    "web",
-    "verifier",
-    "api"
+    "packages/*"
   ],
   "scripts": {
-    "verifier": "cd verifier && yarn start",
-    "client": "cd web && yarn start",
-    "server": "cd api && yarn dev",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "verifier": "yarn workspace verifier start",
+    "client": "yarn workspace web start",
+    "server": "yarn workspace api dev",
+    "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "test": "yarn run cypress open",
     "test:lint": "eslint --ignore-path .gitignore . --color",
     "test:format": "prettier '**/*.+(js|json|ts|md|yml|yaml)'",

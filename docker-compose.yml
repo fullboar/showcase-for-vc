@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend
     env_file:
-      - ./web/.env
+      - ./packages/web/.env
     volumes:
       - ./:/w
   backend:
@@ -19,6 +19,6 @@ services:
     ports:
       - '3100:3100'
     env_file:
-      - ./api/.env
+      - ./packages/api/.env
     volumes:
       - ./:/w

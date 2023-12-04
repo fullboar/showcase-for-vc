@@ -17,6 +17,6 @@
     "jsx": "react-jsx",
     "skipLibCheck": true
   },
-  "include": ["web", "verifier", "api"],
+  "include": ["packages/*"],
   "exclude": ["node_modules", "build"]
 }
