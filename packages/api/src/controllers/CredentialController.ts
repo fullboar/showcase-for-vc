@@ -3,6 +3,16 @@ import { Service } from 'typedi'
 
 import { Credential } from '../content/types'
 import { tractionRequest } from '../utils/traction'
+
+interface credentialParams {
+  connection_id: string
+  cred_def_id?: string
+  credential_proposal?: {
+    '@type'?: string
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
+    attributes?: any[]
+  }
+}
 @JsonController('/credentials')
 @Service()
 export class CredentialController {
@@ -68,7 +78,7 @@ export class CredentialController {
   }
 
   @Post('/offerCredential')
-  public async offerCredential(@Body() params: any) {
+  public async offerCredential(@Body() params: credentialParams) {
     const response = await tractionRequest.post(`/issue-credential/send`, params)
     return response.data
   }
