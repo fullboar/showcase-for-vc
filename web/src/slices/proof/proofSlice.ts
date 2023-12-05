@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 import { createProof, createProofOOB, fetchProofById } from './proofThunks'
 
 interface ProofState {
-  proof?: ProofState
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  proof?: any
   proofUrl?: string
   isLoading: boolean
 }
