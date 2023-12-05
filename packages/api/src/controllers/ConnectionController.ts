@@ -3,6 +3,11 @@ import { Service } from 'typedi'
 
 import { tractionRequest } from '../utils/traction'
 
+interface connectionParams {
+  my_label?: string
+  image_url?: string
+}
+
 @JsonController('/connections')
 @Service()
 export class ConnectionController {
@@ -13,7 +18,7 @@ export class ConnectionController {
   }
 
   @Post('/createInvite')
-  public async createConnectionInvite(@Body() params: any) {
+  public async createConnectionInvite(@Body() params: connectionParams) {
     const response = await tractionRequest.post(`/connections/create-invitation`, params, {
       params: { auto_accept: true },
     })
