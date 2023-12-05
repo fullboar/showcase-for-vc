@@ -9,10 +9,8 @@ import './index.css'
 import * as Redux from './store/configureStore'
 
 const { store, persistor } = Redux
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-const SMode = StrictMode as any
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-const PGate = PersistGate as any
+const SMode = StrictMode
+const PGate = PersistGate
 
 render(
   <SMode>
