@@ -20,6 +20,17 @@ interface CredentialState {
   error: SerializedError | undefined
 }
 
+interface CredentialItem {
+  state: string
+  credential_definition_id: string
+}
+
+interface RevocationRecordItem {
+  revoc_reg_id: string
+  connection_id: string
+  revocation_id: string
+}
+
 const initialState: CredentialState = {
   issuedCredentials: [],
   revokableCredentials: [],
@@ -47,7 +58,7 @@ const credentialSlice = createSlice({
         const results = action.payload.results
         let revocationObjects: RevocationRecord[] = []
         if (results?.length) {
-          results.forEach((cred: any) => {
+          results.forEach((cred: CredentialItem) => {
             if (isCredIssued(cred.state)) {
               const credDefParts = cred.credential_definition_id.split(':')
               const credName = credDefParts[credDefParts.length - 1]
@@ -58,11 +69,11 @@ const credentialSlice = createSlice({
           })
           revocationObjects = results
             .filter(
-              (item: any) =>
+              (item: RevocationRecordItem) =>
                 item.revoc_reg_id !== undefined &&
                 !state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id),
             )
-            .map((item: any) => {
+            .map((item: RevocationRecordItem) => {
               return {
                 revocationRegId: item.revoc_reg_id,
                 connectionId: item.connection_id,
