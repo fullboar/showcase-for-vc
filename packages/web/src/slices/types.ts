@@ -12,8 +12,10 @@ export interface Connection {
 
 export interface ProofRequestData {
   connectionId: string
-  attributes?: ProofRequestData[]
-  predicates?: ProofRequestData[]
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  attributes?: any[]
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
+  predicates?: any[]
   nonRevoked?: { to: number; from?: number }
   requestOptions?: RequestOptions
 }
