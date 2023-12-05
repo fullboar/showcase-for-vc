@@ -113,7 +113,7 @@ export const MainSection: React.FC = () => {
   }, [proofReceived])
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       {isLandscape ? (
         <motion.div variants={fade} className="flex h-full flex-row">
           <div className="flex items-start w-1/2 flex-col">
