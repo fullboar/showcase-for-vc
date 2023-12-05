@@ -9,8 +9,8 @@ import './index.css'
 import * as Redux from './store/configureStore'
 
 const { store, persistor } = Redux
-const SMode = StrictMode as any
-const PGate = PersistGate as any
+const SMode = StrictMode
+const PGate = PersistGate
 
 render(
   <SMode>
