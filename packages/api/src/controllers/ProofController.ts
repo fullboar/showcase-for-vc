@@ -3,6 +3,20 @@ import { Service } from 'typedi'
 
 import { tractionRequest } from '../utils/traction'
 
+interface proofParams {
+  connection_id: string
+  comment?: string
+  proof_request?: {
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    requested_attributes?: any
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+    requested_predicates?: any
+    version?: string
+    name?: string
+  }
+  auto_verify?: boolean
+}
+
 @JsonController('/proofs')
 @Service()
 export class ProofController {
@@ -41,7 +55,7 @@ export class ProofController {
   }
 
   @Post('/requestProof')
-  public async requestProof(@Body() params: any) {
+  public async requestProof(@Body() params: proofParams) {
     const proofRecord = (await tractionRequest.post('/present-proof/send-request', params)).data
     return proofRecord
   }
