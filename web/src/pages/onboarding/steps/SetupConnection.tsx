@@ -157,6 +157,7 @@ export const SetupConnection: React.FC<Props> = ({
             <Button
               text={localization.pages.onboarding.steps.setupConnection.alreadyHaveCredential}
               onClick={skipIssuance}
+              secondary={true}
             ></Button>
           </div>
         </div>

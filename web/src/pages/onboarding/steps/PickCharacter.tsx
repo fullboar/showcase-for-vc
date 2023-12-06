@@ -50,7 +50,7 @@ export const PickCharacter: React.FC<Props> = ({ currentCharacter, characters, t
       >
         <motion.img
           whileHover={{ scale: 1.05 }}
-          className={`m-auto h-16 w-16 p-2 sm:h-20 sm:w-20 md:h-24 md:w-24 md:p-4 lg:h-36 lg:w-36 lg:p-8 rounded-full bg-background dark:bg-dark-background my-6 shadow ${
+          className={`m-auto h-16 w-16 p-2 sm:h-20 sm:w-20 md:h-24 md:w-24 md:p-4 lg:h-36 lg:w-36 lg:p-0 rounded-full bg-background dark:bg-dark-background my-6 shadow ${
             currentCharacter?.type === char.type ? cardStyleSelected : cardStyleUnselected
           }`}
           src={prependApiUrl(char.image)}

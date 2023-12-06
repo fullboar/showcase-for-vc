@@ -52,7 +52,7 @@ module.exports = {
         accent: palette.darkYellow,
         background: palette.darkGrey,
         text: palette.offWhite,
-        inset: palette.darkBlue,
+        inset: palette.darkCyan,
         insetText: palette.white,
         modal: palette.darkGrey,
         modalText: palette.white,
