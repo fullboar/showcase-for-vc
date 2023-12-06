@@ -1,8 +1,9 @@
 export const localization = {
   pages: {
     landingPage: {
-      title: 'BC Wallet Showcase',
-      description: "Explore how you can use BC Wallet to prove things about yourself, in a way that's safe and secure.",
+      title: 'PEI Wallet Showcase',
+      description:
+        "Explore how you can use PEI Wallet to prove things about yourself, in a way that's safe and secure.",
       URL: {
         digitalTrust: 'https://digital.gov.bc.ca/digital-trust/',
       },
@@ -13,14 +14,14 @@ export const localization = {
       },
     },
     onboarding: {
-      title: 'Get Started | BC Wallet Self-Sovereign Identity Demo',
+      title: 'Get Started | PEI Wallet Self-Sovereign Identity Demo',
       components: {
         walletModal: {
-          step1: '1. Download BC Wallet on your phone',
+          step1: '1. Download PEI Wallet on your phone',
           isMobile:
-            "To download, select the apps store icon below. You can also search for BC Wallet in your phone's apps store.",
+            "To download, select the apps store icon below. You can also search for PEI Wallet in your phone's apps store.",
           isNotMobile:
-            "To download, scan this QR code with your phone or select the apps store icon below. You can also search for BC Wallet in your phone's apps store.",
+            "To download, scan this QR code with your phone or select the apps store icon below. You can also search for PEI Wallet in your phone's apps store.",
           step2: (
             <>
               <p className="font-semibold">{'2. Complete the setup'}</p>
@@ -98,7 +99,7 @@ export const localization = {
       },
     },
     useCase: {
-      title: ' | BC Wallet Self-Sovereign Identity Demo',
+      title: ' | PEI Wallet Self-Sovereign Identity Demo',
       components: {
         connectionCard: {
           title: "You're interacting with",
@@ -153,7 +154,7 @@ export const localization = {
       },
     },
     dashboard: {
-      title: 'Dashboard | BC Wallet Self-Sovereign Identity Demo',
+      title: 'Dashboard | PEI Wallet Self-Sovereign Identity Demo',
       errorTitle: 'Woops...',
       errorDescription: "That's not gone well. Please restart the demo.",
       components: {
@@ -267,8 +268,8 @@ export const localization = {
         'Adding new schemas and credential defenitions to the ledger. Please be patient, this can take a few minutes.',
     },
     footer: {
-      mailTo: 'ditrust@gov.bc.ca',
-      copyright: 'Copyright © 2022 Government of British Columbia',
+      mailTo: 'ditrust@gov.pei.ca',
+      copyright: 'Copyright © 2022 Government of Prince Edward Island',
     },
   },
 }

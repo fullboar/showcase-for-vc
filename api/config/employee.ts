@@ -4,15 +4,15 @@ import { getDateInt } from '../src/utils/dateint'
 
 export const employee: CustomCharacter = {
   name: 'Alice',
-  type: 'Person',
-  image: '/public/person/businesswoman-outline.svg',
+  type: 'Employee',
+  image: '/public/employee/businesswoman-outline.svg',
   revocationInfo: [
     {
-      credentialName: 'Student Card',
-      credentialIcon: '/public/person/icon-person.svg',
+      credentialName: 'Employee Card',
+      credentialIcon: '/public/employee/icon-employee.svg',
       title: 'Revoke your Digital Access Credential',
       description:
-        'Best BC College allows you to revoke your Student Card "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
+        'MyGovPEI allows you to revoke your Employee Card "if":\n• there is a problem with your credential.\n• your device was lost or stolen and you want to secure your personal information.',
     },
   ],
   progressBar: [
@@ -69,8 +69,8 @@ export const employee: CustomCharacter = {
       screenId: 'CONNECT',
       title: 'Connect with MyGovPEI',
       text: 'Imagine yourself as an employee of Prince Edward Island, logged into the MyGovPEI portal. They want to provide you with a Digital Access Credential. You can easily use your PEI Wallet to scan the QR code provided on the website.',
-      image: '/public/person/onboarding-connect-light.svg',
-      issuer_name: 'MyGovNL',
+      image: '/public/employee/onboarding-connect-light.svg',
+      issuer_name: 'MyGovPEI',
     },
     {
       screenId: 'ACCEPT_CREDENTIAL',
@@ -81,7 +81,7 @@ export const employee: CustomCharacter = {
         {
           name: 'employee_card',
           version: '1.0',
-          icon: '/public/person/icon-person.svg',
+          icon: '/public/employee/icon-employee.svg',
           attributes: [
             {
               name: 'given_names',
@@ -132,14 +132,14 @@ export const employee: CustomCharacter = {
           screenId: 'START',
           title: 'Getting started in the office',
           text: "Meet Alice (that's you in this demo!) who can utilize her Digital Access Credential at a government office building. In this example, you will simply inform the Concierge at the Jones Building that you are and active employee, without disclosing any personal details.",
-          image: '/public/person/useCases/store/card-school.svg',
+          image: '/public/employee/useCases/store/card-school.svg',
         },
         {
           screenId: 'CONNECTION',
           title: "Start proving you're an employee",
           text: "Picture yourself as Alice, at the main entrance to the Jones Building. You're ready to get your work day started, you're looking forward to an early start, but there's a requirement to prove you're and active employee. To begin, simply scan the QR code shown below.",
-          image: '/public/person/useCases/store/cool-clothes-no-overlay.png',
-          verifier: { name: 'Jones Building', icon: '/public/person/useCases/store/logo-university.png' },
+          image: '/public/employee/useCases/store/cool-clothes-no-overlay.png',
+          verifier: { name: 'Jones Building', icon: '/public/employee/useCases/store/logo-university.png' },
         },
         {
           screenId: 'PROOF',
@@ -150,7 +150,7 @@ export const employee: CustomCharacter = {
             text: 'Jones Building requires some proof of employment.',
             requestedCredentials: [
               {
-                icon: '/public/person/useCases/school/icon-university-card.png',
+                icon: '/public/employee/useCases/school/icon-university-card.png',
                 name: 'employee_card',
                 predicates: {
                   name: 'expiry_date_dateint',
@@ -164,8 +164,8 @@ export const employee: CustomCharacter = {
         {
           screenId: 'STEP_END',
           title: "You're done!",
-          text: 'By demonstrating that you are an active employee, the Concierge at the Jones Building has usher you into your office. This process was quick, involved minimal information disclosure, and allowed the Concierge to establish trust effortlessly and automatically based on the information you provided.',
-          image: '/public/person/big-success.svg',
+          text: 'By demonstrating that you are an active employee, the Concierge at the Jones Building has ushered you into your office. This process was quick, involved minimal information disclosure, and allowed the Concierge to establish trust effortlessly and automatically based on the information you provided.',
+          image: '/public/employee/big-success.svg',
         },
       ],
     },
