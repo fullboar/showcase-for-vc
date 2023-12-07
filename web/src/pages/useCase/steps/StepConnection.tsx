@@ -2,7 +2,7 @@ import type { ConnectionState } from '../../../slices/connection/connectionSlice
 import type { UseCaseScreen } from '../../../slices/types'
 
 import { motion } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { isMobile } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
@@ -10,6 +10,7 @@ import { fade, fadeX } from '../../../FramerAnimations'
 import { localization } from '../../../assets/localization'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
+import { useEffectOnce } from '../../../hooks/useEffectOnce'
 import { useInterval } from '../../../hooks/useInterval'
 import { clearConnection, setDeepLink } from '../../../slices/connection/connectionSlice'
 import { createInvitation, fetchConnectionById } from '../../../slices/connection/connectionThunks'
@@ -31,11 +32,9 @@ export const StepConnection: React.FC<Props> = ({ step, connection }) => {
   const isCompleted = isConnected(state as string)
   const deepLink = `bcwallet://aries_connection_invitation?${invitationUrl?.split('?')[1]}`
 
-  useEffect(() => {
-    dispatch(clearConnection())
-    dispatch(clearProof())
-    dispatch(createInvitation(step.verifier?.name ?? 'Unknown'))
-  }, [])
+  useEffectOnce(() => {
+    if (!isCompleted || newConnection) dispatch(createInvitation(step.verifier?.name ?? 'Unknown'))
+  })
 
   useInterval(
     () => {

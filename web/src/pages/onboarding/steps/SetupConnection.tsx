@@ -8,6 +8,7 @@ import { localization } from '../../../assets/localization'
 import { Button } from '../../../components/Button'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
+import { useEffectOnce } from '../../../hooks/useEffectOnce'
 import { useInterval } from '../../../hooks/useInterval'
 import { clearConnection, setDeepLink } from '../../../slices/connection/connectionSlice'
 import { createInvitation, fetchConnectionById } from '../../../slices/connection/connectionThunks'
@@ -53,13 +54,13 @@ export const SetupConnection: React.FC<Props> = ({
 
   const isCompleted = isConnected(connectionState as string)
 
-  useEffect(() => {
+  useEffectOnce(() => {
     if (!isCompleted || newConnection) {
       dispatch(clearConnection())
       dispatch(createInvitation(issuerName))
       dispatch(clearCredentials())
     }
-  }, [])
+  })
 
   useEffect(() => {
     if (isCompleted && onConnectionComplete) {
