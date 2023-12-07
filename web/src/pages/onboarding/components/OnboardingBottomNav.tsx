@@ -9,6 +9,7 @@ export interface Props {
   onboardingStep: string
   addOnboardingStep(): void
   removeOnboardingStep(): void
+  removeTwoOnboardingStep(): void
   forwardDisabled: boolean
   backDisabled: boolean
   onboardingCompleted(): void
@@ -18,6 +19,7 @@ export const OnboardingBottomNav: React.FC<Props> = ({
   onboardingStep,
   addOnboardingStep,
   removeOnboardingStep,
+  removeTwoOnboardingStep,
   forwardDisabled,
   backDisabled,
   onboardingCompleted,
@@ -44,7 +46,11 @@ export const OnboardingBottomNav: React.FC<Props> = ({
       className="flex w-full justify-between mb-4 h-8 self-end select-none"
     >
       <div className="flex self-center">
-        <BackButton onClick={removeOnboardingStep} disabled={backDisabled} data-cy="prev-onboarding-step" />
+        <BackButton
+          onClick={isCompleted ? removeTwoOnboardingStep : removeOnboardingStep}
+          disabled={backDisabled}
+          data-cy="prev-onboarding-step"
+        />
       </div>
       <AnimatePresence mode="wait">
         <motion.div variants={fadeExit} initial="hidden" animate="show" exit="exit" data-cy="next-onboarding-step">
