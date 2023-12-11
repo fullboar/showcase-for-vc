@@ -32,7 +32,7 @@ export class ProofController {
   }
 
   @Post('/requestProofOOB')
-  public async requestProofOOB(@Body() params: any) {
+  public async requestProofOOB(@Body() params: proofParams) {
     const proofRecord = (await tractionRequest.post('/present-proof/create-request', params)).data
 
     const template = {
