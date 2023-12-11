@@ -1,21 +1,8 @@
 import { Body, Delete, Get, JsonController, Param, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
+import { proofParams } from '../content/types'
 import { tractionRequest } from '../utils/traction'
-
-interface proofParams {
-  connection_id: string
-  comment?: string
-  proof_request?: {
-    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-    requested_attributes?: any
-    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
-    requested_predicates?: any
-    version?: string
-    name?: string
-  }
-  auto_verify?: boolean
-}
 
 @JsonController('/proofs')
 @Service()

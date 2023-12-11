@@ -1,18 +1,9 @@
 import { Body, Get, JsonController, Param, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { Credential } from '../content/types'
+import { Credential, credentialParams } from '../content/types'
 import { tractionRequest } from '../utils/traction'
 
-interface credentialParams {
-  connection_id: string
-  cred_def_id?: string
-  credential_proposal?: {
-    '@type'?: string
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
-    attributes?: any[]
-  }
-}
 @JsonController('/credentials')
 @Service()
 export class CredentialController {
@@ -36,7 +27,7 @@ export class CredentialController {
         params: { schema_name: credential.name, schema_version: credential.version },
       })
     ).data
-    
+
     let schema_id = ''
     if (schemas.schema_ids.length <= 0) {
       const schemaAttrs = credential.attributes.map((attr) => attr.name)
@@ -57,7 +48,7 @@ export class CredentialController {
 
     const credDefs = (await tractionRequest.get(`/credential-definitions/created`, { params: { schema_id } })).data
     let cred_def_id = ''
-    
+
     if (credDefs.credential_definition_ids.length <= 0) {
       const resp = (
         await tractionRequest.post(`/credential-definitions`, {

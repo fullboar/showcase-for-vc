@@ -1,12 +1,8 @@
 import { Body, Get, JsonController, Param, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
+import { connectionParams } from '../content/types'
 import { tractionRequest } from '../utils/traction'
-
-interface connectionParams {
-  my_label?: string
-  image_url?: string
-}
 
 @JsonController('/connections')
 @Service()
