@@ -68,7 +68,7 @@ export class ProofController {
   }
 
   @Post('/proofs/:proofId/accept-presentation')
-  public async acceptProof(@Body() params: any, @Param('proofId') proofId: string) {
+  public async acceptProof(@Body() @Param('proofId') proofId: string) {
     const proofAcceptanceRecord = (
       await tractionRequest.post(`/present-proof/records/${proofId}/verify-presentation`, undefined)
     ).data
