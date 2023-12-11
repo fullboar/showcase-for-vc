@@ -18,6 +18,7 @@ import { StepInfo } from '../components/StepInfo'
 const QR = require('qrcode.react')
 
 export interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   proof?: any
   proofUrl?: string
   step: UseCaseScreen

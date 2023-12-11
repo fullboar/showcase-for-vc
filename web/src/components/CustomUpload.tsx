@@ -12,10 +12,12 @@ import { Modal } from './Modal'
 
 export const CustomUpload: React.FC = () => {
   const dispatch = useAppDispatch()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [uploadFile, setUploadFile] = useState<any>()
   const { isUploading } = useCharacters()
   const [uploadPressed, setUploadPressed] = useState<boolean>(false)
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onChangeHandler = (event: any) => {
     setUploadFile(event.target.files[0])
   }
@@ -23,6 +25,7 @@ export const CustomUpload: React.FC = () => {
   const onSubmitHandler = () => {
     setUploadPressed(true)
     const reader = new FileReader()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     reader.onload = (evt: any) => {
       const uploadedChar: CustomCharacter = JSON.parse(evt.target.result)
       dispatch(

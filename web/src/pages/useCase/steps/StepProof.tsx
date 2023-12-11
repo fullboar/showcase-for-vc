@@ -16,6 +16,7 @@ import { ProofAttributesCard } from '../components/ProofAttributesCard'
 import { StepInfo } from '../components/StepInfo'
 
 export interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   proof?: any
   step: UseCaseScreen
   characterName?: string

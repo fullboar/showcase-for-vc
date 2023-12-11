@@ -29,6 +29,7 @@ const characterSlice = createSlice({
   reducers: {
     uploadCharacter: (state, action: PayloadAction<{ character: CustomCharacter; callback?: () => void }>) => {
       state.uploadedCharacter = action.payload.character
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const promises: Promise<any>[] = []
       state.isUploading = true
       action.payload.character.onboarding

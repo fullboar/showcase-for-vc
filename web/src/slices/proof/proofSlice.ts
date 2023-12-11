@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { createProof, createProofOOB, fetchProofById } from './proofThunks'
 
 interface ProofState {
-  proof?: any
+  proof?: ProofState
   proofUrl?: string
   isLoading: boolean
 }
