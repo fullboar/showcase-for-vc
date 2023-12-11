@@ -46,7 +46,7 @@ export const sendTractionRequest = async (
   method: string,
   path: string,
   data?: any,
-  config?: AxiosRequestConfig<any>
+  config?: AxiosRequestConfig
 ) => {
   const headers = { ...config?.headers, Authorization: `Bearer ${agentKey}` }
   const timeout = config?.timeout ?? 80000
@@ -68,9 +68,9 @@ export const sendTractionRequest = async (
  * Traction API request methods (CRUD)
  */
 export const tractionRequest = {
-  post: (url: string, data: any, config?: AxiosRequestConfig<any>) => sendTractionRequest('post', url, data, config),
-  get: (url: string, config?: AxiosRequestConfig<any>) => sendTractionRequest('get', url, undefined, config),
-  delete: (url: string, config?: AxiosRequestConfig<any>) => sendTractionRequest('delete', url, undefined, config),
+  post: (url: string, data: any, config?: AxiosRequestConfig) => sendTractionRequest('post', url, data, config),
+  get: (url: string, config?: AxiosRequestConfig) => sendTractionRequest('get', url, undefined, config),
+  delete: (url: string, config?: AxiosRequestConfig) => sendTractionRequest('delete', url, undefined, config),
 }
 
 /**
