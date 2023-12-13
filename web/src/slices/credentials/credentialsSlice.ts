@@ -63,7 +63,7 @@ const credentialSlice = createSlice({
               const credDefParts = cred.credential_definition_id.split(':')
               const credName = credDefParts[credDefParts.length - 1]
               if (!state.issuedCredentials.includes(credName)) {
-                state.issuedCredentials.push(credDefParts[credDefParts.length - 1])
+                state.issuedCredentials.push(credName)
               }
             }
           })
