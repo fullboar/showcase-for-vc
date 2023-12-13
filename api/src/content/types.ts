@@ -134,12 +134,12 @@ export interface Wallet {
   ledgerImage?: string
 }
 
-export interface connectionParams {
+export interface ConnectionParams {
   my_label?: string
   image_url?: string
 }
 
-export interface credentialParams {
+export interface CredentialParams {
   connection_id?: string
   cred_def_id?: string
   revocation_registry_size?: number
@@ -156,7 +156,7 @@ export interface credentialParams {
   }
 }
 
-export interface proofParams {
+export interface ProofParams {
   connection_id: string
   comment?: string
   proof_request?: {

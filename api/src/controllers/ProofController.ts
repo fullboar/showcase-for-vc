@@ -1,7 +1,7 @@
 import { Body, Delete, Get, JsonController, Param, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { proofParams } from '../content/types'
+import { ProofParams } from '../content/types'
 import { tractionRequest } from '../utils/traction'
 
 @JsonController('/proofs')
@@ -19,7 +19,7 @@ export class ProofController {
   }
 
   @Post('/requestProofOOB')
-  public async requestProofOOB(@Body() params: proofParams) {
+  public async requestProofOOB(@Body() params: ProofParams) {
     const proofRecord = (await tractionRequest.post('/present-proof/create-request', params)).data
 
     const template = {
@@ -42,7 +42,7 @@ export class ProofController {
   }
 
   @Post('/requestProof')
-  public async requestProof(@Body() params: proofParams) {
+  public async requestProof(@Body() params: ProofParams) {
     const proofRecord = (await tractionRequest.post('/present-proof/send-request', params)).data
     return proofRecord
   }

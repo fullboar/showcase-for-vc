@@ -1,7 +1,7 @@
 import { Body, Get, JsonController, Param, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { connectionParams } from '../content/types'
+import { ConnectionParams } from '../content/types'
 import { tractionRequest } from '../utils/traction'
 
 @JsonController('/connections')
@@ -14,7 +14,7 @@ export class ConnectionController {
   }
 
   @Post('/createInvite')
-  public async createConnectionInvite(@Body() params: connectionParams) {
+  public async createConnectionInvite(@Body() params: ConnectionParams) {
     const response = await tractionRequest.post(`/connections/create-invitation`, params, {
       params: { auto_accept: true },
     })

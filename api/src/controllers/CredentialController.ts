@@ -1,7 +1,7 @@
 import { Body, Get, JsonController, Param, Post } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { Credential, credentialParams } from '../content/types'
+import { Credential, CredentialParams } from '../content/types'
 import { tractionRequest } from '../utils/traction'
 
 @JsonController('/credentials')
@@ -69,7 +69,7 @@ export class CredentialController {
   }
 
   @Post('/offerCredential')
-  public async offerCredential(@Body() params: credentialParams) {
+  public async offerCredential(@Body() params: CredentialParams) {
     const response = await tractionRequest.post(`/issue-credential/send`, params)
     return response.data
   }
