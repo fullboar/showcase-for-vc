@@ -76,6 +76,7 @@ export const OnboardingContainer: React.FC<Props> = ({
     removeOnboardingProgress(dispatch, onboardingStep, currentCharacter)
   }
 
+  // Used on Setup Complete page. Jump back two slides when skipping the 'Credential receieved' verification
   const jumpPrevOnboardingPage = () => {
     removeOnboardingProgress(dispatch, onboardingStep, currentCharacter, 2)
   }

@@ -28,6 +28,7 @@ export const OnboardingBottomNav: React.FC<Props> = ({
   const isCompleted = onboardingStep === 'SETUP_COMPLETED'
 
   useEffect(() => {
+    // If isCompleted, back button goes back 2 slides, skipping the 'Credential received' verification
     if (isCompleted) {
       setLabel('FINISH')
     } else if (onboardingStep === 'CHOOSE_WALLET') {
