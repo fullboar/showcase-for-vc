@@ -33,7 +33,7 @@ export const StepConnection: React.FC<Props> = ({ step, connection }) => {
   const deepLink = `bcwallet://aries_connection_invitation?${invitationUrl?.split('?')[1]}`
 
   useEffectOnce(() => {
-    if (!isCompleted || newConnection) dispatch(createInvitation(step.verifier?.name ?? 'Unknown'))
+    if (!isCompleted) dispatch(createInvitation(step.verifier?.name ?? 'Unknown'))
   })
 
   useInterval(
