@@ -11,8 +11,9 @@ import { localization } from '../../../assets/localization'
 import { QRCode } from '../../../components/QRCode'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useInterval } from '../../../hooks/useInterval'
-import { setDeepLink } from '../../../slices/connection/connectionSlice'
+import { clearConnection, setDeepLink } from '../../../slices/connection/connectionSlice'
 import { createInvitation, fetchConnectionById } from '../../../slices/connection/connectionThunks'
+import { clearProof } from '../../../slices/proof/proofSlice'
 import { nextStep } from '../../../slices/useCases/useCasesSlice'
 import { isConnected } from '../../../utils/Helpers'
 import { prependApiUrl } from '../../../utils/Url'
@@ -24,14 +25,16 @@ export interface Props {
   newConnection?: boolean
 }
 
-export const StepConnection: React.FC<Props> = ({ step, connection, newConnection }) => {
+export const StepConnection: React.FC<Props> = ({ step, connection }) => {
   const dispatch = useAppDispatch()
   const { id, state, invitationUrl } = connection
   const isCompleted = isConnected(state as string)
   const deepLink = `bcwallet://aries_connection_invitation?${invitationUrl?.split('?')[1]}`
 
   useEffect(() => {
-    if (!isCompleted || newConnection) dispatch(createInvitation(step.verifier?.name ?? 'Unknown'))
+    dispatch(clearConnection())
+    dispatch(clearProof())
+    dispatch(createInvitation(step.verifier?.name ?? 'Unknown'))
   }, [])
 
   useInterval(

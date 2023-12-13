@@ -8,6 +8,7 @@ import { ActionCTA } from '../../../components/ActionCTA'
 import { useAppDispatch } from '../../../hooks/hooks'
 import { useInterval } from '../../../hooks/useInterval'
 import { useConnection } from '../../../slices/connection/connectionSelectors'
+import { clearProof } from '../../../slices/proof/proofSlice'
 import { createProof, deleteProofById, fetchProofById, createDeepProof } from '../../../slices/proof/proofThunks'
 import { FailedRequestModal } from '../../onboarding/components/FailedRequestModal'
 import { ProofAttributesCard } from '../components/ProofAttributesCard'
@@ -92,9 +93,12 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
   useEffect(() => {
     if (!proof) {
       createProofRequest()
+    } else {
+      dispatch(clearProof())
+      createProofRequest()
     }
     return () => {
-      dispatch({ type: 'clearProof' })
+      dispatch(clearProof())
     }
   }, [])
 

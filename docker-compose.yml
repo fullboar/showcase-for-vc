@@ -12,6 +12,18 @@ services:
       - ./web/.env
     volumes:
       - ./:/w
+  verifier:
+    image: node:16.18-slim
+    command: ['yarn', 'start']
+    working_dir: /w/verifier
+    ports:
+    - '3001:3001'
+    depends_on:
+    - backend
+    env_file:
+    - ./verifier/.env
+    volumes:
+    - ./:/w
   backend:
     image: node:16.18-slim
     command: ['yarn', 'run', 'dev']
