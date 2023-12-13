@@ -10,20 +10,18 @@ import * as Redux from './store/configureStore'
 import { KBar } from './utils/KBar'
 
 const { store, persistor } = Redux
-const SMode = StrictMode
-const PGate = PersistGate
 const root = createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
-  <SMode>
+  <StrictMode>
     <Provider store={store}>
-      <PGate loading={null} persistor={persistor}>
+      <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <KBar>
             <App />
           </KBar>
         </BrowserRouter>
-      </PGate>
+      </PersistGate>
     </Provider>
-  </SMode>,
+  </StrictMode>,
 )

@@ -9,19 +9,17 @@ import './index.css'
 import * as Redux from './store/configureStore'
 
 const { store, persistor } = Redux
-const SMode = StrictMode
-const PGate = PersistGate
 
 render(
-  <SMode>
+  <StrictMode>
     <Provider store={store}>
-      <PGate loading={null} persistor={persistor}>
+      <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </PGate>
+      </PersistGate>
     </Provider>
-  </SMode>,
+  </StrictMode>,
 
   document.getElementById('root'),
 )
