@@ -28,7 +28,6 @@ export const OnboardingBottomNav: React.FC<Props> = ({
   const isCompleted = onboardingStep === 'SETUP_COMPLETED'
 
   useEffect(() => {
-    // If isCompleted, back button goes back 2 slides, skipping the 'Credential received' verification
     if (isCompleted) {
       setLabel('FINISH')
     } else if (onboardingStep === 'CHOOSE_WALLET') {
@@ -47,6 +46,7 @@ export const OnboardingBottomNav: React.FC<Props> = ({
       className="flex w-full justify-between mb-4 h-8 self-end select-none"
     >
       <div className="flex self-center">
+        {/* If isCompleted, back button goes back 2 slides, skipping the 'Credential received' verification */}
         <BackButton
           onClick={isCompleted ? removeTwoOnboardingStep : removeOnboardingStep}
           disabled={backDisabled}
