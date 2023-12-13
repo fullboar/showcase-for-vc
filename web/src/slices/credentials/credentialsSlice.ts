@@ -56,31 +56,27 @@ const credentialSlice = createSlice({
       .addCase(fetchCredentialsByConId.fulfilled, (state, action) => {
         state.isLoading = false
         const results: (CredentialItem | RevocationRecordItem)[] = action.payload.results
-        if (results?.length) {
-          results
-            .filter((cred): cred is CredentialItem => 'state' in cred && isCredIssued(cred.state))
-            .forEach((cred) => {
-              const credDefParts = cred.credential_definition_id.split(':')
-              const credName = credDefParts[credDefParts.length - 1]
-              if (!state.issuedCredentials.includes(credName)) {
-                state.issuedCredentials.push(credName)
-              }
-            })
-          results
-            .filter((item): item is RevocationRecordItem => 'revoc_reg_id' in item)
-            .forEach((item) => {
-              const containsRev = state.revokableCredentials
-                .map((rev) => rev.revocationRegId)
-                .includes(item.revoc_reg_id)
-              if (!containsRev) {
-                state.revokableCredentials.push({
-                  revocationRegId: item.revoc_reg_id,
-                  connectionId: item.connection_id,
-                  credRevocationId: item.revocation_id,
-                })
-              }
-            })
-        }
+        results
+          .filter((cred): cred is CredentialItem => 'state' in cred && isCredIssued(cred.state))
+          .forEach((cred) => {
+            const credDefParts = cred.credential_definition_id.split(':')
+            const credName = credDefParts[credDefParts.length - 1]
+            if (!state.issuedCredentials.includes(credName)) {
+              state.issuedCredentials.push(credName)
+            }
+          })
+        results
+          .filter((item): item is RevocationRecordItem => 'revoc_reg_id' in item)
+          .forEach((item) => {
+            const containsRev = state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id)
+            if (!containsRev) {
+              state.revokableCredentials.push({
+                revocationRegId: item.revoc_reg_id,
+                connectionId: item.connection_id,
+                credRevocationId: item.revocation_id,
+              })
+            }
+          })
       })
       .addCase(issueCredential.rejected, (state, action) => {
         state.isIssueCredentialLoading = false
