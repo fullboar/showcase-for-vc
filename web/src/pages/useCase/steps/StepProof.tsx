@@ -14,7 +14,6 @@ import { ProofAttributesCard } from '../components/ProofAttributesCard'
 import { StepInfo } from '../components/StepInfo'
 
 export interface Props {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   proof?: any
   step: UseCaseScreen
   characterName?: string
@@ -37,9 +36,7 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
   const { isDeepLink } = useConnection()
 
   const createProofRequest = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const proofs: any = []
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const predicates: any = []
 
     requestedCredentials?.forEach((item) => {

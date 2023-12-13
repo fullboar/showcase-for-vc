@@ -12,7 +12,6 @@ import { prependApiUrl } from '../../../utils/Url'
 export interface Props {
   title: string
   data: CredentialData
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   credential: any
 }
 

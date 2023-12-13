@@ -151,7 +151,6 @@ export interface CredentialParams {
   schema_version?: string | number
   credential_proposal?: {
     '@type'?: string
-    /* eslint-disable  @typescript-eslint/no-explicit-any */
     attributes?: any[]
   }
 }
@@ -160,9 +159,7 @@ export interface ProofParams {
   connection_id: string
   comment?: string
   proof_request?: {
-    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     requested_attributes?: any
-    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     requested_predicates?: any
     version?: string
     name?: string
