@@ -55,11 +55,11 @@ const credentialSlice = createSlice({
       })
       .addCase(fetchCredentialsByConId.fulfilled, (state, action) => {
         state.isLoading = false
-        const results = action.payload.results
+        const results: (CredentialItem | RevocationRecordItem)[] = action.payload.results
         if (results?.length) {
           results
-            .filter((cred: CredentialItem) => isCredIssued(cred.state))
-            .forEach((cred: CredentialItem) => {
+            .filter((cred): cred is CredentialItem => 'state' in cred && isCredIssued(cred.state))
+            .forEach((cred) => {
               const credDefParts = cred.credential_definition_id.split(':')
               const credName = credDefParts[credDefParts.length - 1]
               if (!state.issuedCredentials.includes(credName)) {
@@ -67,8 +67,8 @@ const credentialSlice = createSlice({
               }
             })
           results
-            .filter((item: RevocationRecordItem) => item.revoc_reg_id !== undefined)
-            .forEach((item: RevocationRecordItem) => {
+            .filter((item): item is RevocationRecordItem => 'revoc_reg_id' in item)
+            .forEach((item) => {
               const containsRev = state.revokableCredentials
                 .map((rev) => rev.revocationRegId)
                 .includes(item.revoc_reg_id)
