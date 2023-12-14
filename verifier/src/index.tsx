@@ -9,21 +9,17 @@ import './index.css'
 import * as Redux from './store/configureStore'
 
 const { store, persistor } = Redux
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-const SMode = StrictMode as any
-/* eslint-disable  @typescript-eslint/no-explicit-any */
-const PGate = PersistGate as any
 
 render(
-  <SMode>
+  <StrictMode>
     <Provider store={store}>
-      <PGate loading={null} persistor={persistor}>
+      <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </PGate>
+      </PersistGate>
     </Provider>
-  </SMode>,
+  </StrictMode>,
 
   document.getElementById('root'),
 )

@@ -49,7 +49,6 @@ export const StepperItems = [
 ]
 
 export const addOnboardingProgress = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dispatch: Dispatch<any>,
   onboardingStep: string,
   currentCharacter?: CustomCharacter,
@@ -70,7 +69,6 @@ export const addOnboardingProgress = (
 }
 
 export const removeOnboardingProgress = (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   dispatch: Dispatch<any>,
   onboardingStep: string,
   currentCharacter?: CustomCharacter,

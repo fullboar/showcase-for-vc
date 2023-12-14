@@ -133,3 +133,36 @@ export interface Wallet {
   android: string
   ledgerImage?: string
 }
+
+export interface ConnectionParams {
+  my_label?: string
+  image_url?: string
+}
+
+export interface CredentialParams {
+  connection_id?: string
+  cred_def_id?: string
+  revocation_registry_size?: number
+  schema_id?: string
+  support_revocation?: boolean
+  tag?: string
+  attributes?: string[]
+  schema_name?: string
+  schema_version?: string | number
+  credential_proposal?: {
+    '@type'?: string
+    attributes?: any[]
+  }
+}
+
+export interface ProofParams {
+  connection_id: string
+  comment?: string
+  proof_request?: {
+    requested_attributes?: any
+    requested_predicates?: any
+    version?: string
+    name?: string
+  }
+  auto_verify?: boolean
+}

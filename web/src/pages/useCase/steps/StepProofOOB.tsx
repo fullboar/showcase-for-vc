@@ -18,7 +18,6 @@ import { StepInfo } from '../components/StepInfo'
 const QR = require('qrcode.react')
 
 export interface Props {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   proof?: any
   proofUrl?: string
   step: UseCaseScreen
@@ -31,9 +30,7 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
   const proofReceived = (proof?.state as string) === 'presentation_received' || (proof?.state as string) === 'verified'
 
   const createProofRequest = () => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const proofs: any = []
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const predicates: any = []
 
     requestedCredentials?.forEach((item) => {

@@ -13,7 +13,6 @@ import { prependApiUrl } from '../../../utils/Url'
 export interface Props {
   entityName: string
   requestedCredentials: CredentialRequest[]
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   proof: any
   proofReceived: boolean
 }

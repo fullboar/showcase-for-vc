@@ -12,8 +12,8 @@ export interface Connection {
 
 export interface ProofRequestData {
   connectionId: string
-  attributes?: ProofRequestData[]
-  predicates?: ProofRequestData[]
+  attributes?: any[]
+  predicates?: any[]
   nonRevoked?: { to: number; from?: number }
   requestOptions?: RequestOptions
 }

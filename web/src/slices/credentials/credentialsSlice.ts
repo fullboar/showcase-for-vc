@@ -20,6 +20,17 @@ interface CredentialState {
   error: SerializedError | undefined
 }
 
+interface CredentialItem {
+  state: string
+  credential_definition_id: string
+}
+
+interface RevocationRecordItem {
+  revoc_reg_id: string
+  connection_id: string
+  revocation_id: string
+}
+
 const initialState: CredentialState = {
   issuedCredentials: [],
   revokableCredentials: [],
@@ -44,36 +55,28 @@ const credentialSlice = createSlice({
       })
       .addCase(fetchCredentialsByConId.fulfilled, (state, action) => {
         state.isLoading = false
-        const results = action.payload.results
-        let revocationObjects: RevocationRecord[] = []
-        if (results?.length) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          results.forEach((cred: any) => {
-            if (isCredIssued(cred.state)) {
-              const credDefParts = cred.credential_definition_id.split(':')
-              const credName = credDefParts[credDefParts.length - 1]
-              if (!state.issuedCredentials.includes(credName)) {
-                state.issuedCredentials.push(credDefParts[credDefParts.length - 1])
-              }
+        const results: (CredentialItem | RevocationRecordItem)[] = action.payload.results
+        results
+          .filter((cred): cred is CredentialItem => 'state' in cred && isCredIssued(cred.state))
+          .forEach((cred) => {
+            const credDefParts = cred.credential_definition_id.split(':')
+            const credName = credDefParts[credDefParts.length - 1]
+            if (!state.issuedCredentials.includes(credName)) {
+              state.issuedCredentials.push(credName)
             }
           })
-          revocationObjects = results
-            .filter(
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              (item: any) =>
-                item.revoc_reg_id !== undefined &&
-                !state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id),
-            )
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            .map((item: any) => {
-              return {
+        results
+          .filter((item): item is RevocationRecordItem => 'revoc_reg_id' in item)
+          .forEach((item) => {
+            const containsRev = state.revokableCredentials.map((rev) => rev.revocationRegId).includes(item.revoc_reg_id)
+            if (!containsRev) {
+              state.revokableCredentials.push({
                 revocationRegId: item.revoc_reg_id,
                 connectionId: item.connection_id,
                 credRevocationId: item.revocation_id,
-              }
-            })
-        }
-        state.revokableCredentials.push(...revocationObjects)
+              })
+            }
+          })
       })
       .addCase(issueCredential.rejected, (state, action) => {
         state.isIssueCredentialLoading = false
