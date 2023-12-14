@@ -74,11 +74,13 @@ export const removeOnboardingProgress = (
   dispatch: Dispatch<any>,
   onboardingStep: string,
   currentCharacter?: CustomCharacter,
+  step?: number,
 ) => {
+  const inc = step ?? 1
   const steps = currentCharacter?.onboarding.map((screen) => screen.screenId)
   const currentIndex = steps?.indexOf(onboardingStep)
   if (currentIndex && steps && currentIndex > 0 && currentIndex < steps.length) {
-    dispatch(setOnboardingStep(steps[currentIndex - 1]))
+    dispatch(setOnboardingStep(steps[currentIndex - inc]))
   }
   track({
     id: 'onboarding-step-completed',

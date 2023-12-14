@@ -76,6 +76,10 @@ export const OnboardingContainer: React.FC<Props> = ({
     removeOnboardingProgress(dispatch, onboardingStep, currentCharacter)
   }
 
+  // Used on Setup Complete page. Jump back two slides when skipping the 'Credential receieved' verification
+  const jumpPrevOnboardingPage = () => {
+    removeOnboardingProgress(dispatch, onboardingStep, currentCharacter, 2)
+  }
   //override title and text content to make them character dependant
   const getCharacterContent = (progress: string) => {
     const characterContent = currentCharacter?.onboarding.find((screen) => screen.screenId === progress)
@@ -212,6 +216,7 @@ export const OnboardingContainer: React.FC<Props> = ({
           onboardingStep={onboardingStep}
           addOnboardingStep={nextOnboardingPage}
           removeOnboardingStep={prevOnboardingPage}
+          removeTwoOnboardingStep={jumpPrevOnboardingPage}
           forwardDisabled={isForwardDisabled}
           backDisabled={isBackDisabled}
           onboardingCompleted={onboardingCompleted}
