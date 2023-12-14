@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { fadeX } from '../../../FramerAnimations'
 import { ActionCTA } from '../../../components/ActionCTA'
 import { useAppDispatch } from '../../../hooks/hooks'
+import { useEffectOnce } from '../../../hooks/useEffectOnce'
 import { useInterval } from '../../../hooks/useInterval'
 import { useConnection } from '../../../slices/connection/connectionSelectors'
 import { clearProof } from '../../../slices/proof/proofSlice'
@@ -90,7 +91,7 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
     }
   }
 
-  useEffect(() => {
+  useEffectOnce(() => {
     if (!proof) {
       createProofRequest()
     } else {
@@ -100,7 +101,7 @@ export const StepProof: React.FC<Props> = ({ proof, step, connectionId, requeste
     return () => {
       dispatch(clearProof())
     }
-  }, [])
+  })
 
   useInterval(
     () => {

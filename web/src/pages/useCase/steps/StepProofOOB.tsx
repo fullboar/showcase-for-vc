@@ -1,13 +1,14 @@
 import type { CredentialRequest, UseCaseScreen } from '../../../slices/types'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { isMobile, isBrowser } from 'react-device-detect'
 import { FiExternalLink } from 'react-icons/fi'
 
 import { fade, fadeExit, fadeX } from '../../../FramerAnimations'
 import { localization } from '../../../assets/localization'
 import { useAppDispatch } from '../../../hooks/hooks'
+import { useEffectOnce } from '../../../hooks/useEffectOnce'
 import { useInterval } from '../../../hooks/useInterval'
 import { createProofOOB, fetchProofById } from '../../../slices/proof/proofThunks'
 import { ProofAttributesCard } from '../components/ProofAttributesCard'
@@ -70,9 +71,9 @@ export const StepProofOOB: React.FC<Props> = ({ proof, proofUrl, step, requested
     )
   }
 
-  useEffect(() => {
+  useEffectOnce(() => {
     if (!proof) createProofRequest()
-  }, [])
+  })
 
   useInterval(
     () => {

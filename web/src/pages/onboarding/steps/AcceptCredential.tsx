@@ -13,6 +13,7 @@ import { ActionCTA } from '../../../components/ActionCTA'
 import { Loader } from '../../../components/Loader'
 import { Modal } from '../../../components/Modal'
 import { useAppDispatch } from '../../../hooks/hooks'
+import { useEffectOnce } from '../../../hooks/useEffectOnce'
 import { useInterval } from '../../../hooks/useInterval'
 import { useConnection } from '../../../slices/connection/connectionSelectors'
 import { useCredentials } from '../../../slices/credentials/credentialsSelectors'
@@ -35,14 +36,7 @@ export interface Props {
   onCredentialAccepted?: () => void
 }
 
-export const AcceptCredential: React.FC<Props> = ({
-  connectionId,
-  credentials,
-  currentCharacter,
-  title,
-  text,
-  onCredentialAccepted,
-}) => {
+export const AcceptCredential: React.FC<Props> = ({ connectionId, credentials, title, text, onCredentialAccepted }) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
@@ -63,7 +57,7 @@ export const AcceptCredential: React.FC<Props> = ({
     (cred) => issuedCredentials.includes(cred.name) || issuedCredentialsStartCase.includes(cred.name),
   )
 
-  useEffect(() => {
+  useEffectOnce(() => {
     if (credentials.length > 0) {
       credentials.forEach(async (item) => {
         const credDefId = (await getOrCreateCredDefId(item)).data
@@ -80,7 +74,7 @@ export const AcceptCredential: React.FC<Props> = ({
       })
       setCredentialsIssued(true)
     }
-  }, [currentCharacter, connectionId])
+  })
 
   useEffect(() => {
     if (credentialsAccepted && onCredentialAccepted) {

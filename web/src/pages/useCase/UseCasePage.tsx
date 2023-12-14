@@ -9,6 +9,7 @@ import { localization } from '../../assets/localization'
 import { Loader } from '../../components/Loader'
 import { Modal } from '../../components/Modal'
 import { useAppDispatch } from '../../hooks/hooks'
+import { useEffectOnce } from '../../hooks/useEffectOnce'
 import { useTitle } from '../../hooks/useTitle'
 import { useCurrentCharacter } from '../../slices/characters/charactersSelectors'
 import { useConnection } from '../../slices/connection/connectionSelectors'
@@ -39,11 +40,11 @@ export const UseCasePage: React.FC = () => {
   const navigate = useNavigate()
   useTitle(`${currentUseCase?.name ?? 'Use case'}${localization.pages.useCase.title}`)
 
-  useEffect(() => {
+  useEffectOnce(() => {
     if (currentCharacter && slug) {
       setCurrentUseCase(currentCharacter.useCases.find((item) => item.id === slug))
     }
-  }, [])
+  })
 
   useEffect(() => {
     if (currentUseCase) {
