@@ -117,7 +117,7 @@ export const MainSection: React.FC = () => {
       {isLandscape ? (
         <motion.div variants={fade} className="flex h-full flex-row">
           <div className="flex items-start w-1/2 flex-col">
-            <img className="mb-10" width={150} src={logo} alt="Govlogo" />
+            <img className="m-10" width={150} src={logo} alt="Govlogo" />
             <RenderProofRequest landscape={isLandscape} invitationUrl={invitationUrl as string} />
           </div>
           <RenderLandscape verifiedShow={verifiedShow} verified={verified} idPicture={proofReqPictureSrc} />
