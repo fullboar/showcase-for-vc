@@ -17,13 +17,13 @@ services:
     command: ['yarn', 'start']
     working_dir: /w/verifier
     ports:
-    - '3001:3001'
+      - '3001:3001'
     depends_on:
-    - backend
+      - backend
     env_file:
-    - ./verifier/.env
+      - ./verifier/.env
     volumes:
-    - ./:/w
+      - ./:/w
   backend:
     image: node:16.18-slim
     command: ['yarn', 'run', 'dev']
