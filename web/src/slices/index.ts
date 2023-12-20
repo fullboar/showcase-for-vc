@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 
 import charactersSlice from './characters/charactersSlice'
 import connectionSlice from './connection/connectionSlice'
@@ -24,22 +26,30 @@ const rootReducer = combineReducers({
   useCases: useCaseSlice,
 })
 
+const persistConfig = {
+  key: 'root',
+  version: VERSION,
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 const pReducer = (state: any, action: any) => {
   if (action.type === 'persist/REHYDRATE') {
     const storageVersion = action.payload?._persist.version
 
     if (storageVersion !== VERSION) {
-      return rootReducer(undefined, action)
+      return persistedReducer(undefined, action)
     }
 
-    return rootReducer(action.payload, action)
+    return persistedReducer(action.payload, action)
   }
 
   if (action.type === 'demo/RESET') {
-    return rootReducer(undefined, action)
+    return persistedReducer(undefined, action)
   }
 
-  return rootReducer(state, action)
+  return persistedReducer(state, action)
 }
 
 export default pReducer
