@@ -37,11 +37,7 @@ export const MainSection: React.FC = () => {
       {
         restrictions: [
           {
-<<<<<<< HEAD
-            schema_name: 'Person',
-=======
             schema_name: 'employee_card',
->>>>>>> da2c7b2 (chore: add verifier to repo (#16))
           },
         ],
         names: ['picture'],
@@ -52,27 +48,17 @@ export const MainSection: React.FC = () => {
       {
         restrictions: [
           {
-<<<<<<< HEAD
-            schema_name: 'Person',
-          },
-        ],
-        name: 'birthdate_dateint',
-        p_type: '<=',
-        p_value: getDateInt(-19),
-=======
             schema_name: 'employee_card',
           },
         ],
         name: 'expiry_date_dateint',
         p_type: '>',
         p_value: getDateInt(),
->>>>>>> da2c7b2 (chore: add verifier to repo (#16))
         non_revoked: { to: Math.floor(new Date().getTime() / 1000) },
       },
     ],
 
-<<<<<<< HEAD
-    requestOptions: { name: 'Bell Island Beer & Wine', comment: 'TEMP Expiry date check' },
+    requestOptions: { name: 'MyGovPEI', comment: 'TEMP Expiry date check' },
   }
 
   // Initial state, delete old connections and start new.
@@ -82,17 +68,6 @@ export const MainSection: React.FC = () => {
     dispatch(clearProof())
     dispatch(createInvitation('QR Verifier Demo'))
     dispatch(createProof(proofData))
-=======
-    requestOptions: { name: 'MyGovPEI', comment: 'TEMP Expiry date check' },
-  }
-
-  useEffect(() => {
-    dispatch(clearConnection())
-    dispatch(createInvitation('QR Verifier Demo'))
-    dispatch(createProof(proofData))
-    dispatch(clearCredentials())
-    dispatch(clearProof())
->>>>>>> da2c7b2 (chore: add verifier to repo (#16))
   }, [])
 
   // Check for new connection every 1s
@@ -138,19 +113,11 @@ export const MainSection: React.FC = () => {
   }, [proofReceived])
 
   return (
-<<<<<<< HEAD
     <AnimatePresence mode="wait">
       {isLandscape ? (
         <motion.div variants={fade} className="flex h-full flex-row">
           <div className="flex items-start w-1/2 flex-col">
-            <img className="mb-10" width={150} src={logo} alt="Govlogo" />
-=======
-    <AnimatePresence exitBeforeEnter>
-      {isLandscape ? (
-        <motion.div variants={fade} className="flex h-full flex-row">
-          <div className="flex items-start w-1/2 flex-col">
             <img className="ml-4 mt-4 mb-5" width={150} src={logo} alt="Govlogo" />
->>>>>>> da2c7b2 (chore: add verifier to repo (#16))
             <RenderProofRequest landscape={isLandscape} invitationUrl={invitationUrl as string} />
           </div>
           <RenderLandscape verifiedShow={verifiedShow} verified={verified} idPicture={proofReqPictureSrc} />
@@ -158,11 +125,7 @@ export const MainSection: React.FC = () => {
       ) : (
         <motion.div variants={fade} className="flex h-full flex-col">
           <div className="flex justify-left">
-<<<<<<< HEAD
-            <img className="" width={150} src={logo} alt="Govlogo" />
-=======
             <img className="ml-4 mt-4" width={150} src={logo} alt="Govlogo" />
->>>>>>> da2c7b2 (chore: add verifier to repo (#16))
           </div>
           <RenderProofRequest landscape={isLandscape} invitationUrl={invitationUrl as string} />
           <RenderPortrait verifiedShow={verifiedShow} verified={verified} idPicture={proofReqPictureSrc} />

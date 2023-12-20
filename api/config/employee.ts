@@ -76,7 +76,7 @@ export const employee: CustomCharacter = {
       screenId: 'ACCEPT_CREDENTIAL',
       title: 'Accept your Credential',
       text: "Your wallet has established a secure and private connection with MyGovPEI. In your PEI Wallet, you should now find an offer for a Digital Access Credential. Please take a moment to review the details of the offer, and when you're ready, select 'Accept Offer.'",
-      image: '/public/common/mobile-phone-isometric.svg',
+      image: '/public/common/startup-outline.svg',
       credentials: [
         {
           name: 'employee_card',
