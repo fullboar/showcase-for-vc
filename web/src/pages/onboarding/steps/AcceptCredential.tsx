@@ -54,7 +54,8 @@ export const AcceptCredential: React.FC<Props> = ({ connectionId, credentials, t
 
   const issuedCredentialsStartCase = issuedCredentials.map((name) => startCase(name))
   const credentialsAccepted = credentials.every(
-    (cred) => issuedCredentials.includes(cred.name) || issuedCredentialsStartCase.includes(cred.name),
+    (cred) =>
+      issuedCredentials.includes(cred.credential_tag) || issuedCredentialsStartCase.includes(cred.credential_tag),
   )
 
   useEffectOnce(() => {

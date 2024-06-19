@@ -55,7 +55,7 @@ export const OnboardingContainer: React.FC<Props> = ({
 
   const connectionCompleted = isConnected(connectionState as string)
   const credentials = currentCharacter?.onboarding.find((step) => step.screenId === onboardingStep)?.credentials
-  const credentialsAccepted = credentials?.every((cred) => issuedCredentials.includes(cred.name))
+  const credentialsAccepted = credentials?.every((cred) => issuedCredentials.includes(cred.credential_tag))
 
   const isBackDisabled = ['PICK_CHARACTER', 'ACCEPT_CREDENTIAL'].includes(onboardingStep)
   const isForwardDisabled =

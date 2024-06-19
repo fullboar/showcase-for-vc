@@ -29,15 +29,16 @@ export const StarterCredentials: React.FC<Props> = ({ credentials }) => {
         <hr className="text-separator dark:text-dark-separator" />
       </div>
       {credentials.map((item) => {
-        const completed = issuedCredentials.includes(item.name) || issuedCredentialsStartCase.includes(item.name)
+        const completed =
+          issuedCredentials.includes(item.credential_tag) || issuedCredentialsStartCase.includes(item.credential_tag)
 
         return (
-          <div key={item.name} className="flex-1 flex flex-row items-center justify-between my-2">
+          <div key={item.credential_tag} className="flex-1 flex flex-row items-center justify-between my-2">
             <div className="bg-icon dark:bg-dark-icon rounded-lg p-2 w-12">
               <img className="h-8 m-auto" src={prependApiUrl(item.icon)} alt="icon" />
             </div>
             <div className="flex-1 px-4 justify-self-start text-sm sm:text-base">
-              <p>{startCase(item.name)}</p>
+              <p>{startCase(item.schema_name)}</p>
             </div>
             <StateIndicator completed={completed} />
           </div>
