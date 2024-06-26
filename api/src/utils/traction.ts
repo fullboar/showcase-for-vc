@@ -54,6 +54,7 @@ export const sendTractionRequest = async (
 
   console.log(`api: traction request: ${method} ${url}`)
   const response = await axios.request({
+    ...config,
     method,
     url,
     data,
