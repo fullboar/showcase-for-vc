@@ -79,7 +79,8 @@ export const employee: CustomCharacter = {
       image: '/public/common/startup-outline.svg',
       credentials: [
         {
-          name: 'employee_card',
+          schema_name: 'employee_card',
+          credential_tag: 'employee_card_v2',
           version: '1.0',
           icon: '/public/employee/icon-employee.svg',
           attributes: [

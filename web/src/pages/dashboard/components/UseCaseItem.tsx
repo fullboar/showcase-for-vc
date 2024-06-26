@@ -25,7 +25,7 @@ const getCredIcon = (currChar: CustomCharacter, credName: string) => {
   currChar.onboarding.forEach((screen) => {
     if (screen.credentials) {
       screen.credentials.forEach((cred) => {
-        if (cred.name === credName) {
+        if (cred.schema_name === credName) {
           icon = cred.icon
         }
       })

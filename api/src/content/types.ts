@@ -1,5 +1,6 @@
 export interface Credential {
-  name: string
+  schema_name: string
+  credential_tag: string
   icon: string
   version: string
   attributes: {

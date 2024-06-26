@@ -24,7 +24,7 @@ export class CredentialController {
   public async getOrCreateCredDef(@Body() credential: Credential) {
     const schemas = (
       await tractionRequest.get(`/schemas/created`, {
-        params: { schema_name: credential.name, schema_version: credential.version },
+        params: { schema_name: credential.schema_name, schema_version: credential.version },
       })
     ).data
 
@@ -34,14 +34,14 @@ export class CredentialController {
       const resp = (
         await tractionRequest.post(`/schemas`, {
           attributes: schemaAttrs,
-          schema_name: credential.name,
+          schema_name: credential.schema_name,
           schema_version: credential.version,
         })
       ).data
       schema_id = resp.sent.schema_id
       await new Promise((r) => setTimeout(r, 5000))
     } else {
-      schema_id = schemas.schema_ids.filter((id) => id.includes(`${credential.name}:${credential.version}`))[0]
+      schema_id = schemas.schema_ids.filter((id) => id.includes(`${credential.schema_name}:${credential.version}`))[0]
     }
 
     console.log('selected schema id = ', schema_id)
@@ -55,12 +55,12 @@ export class CredentialController {
           revocation_registry_size: 25,
           schema_id,
           support_revocation: true,
-          tag: credential.name,
+          tag: credential.credential_tag,
         })
       ).data
       cred_def_id = resp.sent.credential_definition_id
     } else {
-      cred_def_id = credDefs.credential_definition_ids.filter((id) => id.includes(credential.name))[0]
+      cred_def_id = credDefs.credential_definition_ids.filter((id) => id.endsWith(credential.credential_tag))[0]
     }
 
     console.log('selected cred def id = ', cred_def_id)
